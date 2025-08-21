@@ -8,9 +8,9 @@ import Image from "next/image";
 import { Award, Package, Star } from "lucide-react";
 
 const stats = [
-  { name: "Berdiri Sejak", value: "2001", icon: Award },
-  { name: "Jenis Produk", value: "1000+", icon: Package },
-  { name: "Rating di Google", value: "4.8 ★", icon: Star },
+  { name: "Ready Stock", value: "Sejak 2001", icon: Award },
+  { name: "Bisa Order Online", value: "1000+ Produk", icon: Package },
+  { name: "Bisa Antar", value: "4.8 Google", icon: Star },
 ];
 
 export const TrustGallery = () => {
@@ -26,7 +26,7 @@ export const TrustGallery = () => {
           className="max-w-2xl mx-auto text-center"
         >
           <h2 className="font-heading text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl">
-            Toko Fisik Kami, Jaminan Kepercayaan Anda
+            Alkes lengkap. Oksigen ready. Satu tempat → semua ada.
           </h2>
         </motion.div>
 

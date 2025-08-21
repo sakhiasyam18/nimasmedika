@@ -82,7 +82,7 @@ export function Footer() {
               viewport={{ once: true }}
               transition={{ delay: 0.05, duration: 0.5 }}
             >
-              Siap Menjadi Solusi Kesehatan Terbaik Anda?
+              Nimas Medika Alkes
             </motion.h2>
 
             <motion.p
@@ -92,10 +92,7 @@ export function Footer() {
               viewport={{ once: true }}
               transition={{ delay: 0.12, duration: 0.5 }}
             >
-              Hubungi kami atau kunjungi langsung toko kami di Madiun. Staf ahli
-              kami siap membantu Anda menemukan produk yang tepat. Untuk
-              kebutuhan cepat, konsultasi singkat, atau ketersediaan stok, tim
-              kami responsif.
+              Sehat itu gampang: simple, cepat, terpercaya.
             </motion.p>
 
             <div className="mt-8 sm:mt-10 flex flex-col sm:flex-row items-center justify-center gap-4">
@@ -122,7 +119,7 @@ export function Footer() {
                   >
                     <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path>
                   </svg>
-                  <span>WhatsApp: {WHATSAPP_DISPLAY}</span>
+                  <span>Chat Cepat : {WHATSAPP_DISPLAY}</span>
                 </a>
               </MagneticButton>
 
@@ -132,7 +129,7 @@ export function Footer() {
                 aria-label="Telepon Toko"
               >
                 <Phone className="h-5 w-5" />
-                <span>Telepon Toko</span>
+                <span>Telepon: 089696835349</span>
               </a>
             </div>
 
@@ -144,18 +141,18 @@ export function Footer() {
         {/* Info Sekunder */}
         <div className="mt-16 grid grid-cols-1 md:grid-cols-3 gap-8 text-center text-white/85">
           <InfoCard
-            title="Kunjungi Kami"
+            title="Alamat"
             icon={<MapPin className="h-5 w-5" />}
             lines={[ADDRESS_LINE_1, ADDRESS_LINE_2]}
           />
           <InfoCard
-            title="Jam Buka"
+            title="Open Everyday"
             icon={<Clock className="h-5 w-5" />}
             lines={[OPEN_DAYS, OPEN_HOURS]}
           />
           <div className="mx-auto w-full max-w-sm">
             <h3 className="inline-flex items-center gap-2 font-semibold text-white">
-              <Store className="h-5 w-5" /> Ikuti Kami
+              <Store className="h-5 w-5" /> Stay Updated!
             </h3>
             <div className="mt-3 flex justify-center gap-4">
               <IconLink href={INSTAGRAM_LINK} label="Instagram">
@@ -166,7 +163,10 @@ export function Footer() {
               </IconLink>
             </div>
             <p className="mt-3 text-xs text-white/70">
-              Update promo, stok baru, dan konten edukasi alat kesehatan.
+              Produk lengkap juga ada di Shopee.
+            </p>
+            <p className="mt-3 text-xs text-white/70">
+              Cek update seru di Instagram kami!
             </p>
           </div>
         </div>
@@ -174,12 +174,9 @@ export function Footer() {
         {/* Sub-Footer */}
         <div className="mt-16 border-t border-white/20 pt-8 text-center text-sm text-white/70">
           <p>
-            &copy; {new Date().getFullYear()} {STORE_NAME}. Didesain dengan
-            hati. Dibuat untuk cepat, ringan, dan nyaman dilihat.
+            &copy; {new Date().getFullYear()} {STORE_NAME}
           </p>
-          <p className="mt-2">
-            <AnimatedUnderline href="#top">Kembali ke atas</AnimatedUnderline>
-          </p>
+
         </div>
       </Container>
     </footer>

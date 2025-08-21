@@ -18,7 +18,7 @@ export const Hero = () => {
           transition={{ duration: 0.5 }}
           className="font-heading text-4xl font-bold tracking-tight text-white sm:text-5xl md:text-6xl"
         >
-          Toko Alat Kesehatan Terlengkap di Madiun
+          Nimas Medika Alkes – Apotek & Alat Kesehatan di Madiun
         </motion.h1>
 
         <motion.div
@@ -28,11 +28,10 @@ export const Hero = () => {
           className="mt-6 max-w-3xl mx-auto"
         >
           <p className="text-lg text-gray-200">
-            Menyediakan perlengkapan alat kesehatan, kedokteran, kebidanan,
-            laboratorium, dan alat terapi.
+            Perlengkapan Kedokteran Kesehatan Kebidanan Labolatorium Alat Terapi
           </p>
-          <p className="text-lg text-gray-200 mt-2">
-            Juga melayani jual, beli, serta sewa tabung oksigen di Madiun.
+          <p className="capitalize text-lg text-gray-200 mt-2">
+            Jual, beli, & sewa tabung oksigen
           </p>
         </motion.div>
 
@@ -46,13 +45,13 @@ export const Hero = () => {
             href="#"
             className="rounded-full bg-gradient-to-r from-primary-dark to-primary px-8 py-3 font-semibold text-white shadow-lg hover:scale-105 transition-transform"
           >
-            Hubungi via WhatsApp
+            Chat Sekarang
           </a>
           <a
             href="#"
             className="rounded-full border-2 border-white px-8 py-3 font-semibold text-white hover:bg-white/10 transition-colors"
           >
-            Lihat Lokasi
+            Arahkan ke Lokasi
           </a>
         </motion.div>
       </Container>

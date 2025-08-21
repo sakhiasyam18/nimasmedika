@@ -7,9 +7,16 @@ import { motion } from "framer-motion";
 import { MapPin, Building, ShoppingCart, Factory } from "lucide-react";
 
 const landmarks = [
-  { name: "Sebelah Timur RS Darmayu", icon: Building },
-  { name: "Tepat di Samping Laraiya Supermarket", icon: ShoppingCart },
-  { name: "Dari arah Pabrik Gula Kanigoro, toko di kiri jalan", icon: Factory },
+  { name: "Kanan Jalan Sebelah Timur RS Darmayu", icon: Building },
+  { name: "Persis di samping Laraiya Supermarket", icon: ShoppingCart },
+  {
+    name: "Dari arah Pabrik Gula Kanigoro → toko ada di kiri jalan",
+    icon: Factory,
+  },
+  {
+    name: "Dari arah Ponorogo, setelah perempatan Te’an lanjut ke timur 400 meter.",
+    icon: Factory,
+  },
 ];
 
 export const Location = () => {
