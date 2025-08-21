@@ -56,9 +56,6 @@ export const Hero = () => {
           </a>
         </motion.div>
       </Container>
-      <h1 className="text-blue-500 text-3xl font-bold underline">
-        Hello world!
-      </h1>
     </div>
   );
 };

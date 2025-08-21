@@ -24,9 +24,6 @@ export default function Home() {
           <Location />
           <Footer />
         </Container>
-        <h1 className="text-blue-500 text-3xl font-bold underline">
-          Hello world!
-        </h1>
       </main>
     </>
   );
