@@ -1,6 +1,11 @@
 // src/app/page.tsx
 import { Container } from "@/components/Container";
 import { Header } from "@/components/Header"; // 1. Impor komponen Header
+import { Hero } from "@/components/Hero"; // Impor komponen Hero
+import { TrustGallery } from "@/components/TrustGallery";
+import { Services } from "@/components/Services";
+import { AboutTeaser } from "@/components/AboutTeaser";
+import { Location } from "@/components/Location"; // 1. Impor komponen baru
 
 export default function Home() {
   return (
@@ -10,13 +15,16 @@ export default function Home() {
 
       <main>
         <Container>
-          {/* Kotak biru ini masih ada sebagai placeholder untuk konten kita nanti */}
-          <div className="bg-primary-light h-40 flex items-center justify-center rounded-lg mt-8">
-            <p className="text-primary-dark font-heading font-bold text-xl">
-              Area Konten Utama Nimas Medika
-            </p>
-          </div>
+          <Hero />
+
+          <TrustGallery />
+          <Services />
+          <AboutTeaser />
+          <Location />
         </Container>
+        <h1 className="text-blue-500 text-3xl font-bold underline">
+          Hello world!
+        </h1>
       </main>
     </>
   );
