@@ -14,7 +14,7 @@ export default function Home() {
       {/* 2. Letakkan Header di sini, di luar tag <main> */}
       <Header />
 
-      <main>
+      <main className="bg-white text-gray-900">
         <Container>
           <Hero />
 

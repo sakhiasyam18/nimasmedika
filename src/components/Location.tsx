@@ -1,4 +1,3 @@
-// src/components/Location.tsx
 "use client";
 
 import React from "react";
@@ -21,32 +20,36 @@ const landmarks = [
 
 export const Location = () => {
   return (
-    <div className="relative bg-white py-24 sm:py-32 overflow-hidden">
-      {/* Latar Belakang Gradasi Dinamis */}
-      <div className="absolute inset-0 -z-10">
-        <div className="absolute inset-0 bg-gradient-to-tr from-accent-light via-white to-secondary opacity-50" />
-      </div>
+    <section
+      className="
+      relative isolate overflow-hidden
+      bg-gradient-to-b from-[#4E71FF] via-[#8DD8FF] to-[#BBFBFF]
+      py-24 sm:py-32"
+    >
+      {/* Efek Radial Glow */}
+      <div
+        aria-hidden
+        className="absolute inset-0 bg-[radial-gradient(50%_50%_at_50%_50%,rgba(255,255,255,0.2)_0%,rgba(255,255,255,0)_80%)]"
+      />
 
       <Container>
-        <div className="text-center mb-16">
-          <motion.h2
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.5 }}
-            viewport={{ once: true, amount: 0.5 }}
-            className="font-heading text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl"
-          >
-            {/* Kunjungi Kami, Lokasinya Sangat Mudah Ditemukan */}
-          </motion.h2>
-        </div>
+        <motion.h2
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6 }}
+          viewport={{ once: true, amount: 0.5 }}
+          className="text-center font-heading text-4xl sm:text-5xl font-extrabold text-white mb-12"
+        >
+          Lokasi Kami
+        </motion.h2>
 
-        <div className="relative h-[500px] sm:h-[600px]">
-          {/* Peta Google Maps di Latar Belakang */}
+        <div className="relative h-[500px] sm:h-[600px] rounded-3xl overflow-hidden shadow-2xl">
+          {/* Google Maps */}
           <motion.div
             initial={{ opacity: 0, scale: 1.1 }}
             whileInView={{ opacity: 1, scale: 1 }}
             transition={{ duration: 1 }}
-            viewport={{ once: true, amount: 0.3 }}
+            viewport={{ once: true }}
             className="absolute inset-0 h-full w-full"
           >
             <iframe
@@ -57,48 +60,56 @@ export const Location = () => {
               allowFullScreen={true}
               loading="lazy"
               referrerPolicy="no-referrer-when-downgrade"
-              className="rounded-2xl shadow-2xl saturate-[1.1]"
+              className="rounded-3xl saturate-[1.15]"
             ></iframe>
           </motion.div>
 
-          {/* Kartu Informasi "Mengambang" dengan Efek Glassmorphism */}
+          {/* Card Info dengan Glassmorphism & Neon Glow */}
           <motion.div
             initial={{ opacity: 0, y: 50 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.7, delay: 0.3 }}
-            viewport={{ once: true, amount: 0.8 }}
-            className="absolute bottom-4 left-4 right-4 sm:left-auto sm:right-8 sm:bottom-8 sm:w-96 p-6 rounded-2xl border border-white/50 bg-white/60 backdrop-blur-xl shadow-lg"
+            viewport={{ once: true }}
+            className="absolute bottom-6 left-1/2 -translate-x-1/2 sm:translate-x-0 sm:left-auto sm:right-8 sm:bottom-8
+            w-[90%] sm:w-96 rounded-3xl border border-white/30 bg-white/20 backdrop-blur-xl shadow-xl
+            p-6 text-white overflow-hidden"
           >
+            {/* Neon Glow Border */}
+            <div className="absolute inset-0 -z-10 rounded-3xl opacity-60 blur-2xl bg-[conic-gradient(from_90deg,#5409DA,#4E71FF,#8DD8FF,#BBFBFF,#5409DA)]"></div>
+
+            {/* Alamat */}
             <div className="flex items-start gap-4">
-              <MapPin className="h-8 w-8 text-primary-dark flex-shrink-0" />
+              <MapPin className="h-8 w-8 text-white drop-shadow-[0_0_10px_rgba(78,113,255,0.8)]" />
               <div>
-                <h3 className="font-heading font-semibold text-gray-900">
+                <h3 className="font-heading font-semibold text-xl">
                   Alamat Lengkap
                 </h3>
-                <p className="mt-1 text-sm text-gray-700">
+                <p className="mt-1 text-sm text-white/90">
                   Jl. Kapten Tendean No. 68, Demangan, Kec. Taman, Kota Madiun,
                   Jawa Timur 63136
                 </p>
               </div>
             </div>
 
-            <div className="mt-6 space-y-3 border-t border-black/10 pt-4">
-              <h3 className="font-heading font-semibold text-gray-900">
+            {/* Landmark */}
+            <div className="mt-6 space-y-4 border-t border-white/20 pt-4">
+              <h3 className="font-heading font-semibold text-lg">
                 Patokan Lokasi
               </h3>
-              {landmarks.map((landmark) => (
-                <div
+              {landmarks.map((landmark, i) => (
+                <motion.div
                   key={landmark.name}
+                  whileHover={{ scale: 1.05, x: 6 }}
                   className="flex items-center gap-3 group"
                 >
-                  <landmark.icon className="h-5 w-5 text-primary transition-transform duration-300 group-hover:scale-125" />
-                  <p className="text-sm text-gray-700">{landmark.name}</p>
-                </div>
+                  <landmark.icon className="h-5 w-5 text-white drop-shadow-[0_0_8px_rgba(141,216,255,0.8)] group-hover:rotate-12 transition-transform" />
+                  <p className="text-sm text-white/90">{landmark.name}</p>
+                </motion.div>
               ))}
             </div>
           </motion.div>
         </div>
       </Container>
-    </div>
+    </section>
   );
 };
