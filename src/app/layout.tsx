@@ -1,7 +1,7 @@
 // src/app/layout.tsx
 import type { Metadata } from "next";
 import { Inter, Plus_Jakarta_Sans } from "next/font/google";
-import "./globals.css";
+import "./globals.css"; // Pastikan ini mengimpor file CSS global kita
 
 // Konfigurasi font Inter untuk teks biasa
 const inter = Inter({
