@@ -6,6 +6,7 @@ import { TrustGallery } from "@/components/TrustGallery";
 import { Services } from "@/components/Services";
 import { AboutTeaser } from "@/components/AboutTeaser";
 import { Location } from "@/components/Location"; // 1. Impor komponen baru
+import { Footer } from "@/components/Footer";
 
 export default function Home() {
   return (
@@ -21,6 +22,7 @@ export default function Home() {
           <Services />
           <AboutTeaser />
           <Location />
+          <Footer />
         </Container>
         <h1 className="text-blue-500 text-3xl font-bold underline">
           Hello world!
