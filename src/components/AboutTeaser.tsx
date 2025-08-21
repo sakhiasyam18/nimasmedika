@@ -6,7 +6,7 @@ import { motion } from "framer-motion";
 import Image from "next/image";
 import Link from "next/link";
 
-// Animasi tilt & floating
+// Variants animasi tilt & floating
 const tiltVariants = {
   hover: {
     rotateX: 6,
@@ -28,25 +28,24 @@ const floating = {
 export const AboutTeaser = () => {
   return (
     <section
-      className="
-      relative isolate overflow-hidden
-      bg-white from-[#4E71FF] via-[#8DD8FF] to-[#BBFBFF]
-      py-24 sm:py-32"
+      className="relative isolate overflow-hidden bg-white py-24 sm:py-32 text-gray-900"
+      aria-label="Tentang Nimas Medika Alkes"
     >
-      {/* Background dekorasi */}
+      {/* Background dekorasi neon lembut */}
       <div
         aria-hidden
-        className="absolute inset-0 bg-[radial-gradient(50%_50%_at_50%_50%,rgba(255,255,255,0.25)_0%,rgba(255,255,255,0)_75%)]"
+        className="absolute inset-0 bg-[radial-gradient(50%_50%_at_50%_40%,rgba(78,113,255,0.12)_0%,transparent_70%)]"
       />
+
       <Container>
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
-          {/* Kolom Kiri: Narasi */}
+          {/* Kolom kiri: narasi */}
           <motion.div
             initial={{ opacity: 0, x: -50 }}
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true, amount: 0.3 }}
             transition={{ duration: 0.8 }}
-            className="relative z-10 text-white"
+            className="relative z-10"
           >
             <motion.div
               initial={{ opacity: 0 }}
@@ -58,12 +57,12 @@ export const AboutTeaser = () => {
               <h2 className="font-heading text-4xl sm:text-5xl font-extrabold leading-tight mb-4">
                 Cerita Kami, Komitmen Untuk Kamu
               </h2>
-              <p className="text-lg leading-relaxed text-white/90">
+              <p className="text-lg leading-relaxed text-slate-700">
                 Di balik setiap produk dan layanan kami, ada dedikasi untuk
                 kesehatan masyarakat Madiun. Kami hadir bukan hanya menjual alat
                 kesehatan, tapi membangun kepercayaan dan kenyamanan.
               </p>
-              <p className="mt-4 text-lg leading-relaxed text-white/80">
+              <p className="mt-4 text-lg leading-relaxed text-slate-600">
                 Dari satu toko kecil menjadi pusat layanan kesehatan modern —
                 perjalanan ini kami lakukan bersama kamu.
               </p>
@@ -76,10 +75,12 @@ export const AboutTeaser = () => {
                 <Link
                   href="#"
                   className="inline-flex items-center gap-2 rounded-full px-8 py-3
-                    bg-gradient-to-r from-[#5409DA] via-[#4E71FF] to-[#8DD8FF]
-                    text-white font-semibold shadow-lg
-                    hover:shadow-[0_12px_40px_rgba(14,165,233,0.6)]
+                    bg-gradient-to-r from-[#2C5BFF] via-[#4E71FF] to-[#8DD8FF]
+                    text-white font-semibold
+                    shadow-[0_0_24px_rgba(78,113,255,0.45)]
+                    hover:shadow-[0_0_40px_rgba(141,216,255,0.6)]
                     transition-all"
+                  aria-label="Pelajari selengkapnya tentang Nimas Medika"
                 >
                   Pelajari Selengkapnya
                   <motion.svg
@@ -102,7 +103,7 @@ export const AboutTeaser = () => {
             </motion.div>
           </motion.div>
 
-          {/* Kolom Kanan: Foto kolase */}
+          {/* Kolom kanan: foto kolase */}
           <motion.div
             initial={{ opacity: 0, scale: 0.95 }}
             whileInView={{ opacity: 1, scale: 1 }}
@@ -119,15 +120,15 @@ export const AboutTeaser = () => {
               whileTap="tap"
               variants={tiltVariants}
               className="relative aspect-square rounded-3xl overflow-hidden
-              bg-white/10 backdrop-blur-lg shadow-xl border border-white/20"
+              bg-white/60 backdrop-blur-xl shadow-[0_0_20px_rgba(78,113,255,0.25)] border border-slate-200"
             >
               <Image
-                src="https://images.unsplash.com/photo-1588776814546-9d9a03b3c0ab?q=80&w=1000"
-                alt="Tentang Kami 1"
+                src="/images/about-1.jpg" // TODO: ganti gambar SEO (misal: tim atau etalase toko)
+                alt="Tentang Nimas Medika - Foto 1"
                 fill
                 className="object-cover"
               />
-              <div className="absolute inset-0 bg-gradient-to-t from-black/30 to-transparent" />
+              <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent" />
             </motion.div>
 
             {/* Foto kanan atas */}
@@ -139,15 +140,15 @@ export const AboutTeaser = () => {
               whileTap="tap"
               variants={tiltVariants}
               className="relative aspect-square rounded-3xl overflow-hidden
-              bg-white/10 backdrop-blur-lg shadow-xl border border-white/20"
+              bg-white/60 backdrop-blur-xl shadow-[0_0_20px_rgba(78,113,255,0.25)] border border-slate-200"
             >
               <Image
-                src="https://images.unsplash.com/photo-1606787364406-a3cdf06c4d19?q=80&w=1000"
-                alt="Tentang Kami 2"
+                src="/images/about-2.jpg" // TODO: ganti gambar SEO (misal: produk unggulan)
+                alt="Tentang Nimas Medika - Foto 2"
                 fill
                 className="object-cover"
               />
-              <div className="absolute inset-0 bg-gradient-to-t from-black/30 to-transparent" />
+              <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent" />
             </motion.div>
 
             {/* Foto besar bawah */}
@@ -159,15 +160,15 @@ export const AboutTeaser = () => {
               whileTap="tap"
               variants={tiltVariants}
               className="relative col-span-2 aspect-[16/9] rounded-3xl overflow-hidden
-              bg-white/10 backdrop-blur-lg shadow-2xl border border-white/20"
+              bg-white/60 backdrop-blur-xl shadow-[0_0_24px_rgba(78,113,255,0.3)] border border-slate-200"
             >
               <Image
-                src="https://images.unsplash.com/photo-1612277795396-c1c7c0162db3?q=80&w=1200"
-                alt="Tentang Kami 3"
+                src="/images/about-3.jpg" // TODO: ganti gambar SEO (misal: interior apotek atau layanan)
+                alt="Tentang Nimas Medika - Foto 3"
                 fill
                 className="object-cover"
               />
-              <div className="absolute inset-0 bg-gradient-to-t from-black/30 to-transparent" />
+              <div className="absolute inset-0 bg-gradient-to-t from-black/25 to-transparent" />
             </motion.div>
           </motion.div>
         </div>

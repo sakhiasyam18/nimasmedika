@@ -19,6 +19,9 @@ export const metadata: Metadata = {
   title: "Nimas Medika - Toko Alat Kesehatan Terlengkap di Madiun", // Judul SEO kita
   description:
     "Nimas Medika Alkes: Toko alat kesehatan terlengkap di Madiun. Menyediakan alat kedokteran, kebidanan, lab, & terapi. Melayani jual, beli, dan sewa oksigen.", // Deskripsi SEO kita
+  icons: {
+    icon: "/logo-nimas-medika-alkes-madiun.ico",
+  },
 };
 
 export default function RootLayout({

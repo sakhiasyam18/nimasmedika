@@ -1,30 +1,39 @@
 // src/app/page.tsx
 import { Container } from "@/components/Container";
-import { Header } from "@/components/Header"; // 1. Impor komponen Header
-import { Hero } from "@/components/Hero"; // Impor komponen Hero
+import { Header } from "@/components/Header";
+import { Hero } from "@/components/Hero";
 import { TrustGallery } from "@/components/TrustGallery";
 import { Services } from "@/components/Services";
 import { AboutTeaser } from "@/components/AboutTeaser";
-import { Location } from "@/components/Location"; // 1. Impor komponen baru
+import { Location } from "@/components/Location";
 import { Footer } from "@/components/Footer";
 
 export default function Home() {
   return (
-    <>
-      {/* 2. Letakkan Header di sini, di luar tag <main> */}
+    <><Container>
+      {/* Header selalu sticky di atas */}
       <Header />
 
-      <main className="bg-white text-gray-900">
-        <Container>
-          <Hero />
+      <main className="relative bg-white text-gray-900">
+        {/* Hero Section */}
+        <Hero />
 
-          <TrustGallery />
-          <Services />
-          <AboutTeaser />
-          <Location />
-          <Footer />
-        </Container>
+        {/* Moodboard / Social Proof */}
+        <TrustGallery />
+
+        {/* Services Section */}
+        <Services />
+
+        {/* About Section */}
+        <AboutTeaser />
+
+        {/* Location / Map */}
+        <Location />
       </main>
+
+      {/* Footer */}
+      <Footer />
+      </Container>
     </>
   );
 }
