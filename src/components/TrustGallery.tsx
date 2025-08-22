@@ -83,10 +83,10 @@ const GlowCard: React.FC<{
   return (
     <motion.div
       custom={i}
-      variants={fadeUp}
-      initial="hidden"
-      whileInView="show"
+      initial={{ opacity: 0, y: 40 }}
+      whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true, amount: 0.25 }}
+      transition={{ duration: 0.6, ease: "easeOut" }}
       whileHover={{
         y: -6,
         rotate: -0.5,
@@ -151,14 +151,14 @@ export const TrustGallery = () => {
           className="mx-auto max-w-3xl text-center"
         >
           <h2
-            className="font-heading text-4xl sm:text-5xl font-extrabold tracking-tight 
+            className="capitalize font-heading text-4xl sm:text-5xl font-extrabold tracking-tight 
             bg-clip-text text-transparent 
             bg-gradient-to-r from-[#2C5BFF] via-[#4E71FF] to-[#8DD8FF]"
           >
-            Alkes lengkap. Oksigen ready. Moodboard bukti nyata.
+            Alkes lengkap. Oksigen ready. Satu tempat semua ada
           </h2>
           <p className="mt-3 text-base sm:text-lg text-slate-600">
-            Singkat, rapi, hidup — gambar yang berbicara.
+            Satu tempat, kebutuhanmu beres!
           </p>
         </motion.div>
 
@@ -167,16 +167,19 @@ export const TrustGallery = () => {
           {stats.map((s, i) => (
             <motion.div
               key={s.name}
-              custom={i}
-              variants={fadeUp}
-              initial="hidden"
-              whileInView="show"
+              initial={{ opacity: 0, y: 40 }}
+              whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, amount: 0.6 }}
+              transition={{
+                duration: 0.6,
+                ease: "easeOut",
+                delay: i * 0.1, // biar muncul berurutan
+              }}
               className="inline-flex items-center gap-2 rounded-full px-4 py-2
-                text-sm font-semibold text-slate-800
-                bg-white/70 backdrop-blur ring-1 ring-slate-200 shadow-sm
-                hover:shadow-[0_0_20px_rgba(78,113,255,0.25)]
-                transition-all"
+        text-sm font-semibold text-slate-800
+        bg-white/70 backdrop-blur ring-1 ring-slate-200 shadow-sm
+        hover:shadow-[0_0_20px_rgba(78,113,255,0.25)]
+        transition-all"
             >
               <span
                 className="inline-flex h-6 w-6 items-center justify-center rounded-full 
@@ -211,11 +214,10 @@ export const TrustGallery = () => {
 
           {/* CTA Ringkas */}
           <motion.div
-            variants={fadeUp}
-            initial="hidden"
-            whileInView="show"
+            initial={{ opacity: 0, y: 40 }}
+            whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, amount: 0.4 }}
-            custom={IMAGES.length + 1}
+            transition={{ duration: 0.6, ease: "easeOut" }}
             className="mx-auto mt-10 flex justify-center"
           >
             <a
@@ -227,7 +229,7 @@ export const TrustGallery = () => {
                 hover:shadow-[0_0_44px_rgba(141,216,255,0.65)]
                 transition-all active:scale-[0.98]"
             >
-              Lihat Selengkapnya
+              Scroll Foto Dulu Lah
               <svg
                 className="h-4 w-4 transition-transform group-hover:translate-x-0.5"
                 viewBox="0 0 24 24"

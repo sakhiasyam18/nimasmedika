@@ -4,6 +4,7 @@ import React from "react";
 import { Container } from "./Container";
 import { motion } from "framer-motion";
 import { MapPin, Building, ShoppingCart, Factory } from "lucide-react";
+import Image from "next/image";
 
 const landmarks = [
   { name: "Kanan Jalan Sebelah Timur RS Darmayu", icon: Building },
@@ -13,7 +14,7 @@ const landmarks = [
     icon: Factory,
   },
   {
-    name: "Dari arah Ponorogo, setelah perempatan Te’an lanjut ke timur 400 meter",
+    name: "Dari arah Ponorogo, setelah perempatan Te’an lanjut ke timur 400 meter.",
     icon: Factory,
   },
 ];
@@ -24,14 +25,14 @@ export const Location = () => {
       className="relative isolate overflow-hidden bg-white py-24 sm:py-32 text-gray-900"
       aria-label="Lokasi Nimas Medika di Madiun"
     >
-      {/* Glow dekorasi biru */}
+      {/* Efek Radial Glow biru */}
       <div
         aria-hidden
         className="absolute inset-0 bg-[radial-gradient(50%_50%_at_50%_30%,rgba(78,113,255,0.1)_0%,transparent_80%)]"
       />
 
       <Container>
-        <motion.h2
+        {/* <motion.h2
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6 }}
@@ -39,8 +40,7 @@ export const Location = () => {
           className="text-center font-heading text-4xl sm:text-5xl font-extrabold mb-12"
         >
           Lokasi Kami
-        </motion.h2>
-
+        </motion.h2> */}
         <div className="relative h-[500px] sm:h-[600px] rounded-3xl overflow-hidden shadow-[0_0_28px_rgba(78,113,255,0.25)]">
           {/* ====== Google Maps Embed ====== */}
           <iframe
@@ -61,11 +61,11 @@ export const Location = () => {
             transition={{ duration: 0.7, delay: 0.3 }}
             viewport={{ once: true }}
             className="absolute bottom-6 left-1/2 -translate-x-1/2 sm:translate-x-0 sm:left-auto sm:right-8 sm:bottom-8
-            w-[90%] sm:w-96 rounded-3xl border border-slate-200 bg-white/80 backdrop-blur-xl shadow-[0_0_24px_rgba(78,113,255,0.3)]
+            w-[90%] sm:w-96 rounded-3xl border border-slate-200 bg-white/70 backdrop-blur-xl shadow-[0_0_24px_rgba(78,113,255,0.3)]
             p-6 text-gray-900 overflow-hidden"
           >
             {/* Neon aura border */}
-            <div className="absolute inset-0 -z-10 rounded-3xl opacity-50 blur-2xl bg-[conic-gradient(from_90deg,#4E71FF,#8DD8FF,#BBFBFF,#4E71FF)]"></div>
+            <div className="absolute inset-0 -z-10 rounded-3xl opacity-60 blur-2xl bg-[conic-gradient(from_90deg,#4E71FF,#8DD8FF,#BBFBFF,#4E71FF)]"></div>
 
             {/* Alamat utama */}
             <div className="flex items-start gap-4">

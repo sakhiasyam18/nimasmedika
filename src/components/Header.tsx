@@ -1,6 +1,7 @@
 // src/components/Header.tsx
 "use client";
 
+import Image from "next/image";
 import React, { useState, useEffect } from "react";
 import { Container } from "./Container";
 import { cn } from "@/lib/utils";
@@ -44,8 +45,18 @@ export const Header = () => {
     >
       <Container className="flex items-center justify-between h-16">
         {/* Logo (SEO-friendly: H1 di homepage) */}
-        <h1 className="font-heading font-extrabold text-xl text-[#2C5BFF] tracking-tight drop-shadow-[0_0_6px_rgba(78,113,255,0.35)]">
-          Nimas Medika
+        <h1 className="flex items-center">
+          <a
+            href="/"
+            aria-label="Nimas Medika Alkes - Toko Alat Kesehatan Madiun"
+          >
+            <Image
+              src="/images/logo-nimas-medika-alkes-madiun.svg" // ✅ lokasi file logo
+              alt="Nimas Medika Alkes - Toko Alat Kesehatan Madiun"
+              width={75}
+              height={0}
+            />
+          </a>
         </h1>
 
         {/* Desktop Nav */}

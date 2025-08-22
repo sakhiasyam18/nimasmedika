@@ -25,6 +25,22 @@ const floating = {
   },
 };
 
+// Gabungan floating + tilt
+const combinedVariants = {
+  initial: {
+    ...floating.initial,
+  },
+  animate: {
+    ...floating.animate,
+  },
+  hover: {
+    ...tiltVariants.hover,
+  },
+  tap: {
+    ...tiltVariants.tap,
+  },
+};
+
 export const AboutTeaser = () => {
   return (
     <section
@@ -58,13 +74,13 @@ export const AboutTeaser = () => {
                 Cerita Kami, Komitmen Untuk Kamu
               </h2>
               <p className="text-lg leading-relaxed text-slate-700">
-                Di balik setiap produk dan layanan kami, ada dedikasi untuk
-                kesehatan masyarakat Madiun. Kami hadir bukan hanya menjual alat
-                kesehatan, tapi membangun kepercayaan dan kenyamanan.
+                Dari toko kecil ke pusat kesehatan modern. Sejak 2001, kami
+                hadir bukan cuma jualan alat kesehatan, tapi kasih kepastian &
+                kenyamanan buat setiap keluarga.
               </p>
               <p className="mt-4 text-lg leading-relaxed text-slate-600">
-                Dari satu toko kecil menjadi pusat layanan kesehatan modern —
-                perjalanan ini kami lakukan bersama kamu.
+                Karena saat bicara kesehatan, yang kamu butuhkan bukan cuma
+                produk, tapi juga rasa aman. Dan itu yang selalu kami jaga.
               </p>
 
               <motion.div
@@ -82,7 +98,7 @@ export const AboutTeaser = () => {
                     transition-all"
                   aria-label="Pelajari selengkapnya tentang Nimas Medika"
                 >
-                  Pelajari Selengkapnya
+                  Kisah Kami Sejak 2001
                   <motion.svg
                     className="h-5 w-5"
                     xmlns="http://www.w3.org/2000/svg"
@@ -113,17 +129,16 @@ export const AboutTeaser = () => {
           >
             {/* Foto kiri atas */}
             <motion.div
-              variants={floating}
+              variants={combinedVariants}
               initial="initial"
               animate="animate"
               whileHover="hover"
               whileTap="tap"
-              variants={tiltVariants}
               className="relative aspect-square rounded-3xl overflow-hidden
               bg-white/60 backdrop-blur-xl shadow-[0_0_20px_rgba(78,113,255,0.25)] border border-slate-200"
             >
               <Image
-                src="/images/about-1.jpg" // TODO: ganti gambar SEO (misal: tim atau etalase toko)
+                src="/images/about-1.jpg"
                 alt="Tentang Nimas Medika - Foto 1"
                 fill
                 className="object-cover"
@@ -133,17 +148,16 @@ export const AboutTeaser = () => {
 
             {/* Foto kanan atas */}
             <motion.div
-              variants={floating}
+              variants={combinedVariants}
               initial="initial"
               animate="animate"
               whileHover="hover"
               whileTap="tap"
-              variants={tiltVariants}
               className="relative aspect-square rounded-3xl overflow-hidden
               bg-white/60 backdrop-blur-xl shadow-[0_0_20px_rgba(78,113,255,0.25)] border border-slate-200"
             >
               <Image
-                src="/images/about-2.jpg" // TODO: ganti gambar SEO (misal: produk unggulan)
+                src="/images/about-2.jpg"
                 alt="Tentang Nimas Medika - Foto 2"
                 fill
                 className="object-cover"
@@ -153,17 +167,16 @@ export const AboutTeaser = () => {
 
             {/* Foto besar bawah */}
             <motion.div
-              variants={floating}
+              variants={combinedVariants}
               initial="initial"
               animate="animate"
               whileHover="hover"
               whileTap="tap"
-              variants={tiltVariants}
               className="relative col-span-2 aspect-[16/9] rounded-3xl overflow-hidden
               bg-white/60 backdrop-blur-xl shadow-[0_0_24px_rgba(78,113,255,0.3)] border border-slate-200"
             >
               <Image
-                src="/images/about-3.jpg" // TODO: ganti gambar SEO (misal: interior apotek atau layanan)
+                src="/images/about-3.jpg"
                 alt="Tentang Nimas Medika - Foto 3"
                 fill
                 className="object-cover"
