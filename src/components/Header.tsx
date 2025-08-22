@@ -1,10 +1,11 @@
 // src/components/Header.tsx
 "use client";
 
+import Link from "next/link";
 import Image from "next/image";
 import React, { useState, useEffect } from "react";
 import { Container } from "./Container";
-import { cn } from "@/lib/utils";
+// import { cn } from "@/lib/utils";
 import { motion, AnimatePresence } from "framer-motion";
 import { Menu, X } from "lucide-react";
 
@@ -45,7 +46,7 @@ export const Header = () => {
       <Container className="flex items-center justify-between h-16">
         {/* Logo (SEO-friendly: H1 di homepage) */}
         <h1 className="flex items-center">
-          <a
+          <link 
             href="/"
             aria-label="Nimas Medika Alkes - Toko Alat Kesehatan Madiun"
           >
@@ -55,13 +56,13 @@ export const Header = () => {
               width={75}
               height={0}
             />
-          </a>
+          </link>
         </h1>
 
         {/* Desktop Nav */}
         <nav className="hidden md:flex items-center gap-8 text-sm font-medium">
           {navItems.map((item) => (
-            <a
+            <link 
               key={item.label}
               href={item.href}
               className="relative text-slate-700 hover:text-[#2C5BFF] transition-colors"
@@ -69,7 +70,7 @@ export const Header = () => {
               {item.label}
               {/* Neon underline animasi */}
               <span className="absolute left-0 -bottom-1 h-[2px] w-0 bg-gradient-to-r from-[#2C5BFF] via-[#4E71FF] to-[#8DD8FF] transition-all group-hover:w-full" />
-            </a>
+            </link>
           ))}
         </nav>
 
@@ -94,13 +95,13 @@ export const Header = () => {
           >
             <div className="rounded-2xl border border-slate-200 bg-white/90 backdrop-blur-xl shadow-[0_0_25px_rgba(78,113,255,0.25)] p-4 space-y-2">
               {navItems.map((item) => (
-                <a
+                <link
                   key={item.label}
                   href={item.href}
                   className="block rounded-lg px-4 py-2 text-slate-700 hover:bg-[#2C5BFF]/10 hover:text-[#2C5BFF] transition"
                 >
                   {item.label}
-                </a>
+                </link>
               ))}
             </div>
           </motion.div>
