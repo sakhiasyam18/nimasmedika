@@ -3,8 +3,14 @@
 import React from "react";
 import { Container } from "./Container";
 import { motion } from "framer-motion";
-import { MapPin, Building, ShoppingCart, Factory } from "lucide-react";
-import Image from "next/image";
+import {
+  MapPin,
+  Building,
+  ShoppingCart,
+  Factory,
+  ArrowUpDown,
+} from "lucide-react";
+// import Image from "next/image";
 
 const landmarks = [
   { name: "Kanan Jalan Sebelah Timur RS Darmayu", icon: Building },
@@ -15,7 +21,7 @@ const landmarks = [
   },
   {
     name: "Dari arah Ponorogo, setelah perempatan Te’an lanjut ke timur 400 meter.",
-    icon: Factory,
+    icon: ArrowUpDown,
   },
 ];
 

@@ -10,7 +10,7 @@ import Image from "next/image";
 const services = [
   {
     name: "Alat Medis & Kedokteran",
-    description: "Tensi Meter | Kursi Roda | Produk Original & Berkualitas.",
+    description: "Tensi Meter | Kursi Roda | Bed Pasien | Baju OKA Perawat | Jas Dokter",
     longDescription:
       "Menyediakan berbagai alat medis dan perlengkapan dokter/bidan. Mulai dari tensimeter, stetoskop, kursi roda, hingga alat-alat laboratorium. Semua produk original dan berkualitas.",
     icon: Stethoscope,
@@ -18,7 +18,7 @@ const services = [
   },
   {
     name: "Jual & Isi Ulang Oksigen 5 Menit",
-    description: "Isi Ulang Oksigen 5 Menit! Stok Selalu Standby Buat Kamu.",
+    description: "Isi Ulang Oksigen 5 Menit! Tekanan Full Tank Diisi 8 Tabung 2.000 Psi Rp. 45.000",
     longDescription:
       "Layanan jual dan isi ulang tabung oksigen di Madiun yang selalu siaga. Stok kami terjamin, proses aman dan cepat untuk kebutuhan pernapasan Anda.",
     icon: Droplet,
@@ -77,12 +77,12 @@ export const Services = () => {
           className="max-w-xl"
         >
           <h2 className="font-heading text-4xl sm:text-5xl font-extrabold leading-tight">
-            Solusi Kesehatan Lengkap, Cepat &amp; Profesional
+            Supplier Alat Kesehatan Terlengkap di Madiun
           </h2>
-          <p className="mt-6 text-lg leading-8 text-slate-600">
-            Di Nimas Medika, semua layanan dirancang biar hidup sehat jadi
-            gampang. Dari kebutuhan darurat sampai perawatan rutin — semua
-            ready, semua terjamin kualitasnya.
+          <p className="capitalize mt-6 text-lg leading-8 text-slate-600">
+            Nimas Medika, satu-satunya supplier alat kesehatan paling lengkap di
+            Madiun. Dari kebutuhan medis harian sampai layanan oksigen — semua
+            ada dengan kualitas terjamin & harga yang tetap terjangkau.
           </p>
 
           {/* Preview gambar besar */}

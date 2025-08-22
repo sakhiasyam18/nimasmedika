@@ -12,7 +12,6 @@ export const Header = () => {
   const [isOpen, setIsOpen] = useState(false);
 
   const navItems = [
-    { label: "Home", href: "#" },
     { label: "Layanan", href: "#services" },
     { label: "Tentang Kami", href: "#about" },
     { label: "Kontak", href: "#contact" },

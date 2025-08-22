@@ -41,8 +41,8 @@ export const Hero = () => {
           <p className="text-lg sm:text-xl text-slate-700">
             Perlengkapan Kedokteran Kesehatan Kebidanan Laboratorium Alat Terapi
           </p>
-          <p className="mt-2 text-lg text-slate-600">
-            Jual, beli, &amp; sewa tabung oksigen
+          <p className="capitalize mt-2 text-lg text-slate-600">
+            Jual, beli, &amp; sewa tabung oksigen madiun
           </p>
         </motion.div>
 
@@ -54,7 +54,8 @@ export const Hero = () => {
           className="mt-10 flex flex-col sm:flex-row items-center justify-center gap-4 sm:gap-6"
         >
           <motion.a
-            href="#"
+            href="https://wa.me/628123436075"
+            target="_blank"
             whileHover={{ scale: 1.06 }}
             whileTap={{ scale: 0.98 }}
             className="inline-flex items-center gap-3 rounded-full px-8 py-4
@@ -70,7 +71,8 @@ export const Hero = () => {
           </motion.a>
 
           <motion.a
-            href="#"
+            href="https://maps.app.goo.gl/KgHkYQ6x1PkvxugX9"
+            target="_blank"
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.98 }}
             className="inline-flex items-center gap-3 rounded-full px-8 py-4

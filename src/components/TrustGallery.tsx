@@ -13,49 +13,65 @@ const IMAGES = [
   {
     src: "/images/gallery-1.jpg",
     alt: "Produk kesehatan unggulan",
-    ratio: "aspect-[4/5]",
+    ratio: "aspect-[4/5]", // portrait
   },
   {
     src: "/images/gallery-2.jpg",
-    alt: "Etalase alat kesehatan",
-    ratio: "aspect-[1/1]",
+    alt: "Etalase alat kesehatan modern",
+    ratio: "aspect-[1/1]", // square
   },
   {
     src: "/images/gallery-3.jpg",
     alt: "Tabung oksigen ready",
-    ratio: "aspect-[3/4]",
+    ratio: "aspect-[3/4]", // portrait
   },
   {
     src: "/images/gallery-4.jpg",
     alt: "Interior apotek modern",
-    ratio: "aspect-[16/11]",
+    ratio: "aspect-[16/10]", // landscape
   },
   {
     src: "/images/gallery-5.jpg",
     alt: "Perlengkapan medis lengkap",
-    ratio: "aspect-[4/3]",
+    ratio: "aspect-[4/3]", // landscape medium
   },
   {
     src: "/images/gallery-6.jpg",
     alt: "Layanan cek kesehatan",
-    ratio: "aspect-[1/1]",
+    ratio: "aspect-[1/1]", // square
   },
   {
     src: "/images/gallery-7.jpg",
     alt: "Pesan antar cepat",
-    ratio: "aspect-[5/7]",
+    ratio: "aspect-[5/7]", // portrait tipis
   },
   {
     src: "/images/gallery-8.jpg",
     alt: "Produk farmasi pilihan",
-    ratio: "aspect-[16/10]",
+    ratio: "aspect-[16/9]", // wide landscape
   },
   {
     src: "/images/gallery-9.jpg",
     alt: "Stok alat medis lengkap",
-    ratio: "aspect-[3/4]",
+    ratio: "aspect-[3/4]", // portrait
+  },
+  {
+    src: "/images/gallery-10.jpg",
+    alt: "Alat medis rumah sakit",
+    ratio: "aspect-[4/3]", // landscape medium
+  },
+  {
+    src: "/images/gallery-11.jpg",
+    alt: "Toko alat kesehatan Nimas Medika",
+    ratio: "aspect-[16/10]", // landscape
+  },
+  {
+    src: "/images/gallery-12.jpg",
+    alt: "Konsultasi pelanggan",
+    ratio: "aspect-[1/1]", // square
   },
 ];
+
 
 const stats = [
   { name: "Ready Stock", value: "Sejak 2001", icon: Award },
@@ -229,7 +245,7 @@ export const TrustGallery = () => {
                 hover:shadow-[0_0_44px_rgba(141,216,255,0.65)]
                 transition-all active:scale-[0.98]"
             >
-              Scroll Foto Dulu Lah
+              Scroll Foto Dulu
               <svg
                 className="h-4 w-4 transition-transform group-hover:translate-x-0.5"
                 viewBox="0 0 24 24"

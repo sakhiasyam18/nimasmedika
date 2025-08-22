@@ -91,14 +91,14 @@ export const AboutTeaser = () => {
                 <Link
                   href="#"
                   className="inline-flex items-center gap-2 rounded-full px-8 py-3
-                    bg-gradient-to-r from-[#2C5BFF] via-[#4E71FF] to-[#8DD8FF]
-                    text-white font-semibold
-                    shadow-[0_0_24px_rgba(78,113,255,0.45)]
-                    hover:shadow-[0_0_40px_rgba(141,216,255,0.6)]
-                    transition-all"
+              bg-gradient-to-r from-[#2C5BFF] via-[#4E71FF] to-[#8DD8FF]
+              text-white font-semibold
+              shadow-[0_0_24px_rgba(78,113,255,0.45)]
+              hover:shadow-[0_0_40px_rgba(141,216,255,0.6)]
+              transition-all"
                   aria-label="Pelajari selengkapnya tentang Nimas Medika"
                 >
-                  Kisah Kami Sejak 2001
+                  Kisah Nimas Sejak 2001
                   <motion.svg
                     className="h-5 w-5"
                     xmlns="http://www.w3.org/2000/svg"
@@ -120,22 +120,15 @@ export const AboutTeaser = () => {
           </motion.div>
 
           {/* Kolom kanan: foto kolase */}
-          <motion.div
-            initial={{ opacity: 0, scale: 0.95 }}
-            whileInView={{ opacity: 1, scale: 1 }}
-            transition={{ duration: 0.8 }}
-            viewport={{ once: true, amount: 0.3 }}
-            className="relative grid grid-cols-2 gap-4"
-          >
+          <div className="relative grid grid-cols-2 gap-4">
             {/* Foto kiri atas */}
             <motion.div
-              variants={combinedVariants}
-              initial="initial"
-              animate="animate"
-              whileHover="hover"
-              whileTap="tap"
+              initial={{ opacity: 0, x: -50, scale: 0.9 }}
+              whileInView={{ opacity: 1, x: 0, scale: 1 }}
+              transition={{ duration: 0.8, delay: 0.2, ease: "easeOut" }}
+              viewport={{ once: true, amount: 0.3 }}
               className="relative aspect-square rounded-3xl overflow-hidden
-              bg-white/60 backdrop-blur-xl shadow-[0_0_20px_rgba(78,113,255,0.25)] border border-slate-200"
+        bg-white/60 backdrop-blur-xl shadow-[0_0_20px_rgba(78,113,255,0.25)] border border-slate-200"
             >
               <Image
                 src="/images/about-1.jpg"
@@ -148,13 +141,12 @@ export const AboutTeaser = () => {
 
             {/* Foto kanan atas */}
             <motion.div
-              variants={combinedVariants}
-              initial="initial"
-              animate="animate"
-              whileHover="hover"
-              whileTap="tap"
+              initial={{ opacity: 0, x: 50, scale: 0.9 }}
+              whileInView={{ opacity: 1, x: 0, scale: 1 }}
+              transition={{ duration: 0.8, delay: 0.4, ease: "easeOut" }}
+              viewport={{ once: true, amount: 0.3 }}
               className="relative aspect-square rounded-3xl overflow-hidden
-              bg-white/60 backdrop-blur-xl shadow-[0_0_20px_rgba(78,113,255,0.25)] border border-slate-200"
+        bg-white/60 backdrop-blur-xl shadow-[0_0_20px_rgba(78,113,255,0.25)] border border-slate-200"
             >
               <Image
                 src="/images/about-2.jpg"
@@ -167,13 +159,12 @@ export const AboutTeaser = () => {
 
             {/* Foto besar bawah */}
             <motion.div
-              variants={combinedVariants}
-              initial="initial"
-              animate="animate"
-              whileHover="hover"
-              whileTap="tap"
+              initial={{ opacity: 0, y: 50, scale: 0.9 }}
+              whileInView={{ opacity: 1, y: 0, scale: 1 }}
+              transition={{ duration: 0.9, delay: 0.6, ease: "easeOut" }}
+              viewport={{ once: true, amount: 0.3 }}
               className="relative col-span-2 aspect-[16/9] rounded-3xl overflow-hidden
-              bg-white/60 backdrop-blur-xl shadow-[0_0_24px_rgba(78,113,255,0.3)] border border-slate-200"
+        bg-white/60 backdrop-blur-xl shadow-[0_0_24px_rgba(78,113,255,0.3)] border border-slate-200"
             >
               <Image
                 src="/images/about-3.jpg"
@@ -183,7 +174,7 @@ export const AboutTeaser = () => {
               />
               <div className="absolute inset-0 bg-gradient-to-t from-black/25 to-transparent" />
             </motion.div>
-          </motion.div>
+          </div>
         </div>
       </Container>
     </section>
