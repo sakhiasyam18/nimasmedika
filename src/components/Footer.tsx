@@ -15,9 +15,9 @@ import { Container } from "./Container";
 
 const STORE_NAME = "Nimas Medika Alkes";
 const ADDRESS_LINE_1 = "Jl. Kapten Tendean No. 68";
-const ADDRESS_LINE_2 = "Demangan, Madiun";
-const OPEN_DAYS = "Senin - Minggu";
-const OPEN_HOURS = "06.00 - 21.00 WIB";
+const ADDRESS_LINE_2 = "Demangan, Taman, Kota Madiun";
+const OPEN_DAYS = "Always Ready!";
+const OPEN_HOURS = "06.00 - 22.00 WIB";
 const WHATSAPP_DISPLAY = "0812-3436-075";
 const WHATSAPP_NUMBER = "628123436075"; // tanpa +
 const PHONE_NUMBER = "089696835349";
@@ -85,7 +85,7 @@ export function Footer() {
                 >
                   <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path>
                 </svg>
-                <span>Chat Cepat : {WHATSAPP_DISPLAY}</span>
+                <span>Toko Masih Tutup Telepon Saja : {WHATSAPP_DISPLAY}</span>
               </a>
 
               <a
@@ -94,21 +94,21 @@ export function Footer() {
                 aria-label="Telepon Toko"
               >
                 <Phone className="h-5 w-5 text-[#2C5BFF]" />
-                <span>Telepon: {PHONE_NUMBER}</span>
+                <span>Chat Cepat: {PHONE_NUMBER}</span>
               </a>
             </div>
           </div>
         </motion.div>
 
         {/* Info Sekunder */}
-        <div className="mt-16 grid grid-cols-1 md:grid-cols-3 gap-8 text-center">
+        <div className="mt-10 grid grid-cols-1 md:grid-cols-3 gap-8 text-center">
           <InfoCard
-            title="Alamat"
+            title="Ketemu Kita di Sini:"
             icon={<MapPin className="h-5 w-5 text-[#2C5BFF]" />}
             lines={[ADDRESS_LINE_1, ADDRESS_LINE_2]}
           />
           <InfoCard
-            title="Jam Operasional"
+            title="Buka Setiap Hari"
             icon={<Clock className="h-5 w-5 text-[#2C5BFF]" />}
             lines={[OPEN_DAYS, OPEN_HOURS]}
           />

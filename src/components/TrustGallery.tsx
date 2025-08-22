@@ -245,7 +245,7 @@ export const TrustGallery = () => {
                 hover:shadow-[0_0_44px_rgba(141,216,255,0.65)]
                 transition-all active:scale-[0.98]"
             >
-              Scroll Foto Dulu
+              Scroll Foto
               <svg
                 className="h-4 w-4 transition-transform group-hover:translate-x-0.5"
                 viewBox="0 0 24 24"

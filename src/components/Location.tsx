@@ -20,7 +20,7 @@ const landmarks = [
     icon: Factory,
   },
   {
-    name: "Dari arah Ponorogo, setelah perempatan Te’an lanjut ke timur 400 meter.",
+    name: "Dari arah Ponorogo, setelah perempatan Te’an lanjut ke timur 100 meter.",
     icon: ArrowUpDown,
   },
 ];

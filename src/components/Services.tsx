@@ -10,33 +10,35 @@ import Image from "next/image";
 const services = [
   {
     name: "Alat Medis & Kedokteran",
-    description: "Tensi Meter | Kursi Roda | Bed Pasien | Baju OKA Perawat | Jas Dokter",
+    description:
+      "Tensi Meter | Kursi Roda | Bed Pasien | Baju OKA Perawat | Jas Dokter",
     longDescription:
       "Menyediakan berbagai alat medis dan perlengkapan dokter/bidan. Mulai dari tensimeter, stetoskop, kursi roda, hingga alat-alat laboratorium. Semua produk original dan berkualitas.",
     icon: Stethoscope,
     imageSrc: "/images/service-alat-medis.jpg", // TODO: ganti gambar SEO-friendly
   },
   {
-    name: "Jual & Isi Ulang Oksigen 5 Menit",
-    description: "Isi Ulang Oksigen 5 Menit! Tekanan Full Tank Diisi 8 Tabung 2.000 Psi Rp. 45.000",
+    name: "Sewa & Isi Ulang Oksigen 5 Menit",
+    description:
+      "Isi Ulang Oksigen 5 Menit! Tekanan Full Tank Diisi 8 Tabung 2.000 Psi Rp. 45.000",
     longDescription:
       "Layanan jual dan isi ulang tabung oksigen di Madiun yang selalu siaga. Stok kami terjamin, proses aman dan cepat untuk kebutuhan pernapasan Anda.",
     icon: Droplet,
     imageSrc: "/images/service-oksigen.jpg", // TODO: ganti gambar SEO-friendly
   },
   {
-    name: "Layanan Cek Kesehatan",
+    name: "Cek Gula Darah, Asam Urat, Kolesterol",
     description:
-      "Cek Gula Darah, Asam Urat, Kolesterol. Cepat, Akurat - no Ribet.",
+      "Layanan Cek Kesehatan. Cepat, Akurat - no Ribet Obat Langsung Tersedia",
     longDescription:
       "Tidak perlu antre di lab. Lakukan pengecekan Gula Darah, Asam Urat, dan Kolesterol langsung di apotek kami. Hasil cepat, akurat, dan terjangkau.",
     icon: FlaskConical,
     imageSrc: "/images/service-cek-kesehatan.jpg", // TODO: ganti gambar SEO-friendly
   },
   {
-    name: "Pesan Antar Instan",
+    name: "Langsung Diantar Via GoSend",
     description:
-      "Butuh Alat Kesehatan Mendadak? Tinggal Order → Langsung Diantar Via GoSend.",
+      "Butuh Alat Kesehatan Mendadak? Tinggal Order → Pesan Antar Instan.",
     longDescription:
       "Butuh obat atau alkes mendadak? Manfaatkan layanan pesan antar instan kami. Pesanan Anda akan tiba dengan cepat dan aman di depan pintu rumah.",
     icon: Truck,
@@ -81,8 +83,8 @@ export const Services = () => {
           </h2>
           <p className="capitalize mt-6 text-lg leading-8 text-slate-600">
             Nimas Medika, satu-satunya supplier alat kesehatan paling lengkap di
-            Madiun. Dari kebutuhan medis harian sampai layanan oksigen — semua
-            ada dengan kualitas terjamin & harga yang tetap terjangkau.
+            Madiun. Mau cari alat medis, perawatan, alat lab, atau isi ulang &
+            sewa oksigen? semua ready terjamin | harga terjangkau.
           </p>
 
           {/* Preview gambar besar */}

@@ -71,16 +71,20 @@ export const AboutTeaser = () => {
               className="max-w-xl"
             >
               <h2 className="font-heading text-4xl sm:text-5xl font-extrabold leading-tight mb-4">
-                Cerita Kami, Komitmen Untuk Kamu
+                Dari Demangan, Sejak 2001
               </h2>
-              <p className="text-lg leading-relaxed text-slate-700">
-                Dari toko kecil ke pusat kesehatan modern. Sejak 2001, kami
-                hadir bukan cuma jualan alat kesehatan, tapi kasih kepastian &
-                kenyamanan buat setiap keluarga.
+              <p className="capitalize text-lg leading-relaxed text-slate-700">
+                Sejak 2001, Nimas Medika lahir di Demangan, Madiun. Tapi
+                kebutuhan masyarakat terus tumbuh. Dari situ, Nimas ikut
+                berkembang: hadirkan alat kesehatan lebih lengkap, tambah apotek
+                , hingga kini jadi pusat layanan dengan alat laboratorium,
+                kebidanan, kedokteran, terapi, dan oksigen medis.
               </p>
-              <p className="mt-4 text-lg leading-relaxed text-slate-600">
-                Karena saat bicara kesehatan, yang kamu butuhkan bukan cuma
-                produk, tapi juga rasa aman. Dan itu yang selalu kami jaga.
+              <p className="capitalize mt-4 text-lg leading-relaxed text-slate-600">
+                Buat kami, ini bukan sekadar perjalanan bisnis. Dari satu toko
+                kecil di Demangan, hingga dipercaya ribuan orang, Itulah
+                kenapa lebih dari 24 tahun, Nimas Medika tetap jadi sahabat
+                kesehatan masyarakat Madiun.
               </p>
 
               <motion.div
@@ -98,8 +102,8 @@ export const AboutTeaser = () => {
               transition-all"
                   aria-label="Pelajari selengkapnya tentang Nimas Medika"
                 >
-                  Kisah Nimas Sejak 2001
-                  <motion.svg
+                  Kisah Kita Selama 24 Tahun
+                  {/* <motion.svg
                     className="h-5 w-5"
                     xmlns="http://www.w3.org/2000/svg"
                     fill="none"
@@ -113,7 +117,7 @@ export const AboutTeaser = () => {
                       strokeWidth={2}
                       d="M17 8l4 4m0 0l-4 4m4-4H3"
                     />
-                  </motion.svg>
+                  </motion.svg> */}
                 </Link>
               </motion.div>
             </motion.div>
