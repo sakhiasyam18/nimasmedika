@@ -26,20 +26,20 @@ const floating = {
 };
 
 // Gabungan floating + tilt
-const combinedVariants = {
-  initial: {
-    ...floating.initial,
-  },
-  animate: {
-    ...floating.animate,
-  },
-  hover: {
-    ...tiltVariants.hover,
-  },
-  tap: {
-    ...tiltVariants.tap,
-  },
-};
+// const combinedVariants = {
+//   initial: {
+//     ...floating.initial,
+//   },
+//   animate: {
+//     ...floating.animate,
+//   },
+//   hover: {
+//     ...tiltVariants.hover,
+//   },
+//   tap: {
+//     ...tiltVariants.tap,
+//   },
+// };
 
 export const AboutTeaser = () => {
   return (
