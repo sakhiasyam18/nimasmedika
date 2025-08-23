@@ -1,6 +1,6 @@
 // src/app/page.tsx
 import { Container } from "@/components/Container";
-import { Header } from "@/components/Header";
+// import { Header } from "@/components/Header";
 import { Hero } from "@/components/Hero";
 import { TrustGallery } from "@/components/TrustGallery";
 import { Services } from "@/components/Services";
@@ -12,7 +12,7 @@ export default function Home() {
   return (
     <><Container>
       {/* Header selalu sticky di atas */}
-      <Header />
+      {/* <Header /> */}
 
       <main className="relative bg-white text-gray-900">
         {/* Hero Section */}
