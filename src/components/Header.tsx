@@ -13,7 +13,7 @@ export const Header = () => {
   const [isOpen, setIsOpen] = useState(false);
 
   const navItems = [
-    { label: "Layanan", href: "#services" },
+    { label: "Layanan", href: "layanan/oksigen" },
     { label: "Tentang Kami", href: "#about" },
     { label: "Kontak", href: "#contact" },
   ];
@@ -46,7 +46,7 @@ export const Header = () => {
       <Container className="flex items-center justify-between h-16">
         {/* Logo (SEO-friendly: H1 di homepage) */}
         <h1 className="flex items-center">
-          <Link 
+          <Link
             href="/"
             aria-label="Nimas Medika Alkes - Toko Alat Kesehatan Madiun"
           >
@@ -62,7 +62,7 @@ export const Header = () => {
         {/* Desktop Nav */}
         <nav className="hidden md:flex items-center gap-8 text-sm font-medium">
           {navItems.map((item) => (
-            <Link 
+            <Link
               key={item.label}
               href={item.href}
               className="relative text-slate-700 hover:text-[#2C5BFF] transition-colors"
