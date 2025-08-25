@@ -1,6 +1,6 @@
 // src/components/OxygenPricing.tsx
 "use client";
-
+import { PanInfo} from "framer-motion";
 import React, { useState, useCallback, useMemo } from "react";
 import Image from "next/image";
 import { motion, AnimatePresence } from "framer-motion";
@@ -188,7 +188,7 @@ const Lightbox: React.FC<LightboxProps> = React.memo(
 
     // Handle drag end untuk swipe navigation
     const handleDragEnd = useCallback(
-      (_: any, info: any) => {
+      (_: PointerEvent | TouchEvent | MouseEvent, info: PanInfo) => {
         const threshold = 100;
         if (info.offset.x > threshold) {
           handlePrevious();
@@ -347,7 +347,7 @@ const PricingCard: React.FC<{ option: PricingOption; index: number }> =
 
     // Handle image navigation dengan drag
     const handleImageDragEnd = useCallback(
-      (_: any, info: any) => {
+      (_: PointerEvent | TouchEvent | MouseEvent, info: PanInfo) => {
         const threshold = 100;
         if (info.offset.x > threshold && selectedImageIndex > 0) {
           setSelectedImageIndex(selectedImageIndex - 1);

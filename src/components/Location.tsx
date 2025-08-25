@@ -1,3 +1,4 @@
+//src/app/location.tsx
 "use client";
 
 import React from "react";
@@ -92,7 +93,7 @@ export const Location = () => {
               <h3 className="font-heading font-semibold text-lg">
                 Patokan Lokasi
               </h3>
-              {landmarks.map((landmark, i) => (
+              {landmarks.map((landmark) => (
                 <motion.div
                   key={landmark.name}
                   whileHover={{ scale: 1.05, x: 6 }}
