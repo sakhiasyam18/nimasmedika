@@ -7,23 +7,23 @@ import Image from "next/image";
 import Link from "next/link";
 
 // Variants animasi tilt & floating
-const tiltVariants = {
-  hover: {
-    rotateX: 6,
-    rotateY: -6,
-    scale: 1.04,
-    transition: { type: "spring", stiffness: 200, damping: 15 },
-  },
-  tap: { rotateX: 0, rotateY: 0, scale: 1 },
-};
+// const tiltVariants = {
+//   hover: {
+//     rotateX: 6,
+//     rotateY: -6,
+//     scale: 1.04,
+//     transition: { type: "spring", stiffness: 200, damping: 15 },
+//   },
+//   tap: { rotateX: 0, rotateY: 0, scale: 1 },
+// };
 
-const floating = {
-  initial: { y: 0 },
-  animate: {
-    y: [0, -8, 0],
-    transition: { repeat: Infinity, duration: 5, ease: "easeInOut" },
-  },
-};
+// const floating = {
+//   initial: { y: 0 },
+//   animate: {
+//     y: [0, -8, 0],
+//     transition: { repeat: Infinity, duration: 5, ease: "easeInOut" },
+//   },
+// };
 
 // Gabungan floating + tilt
 // const combinedVariants = {

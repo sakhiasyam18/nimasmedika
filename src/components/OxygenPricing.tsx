@@ -133,16 +133,16 @@ const pricingOptions: PricingOption[] = [
 ];
 
 // ===== Animation Variants (untuk performance) =====
-const fadeInUp = {
-  initial: { opacity: 0, y: 40 },
-  animate: { opacity: 1, y: 0 },
-  exit: { opacity: 0, y: -40 },
-};
+// const fadeInUp = {
+//   initial: { opacity: 0, y: 40 },
+//   animate: { opacity: 1, y: 0 },
+//   exit: { opacity: 0, y: -40 },
+// };
 
-const scaleIn = {
-  initial: { scale: 0 },
-  animate: { scale: 1 },
-};
+// const scaleIn = {
+//   initial: { scale: 0 },
+//   animate: { scale: 1 },
+// };
 
 const slideInFromRight = {
   initial: { opacity: 0, x: 30 },
