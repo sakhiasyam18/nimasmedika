@@ -370,17 +370,18 @@ const PricingCard: React.FC<{ option: PricingOption; index: number }> =
           {/* Timeline Node */}
           <div className="relative flex flex-col items-center">
             <motion.div
-              variants={scaleIn}
-              initial="initial"
-              whileInView="animate"
-              viewport={{ once: true }}
+              // Animasi masuk saat scroll terlihat
+              initial={{ scale: 0 }} // awalnya mengecil
+              whileInView={{ scale: 1 }} // saat terlihat, membesar ke ukuran normal
+              viewport={{ once: true }} // animasi hanya sekali
               transition={{
                 type: "spring",
                 stiffness: 200,
                 damping: 12,
                 delay: 0.1,
               }}
-              className="z-10 grid place-items-center h-10 w-10 rounded-full bg-primary text-white shadow-[0_0_0_6px_rgba(78,113,255,0.15)] ring-4 ring-primary/20"
+              className="z-10 grid place-items-center h-10 w-10 rounded-full bg-primary text-white
+              shadow-[0_0_0_6px_rgba(78,113,255,0.15)] ring-4 ring-primary/20"
             >
               <IconComponent className="h-5 w-5" />
             </motion.div>
@@ -391,9 +392,8 @@ const PricingCard: React.FC<{ option: PricingOption; index: number }> =
 
           {/* Main Card */}
           <motion.div
-            variants={fadeInUp}
-            initial="initial"
-            whileInView="animate"
+            initial={{ opacity: 0, y: 20 }} // Mulai transparan & sedikit turun
+            whileInView={{ opacity: 1, y: 0 }} // Muncul + naik ke posisi normal
             viewport={{ once: true, amount: 0.3 }}
             transition={{ duration: 0.4, delay: index * 0.05 }}
             className="flex-1 pb-16"
@@ -460,12 +460,16 @@ const PricingCard: React.FC<{ option: PricingOption; index: number }> =
                               drag="x"
                               dragConstraints={{ left: 0, right: 0 }}
                               onDragEnd={handleImageDragEnd}
-                              variants={slideInFromRight}
-                              initial="initial"
-                              animate="animate"
-                              exit="exit"
+                              initial={{ opacity: 0, x: 50 }}
+                              animate={{ opacity: 1, x: 0 }}
+                              exit={{ opacity: 0, x: -50 }}
                               transition={{ duration: 0.3, ease: "easeInOut" }}
-                              className="relative aspect-video w-full overflow-hidden rounded-xl ring-2 ring-transparent hover:ring-primary/60 focus-within:ring-primary/60 transition-all duration-200 cursor-grab active:cursor-grabbing"
+                              className="relative aspect-video w-full overflow-hidden rounded-xl
+               ring-2 ring-transparent
+               hover:ring-primary/60
+               focus-within:ring-primary/60
+               transition-all duration-200
+               cursor-grab active:cursor-grabbing"
                             >
                               <button
                                 type="button"
