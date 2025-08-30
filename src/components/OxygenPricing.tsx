@@ -1,6 +1,6 @@
 // src/components/OxygenPricing.tsx
 "use client";
-import { PanInfo} from "framer-motion";
+import { PanInfo } from "framer-motion";
 import React, { useState, useCallback, useMemo } from "react";
 import Image from "next/image";
 import { motion, AnimatePresence } from "framer-motion";
@@ -47,7 +47,7 @@ const pricingOptions: PricingOption[] = [
     title: "Sewa Tabung Oksigen Bulanan di Madiun",
     price: "Mulai dari Rp 200.000",
     description:
-      "Layanan sewa tabung oksigen di Madiun untuk perawatan di rumah—fleksibel, ekonomis, dan bisa diantar.",
+      "Layanan Oksigen di Madiun yang Bisa Diantarkan ke Rumah",
     icon: Tag,
     features: [
       "Sewa tabung + isi: Rp 200.000/bln",
@@ -66,16 +66,15 @@ const pricingOptions: PricingOption[] = [
   },
   {
     id: "beli-paket",
-    title: "Beli Paket Oksigen Lengkap Siap Pakai",
-    price: "Rp 1.000.000",
-    description:
-      "Paket lengkap: tabung 1m³ + regulator + troli + selang. Siap pakai, bergaransi, terdaftar Kemenkes.",
+    title: "Beli Paket Oksigen Lengkap Siap Pakai di Madiun",
+    price: "Rp 1.000.000 & Rp 1.700.000",
+    description: "All-in-One Oksigen. Gaskeun!",
     icon: ShoppingCart,
     features: [
-      "Set lengkap (tabung + isi + regulator + troli + selang)",
+      "Tabung + Regulator & Selang + Troli = Beres",
       "Produk original terdaftar KEMENKES RI",
-      "Siap pakai tanpa setting rumit",
-      "Investasi kesehatan jangka panjang",
+      "Beli Terpisah Regulator: Rp 250.000",
+      "Beli Terpisah Troli: Rp 125.000",
     ],
     images: [
       "/images/gallery-6.jpg",
@@ -88,16 +87,15 @@ const pricingOptions: PricingOption[] = [
   },
   {
     id: "beli-tabung",
-    title: "Beli Tabung Oksigen 1m³ Baru",
-    price: "Rp 400.000",
-    description:
-      "Tabung oksigen 1m³ baru standar medis—pas bila kamu sudah punya regulator & aksesoris lain.",
+    title: "Beli Tabung Oksigen 1m³ & 6m³ di Madiun",
+    price: "Rp 500.000 & Rp 1.300.000",
+    description: "Tabung Baru. Isi Penuh. Siap Pakai.",
     icon: Box,
     features: [
-      "Kondisi baru, standar medis",
-      "Terisi penuh 2000 PSI",
-      "Siap hubungkan ke regulator",
-      "Kualitas terjamin & aman",
+      "Beli Oksigen Saja",
+      "Terisi Penuh 2000 PSI",
+      "Siap Dihubungkan ke Regulator",
+      "Kondisi Baru",
     ],
     images: [
       "/images/gallery-7.jpg",
@@ -111,15 +109,15 @@ const pricingOptions: PricingOption[] = [
   {
     id: "isi-ulang",
     title: "Isi Ulang Oksigen Cepat di Madiun",
-    price: "Rp 45.000",
+    price: "Rp 45.000 & Rp 110.000",
     description:
-      "Jasa isi ulang ±5 menit, tekanan penuh 2000 PSI. Bisa ditunggu, cepat & profesional.",
+      "Jasa isi ulang tabung oksigen cepat ±5 menit. Tekanan penuh 2000 PSI dengan 8 tabung besar, bisa langsung ditunggu di tempat dan siap dibawa pulang.",
     icon: RefreshCw,
     features: [
       "Isi ulang ±5 menit",
-      "Tekanan penuh 2000 PSI",
+      "Tekanan Full Tank 2000 PSI",
       "Untuk tabung standar 1m³",
-      "Tim berpengalaman & sigap",
+      "Untuk Tabung Besar 6m³",
     ],
     images: [
       "/images/gallery-10.jpg",
@@ -424,9 +422,9 @@ const PricingCard: React.FC<{ option: PricingOption; index: number }> =
                       <div className="border-t border-black/5 dark:border-white/10 pt-6 grid grid-cols-1 md:grid-cols-2 gap-6">
                         {/* Features List */}
                         <div>
-                          <h4 className="font-semibold text-gray-900 dark:text-white mb-3">
+                          {/* <h4 className="font-semibold text-gray-900 dark:text-white mb-3">
                             Fitur & Keunggulan
-                          </h4>
+                          </h4> */}
                           <ul className="space-y-3 text-sm leading-6 text-gray-700 dark:text-gray-300">
                             {option.features.map((feature, idx) => (
                               <li
@@ -440,11 +438,11 @@ const PricingCard: React.FC<{ option: PricingOption; index: number }> =
                           </ul>
 
                           {/* SEO Keywords */}
-                          <p className="mt-4 text-xs text-gray-500 dark:text-gray-400">
+                          {/* <p className="mt-4 text-xs text-gray-500 dark:text-gray-400">
                             Kata kunci: layanan oksigen Madiun, tabung oksigen,
                             isi ulang oksigen, sewa tabung oksigen, paket
                             oksigen lengkap.
-                          </p>
+                          </p> */}
                         </div>
 
                         {/* Image Gallery */}
@@ -598,7 +596,7 @@ const OxygenPricing: React.FC = () => {
             transition={{ duration: 0.4 }}
             className="font-heading text-2xl sm:text-4xl font-black tracking-tight text-gray-900 dark:text-white"
           >
-            Tabung Oksigen 1m³ di Madiun — Beli, Sewa, atau Isi Ulang
+            Tabung Oksigen 1m³ & 6m³ di Madiun — Beli, Sewa, atau Isi Ulang
           </motion.h2>
           <motion.p
             initial={{ opacity: 0, y: 20 }}

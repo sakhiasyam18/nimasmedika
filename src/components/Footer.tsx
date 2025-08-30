@@ -18,9 +18,9 @@ const ADDRESS_LINE_1 = "Jl. Kapten Tendean No. 68";
 const ADDRESS_LINE_2 = "Demangan, Taman, Kota Madiun";
 const OPEN_DAYS = "Always Ready!";
 const OPEN_HOURS = "06.00 - 22.00 WIB";
-const WHATSAPP_DISPLAY = "0812-3436-075";
-const WHATSAPP_NUMBER = "628123436075"; // tanpa +
-const PHONE_NUMBER = "089696835349";
+const WHATSAPP_DISPLAY = "089696835349";
+const WHATSAPP_NUMBER = "6289696835349"; // tanpa +
+const PHONE_NUMBER = "081-2343-6075";
 const SHOPEE_LINK = "https://shopee.co.id/nimasmedika";
 const INSTAGRAM_LINK = "https://instagram.com/nimasmedika";
 
@@ -65,11 +65,10 @@ export function Footer() {
 
             <div className="mt-8 sm:mt-10 flex flex-col sm:flex-row items-center justify-center gap-4">
               <a
-                href={`https://wa.me/${WHATSAPP_NUMBER}`}
+                href={`tel:${PHONE_NUMBER}`}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="flex items-center justify-center gap-2 rounded-full px-8 py-3 font-semibold text-white shadow-[0_0_24px_rgba(78,113,255,0.4)] transition-all bg-gradient-to-r from-[#2C5BFF] via-[#4E71FF] to-[#8DD8FF] hover:shadow-[0_0_40px_rgba(141,216,255,0.6)]"
-                aria-label={`WhatsApp ${WHATSAPP_DISPLAY}`}
               >
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
@@ -85,16 +84,16 @@ export function Footer() {
                 >
                   <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path>
                 </svg>
-                <span>Toko Masih Tutup Telepon Saja : {WHATSAPP_DISPLAY}</span>
+                <span>Toko Masih Tutup Telepon Saja : {PHONE_NUMBER}</span>
               </a>
 
               <a
-                href={`tel:${PHONE_NUMBER}`}
+                href={`https://wa.me/${WHATSAPP_NUMBER}`}
                 className="flex items-center justify-center gap-2 rounded-full border border-slate-300 bg-white/70 px-8 py-3 font-semibold text-slate-700 transition-all hover:bg-slate-100"
                 aria-label="Telepon Toko"
               >
                 <Phone className="h-5 w-5 text-[#2C5BFF]" />
-                <span>Chat Cepat: {PHONE_NUMBER}</span>
+                <span>{`Chat Cepat :  ${WHATSAPP_DISPLAY}`}</span>
               </a>
             </div>
           </div>

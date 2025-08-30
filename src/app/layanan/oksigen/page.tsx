@@ -18,7 +18,7 @@ export default function Oksigen() {
           <OxygenHero />
           <OxygenPricing />
           <UsageGuide />
-          <OtherSizes />
+          {/* <OtherSizes /> */}
         </main>
         <Footer />
       </Container>

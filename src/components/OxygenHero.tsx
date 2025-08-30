@@ -8,12 +8,12 @@ import { Container } from "@/components/Container";
 
 export const OxygenHero = () => {
   return (
-    <section className="relative overflow-hidden bg-slate-50 pt-16 pb-24 sm:pt-24 sm:pb-32">
-      {/* Background Neon Gradient Multiwarna */}
+    <section className="relative overflow-hidden bg-gradient-to-b from-slate-50 via-slate-100 to-slate-50 pt-16 pb-24 sm:pt-24 sm:pb-32">
+      {/* Background soft gradient glassmorphism */}
       <div className="absolute inset-0 z-0 overflow-hidden">
-        <div className="absolute top-0 left-1/3 w-[500px] h-[500px] bg-gradient-to-r from-pink-400 via-purple-500 to-blue-500 rounded-full blur-[150px] opacity-40 animate-pulse" />
-        <div className="absolute bottom-0 right-1/4 w-[400px] h-[400px] bg-gradient-to-br from-yellow-400 via-green-400 to-cyan-400 rounded-full blur-[120px] opacity-40 animate-pulse delay-200" />
-        <div className="absolute top-1/2 left-0 w-[300px] h-[300px] bg-gradient-to-tl from-blue-500 via-indigo-400 to-pink-500 rounded-full blur-[100px] opacity-30 animate-pulse delay-500" />
+        <div className="absolute top-0 left-1/3 w-[500px] h-[500px] bg-gradient-to-r from-blue-200 via-indigo-200 to-purple-200 rounded-full blur-[160px] opacity-50" />
+        <div className="absolute bottom-0 right-1/4 w-[400px] h-[400px] bg-gradient-to-br from-teal-200 via-cyan-200 to-blue-200 rounded-full blur-[140px] opacity-50" />
+        <div className="absolute top-1/2 left-0 w-[300px] h-[300px] bg-gradient-to-tl from-pink-200 via-purple-200 to-blue-200 rounded-full blur-[120px] opacity-40" />
       </div>
 
       <Container className="relative z-10">
@@ -25,14 +25,14 @@ export const OxygenHero = () => {
             transition={{ duration: 0.7, ease: "easeOut" }}
           >
             <h1 className="font-heading text-4xl font-bold tracking-tight text-gray-900 sm:text-5xl leading-tight">
-              Tabung Oksigen 1m³ di Madiun - Beli atau Sewa
+              Tabung Oksigen di Madiun - Beli atau Sewa
             </h1>
             <p className="mt-6 text-lg leading-8 text-gray-700">
               Nimas Medika menyediakan layanan{" "}
-              <strong>jual tabung oksigen 1m³</strong>
+              <strong>jual tabung oksigen 1m³ & 6m³</strong>
               dan <strong>sewa tabung oksigen murah di Madiun</strong>. Tabung
-              sudah terisi penuh 2000 PSI, aman dan siap pakai untuk perawatan
-              medis di rumah atau keperluan darurat.
+              sudah terisi penuh 2000 PSI diisi dengan 8 tabung, yang bisa
+              ditunggu di tempat 5 menit langsung siap dipakai
             </p>
             <div className="mt-8 flex flex-wrap gap-4">
               <a
