@@ -31,19 +31,18 @@ export const UsageGuide = () => {
             Cara Penggunaan yang Aman
           </h2>
           <p className="mt-6 text-lg leading-8 text-gray-700">
-            Keamanan Anda adalah prioritas kami. Staf kami akan memberikan
-            panduan lengkap saat Anda membeli atau saat barang diantar. Berikut
-            langkah dasarnya:
+            Santai aja, pakai tabung oksigen itu gampang kok. Yang penting step
+            by step-nya jangan diloncatin:
           </p>
         </motion.div>
 
         {/* Steps */}
         <div className="mt-12 space-y-6 max-w-2xl mx-auto">
           {[
-            "Pastikan knop regulator dalam posisi 'Close' (tertutup) sebelum dipasang.",
-            "Pasang regulator dengan kencang ke kepala tabung oksigen.",
-            "Buka keran utama di puncak tabung secara perlahan.",
-            "Atur aliran oksigen pada knop sesuai anjuran dokter.",
+            "Close dulu knopnya sebelum pasang, Pastiin knop masih di posisi Close dulu",
+            "Kencengin regulator sampai mantap, biar aman",
+            "Keran utama dibuka pelan-pelan aja. Biar nggak kaget",
+            "Atur sesuai udara aliran oksigen yang sesuai dan senyaman nya",
           ].map((step, i) => (
             <motion.div
               key={i}
