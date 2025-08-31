@@ -11,57 +11,57 @@ import { Award, Package, Star } from "lucide-react";
 // TODO: ganti src dengan gambar real produk/etalase, simpan di /public/images
 const IMAGES = [
   {
-    src: "/images/gallery-1.jpg",
+    src: "/images/IMG20211201094644_28_11zon.jpg",
     alt: "Produk kesehatan unggulan",
     ratio: "aspect-[4/5]", // portrait
   },
   {
-    src: "/images/gallery-2.jpg",
+    src: "/images/Etalase alat kesehatan modern (2).jpg",
     alt: "Etalase alat kesehatan modern",
     ratio: "aspect-[1/1]", // square
   },
   {
-    src: "/images/gallery-3.jpg",
+    src: "/images/IMG20250831143715_26_11zon.jpg",
     alt: "Tabung oksigen ready",
     ratio: "aspect-[3/4]", // portrait
   },
   {
-    src: "/images/gallery-4.jpg",
+    src: "/images/IMG20240105122528_7_11zon.jpg",
     alt: "Interior apotek modern",
     ratio: "aspect-[16/10]", // landscape
   },
   {
-    src: "/images/gallery-5.jpg",
+    src: "/images/IMG20231113133802_6_11zon.jpg",
     alt: "Perlengkapan medis lengkap",
     ratio: "aspect-[4/3]", // landscape medium
   },
   {
-    src: "/images/gallery-6.jpg",
+    src: "/images/toko alkes madiun (9)_1_11zon.jpg",
     alt: "Layanan cek kesehatan",
     ratio: "aspect-[1/1]", // square
   },
   {
-    src: "/images/gallery-7.jpg",
+    src: "/images/pesan-antar-alat-kesehatan-di-madiun.webp",
     alt: "Pesan antar cepat",
     ratio: "aspect-[5/7]", // portrait tipis
   },
   {
-    src: "/images/gallery-8.jpg",
+    src: "/images/IMG20240105122528_7_11zon.jpg",
     alt: "Produk farmasi pilihan",
     ratio: "aspect-[16/9]", // wide landscape
   },
   {
-    src: "/images/gallery-9.jpg",
+    src: "/images/toko alkes madiun (15)_11_11zon.jpg",
     alt: "Stok alat medis lengkap",
     ratio: "aspect-[3/4]", // portrait
   },
   {
-    src: "/images/gallery-10.jpg",
+    src: "/images/IMG20250831144110_36_11zon.jpg",
     alt: "Alat medis rumah sakit",
     ratio: "aspect-[4/3]", // landscape medium
   },
   {
-    src: "/images/gallery-11.jpg",
+    src: "/images/IMG20211201094720_27_11zon.jpg",
     alt: "Toko alat kesehatan Nimas Medika",
     ratio: "aspect-[16/10]", // landscape
   },

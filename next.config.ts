@@ -15,5 +15,11 @@ const nextConfig: NextConfig = {
     ],
   },
 };
+// next.config.js
+module.exports = {
+  images: {
+    domains: ["img.youtube.com"],
+  },
+};
 
 export default nextConfig;

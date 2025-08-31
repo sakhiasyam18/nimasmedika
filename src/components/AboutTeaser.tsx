@@ -82,9 +82,9 @@ export const AboutTeaser = () => {
               </p>
               <p className="capitalize mt-4 text-lg leading-relaxed text-slate-600">
                 Buat kami, ini bukan sekadar perjalanan bisnis. Dari satu toko
-                kecil di Demangan, hingga dipercaya ribuan orang, Itulah
-                kenapa lebih dari 24 tahun, Nimas Medika tetap jadi sahabat
-                kesehatan masyarakat Madiun.
+                kecil di Demangan, hingga dipercaya ribuan orang, Itulah kenapa
+                lebih dari 24 tahun, Nimas Medika tetap jadi sahabat kesehatan
+                masyarakat Madiun.
               </p>
 
               <motion.div
@@ -135,7 +135,7 @@ export const AboutTeaser = () => {
         bg-white/60 backdrop-blur-xl shadow-[0_0_20px_rgba(78,113,255,0.25)] border border-slate-200"
             >
               <Image
-                src="/images/about-1.jpg"
+                src="/images/IMG20160121070554.jpg"
                 alt="Tentang Nimas Medika - Foto 1"
                 fill
                 className="object-cover"
@@ -171,7 +171,7 @@ export const AboutTeaser = () => {
         bg-white/60 backdrop-blur-xl shadow-[0_0_24px_rgba(78,113,255,0.3)] border border-slate-200"
             >
               <Image
-                src="/images/about-3.jpg"
+                src="/images/cover shopee minim.jpg"
                 alt="Tentang Nimas Medika - Foto 3"
                 fill
                 className="object-cover"

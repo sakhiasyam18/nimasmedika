@@ -95,17 +95,17 @@ export const Hero = () => {
         */}
         <div className="relative mt-12">
           <div className="relative h-72 sm:h-80 md:h-[420px] rounded-3xl overflow-hidden bg-white/50 border border-slate-200">
-            <Image
-              src="/images/hero-placeholder.jpg" // TODO: ganti ke gambar SEO kamu
-              alt="Etalase Nimas Medika: alat kesehatan lengkap dan tabung oksigen ready"
-              fill
-              priority
-              className="object-cover"
-              sizes="(max-width: 640px) 100vw, (max-width: 1024px) 90vw, 1200px"
-            />
+            <iframe
+              className="w-full h-full"
+              src="https://www.youtube.com/embed/9YOuzwQS8OI?rel=0"
+              title="Etalase Nimas Medika: alat kesehatan lengkap dan tabung oksigen ready"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+              allowFullScreen
+            ></iframe>
+
             {/* Frame glass + neon tipis */}
             <div className="pointer-events-none absolute inset-0 rounded-3xl ring-1 ring-white/40" />
-            <div className="pointer-events-none absolute -inset-2 rounded-[28px] blur-2xl opacity-60 bg-[conic-gradient(from_40deg,#4E71FF,#8DD8FF,#BBFBFF,#4E71FF)]" />
+            {/* <div className="pointer-events-none absolute -inset-2 rounded-[28px] blur-2xl opacity-60 bg-[conic-gradient(from_40deg,#4E71FF,#8DD8FF,#BBFBFF,#4E71FF)]" /> */}
           </div>
         </div>
       </Container>

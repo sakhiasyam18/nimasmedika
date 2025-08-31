@@ -15,7 +15,7 @@ const services = [
     longDescription:
       "Menyediakan berbagai alat medis dan perlengkapan dokter/bidan. Mulai dari tensimeter, stetoskop, kursi roda, hingga alat-alat laboratorium. Semua produk original dan berkualitas.",
     icon: Stethoscope,
-    imageSrc: "/images/service-alat-medis.jpg", // TODO: ganti gambar SEO-friendly
+    imageSrc: "/images/IMG20210214184913.jpg", // TODO: ganti gambar SEO-friendly
   },
   {
     name: "Sewa & Isi Ulang Oksigen 5 Menit",
@@ -24,7 +24,7 @@ const services = [
     longDescription:
       "Layanan jual dan isi ulang tabung oksigen di Madiun yang selalu siaga. Stok kami terjamin, proses aman dan cepat untuk kebutuhan pernapasan Anda.",
     icon: Droplet,
-    imageSrc: "/images/service-oksigen.jpg", // TODO: ganti gambar SEO-friendly
+    imageSrc: "/images/240717466_518896205873519_2457263916975335168_n.jpg", // TODO: ganti gambar SEO-friendly
   },
   {
     name: "Cek Gula Darah, Asam Urat, Kolesterol",
@@ -33,7 +33,7 @@ const services = [
     longDescription:
       "Tidak perlu antre di lab. Lakukan pengecekan Gula Darah, Asam Urat, dan Kolesterol langsung di apotek kami. Hasil cepat, akurat, dan terjangkau.",
     icon: FlaskConical,
-    imageSrc: "/images/service-cek-kesehatan.jpg", // TODO: ganti gambar SEO-friendly
+    imageSrc: "/images/IMG20210428133927.jpg", // TODO: ganti gambar SEO-friendly
   },
   {
     name: "Langsung Diantar Via GoSend",
@@ -42,7 +42,7 @@ const services = [
     longDescription:
       "Butuh obat atau alkes mendadak? Manfaatkan layanan pesan antar instan kami. Pesanan Anda akan tiba dengan cepat dan aman di depan pintu rumah.",
     icon: Truck,
-    imageSrc: "/images/service-antar.jpg", // TODO: ganti gambar SEO-friendly
+    imageSrc: "/images/photo-collage.png", // TODO: ganti gambar SEO-friendly
   },
 ];
 

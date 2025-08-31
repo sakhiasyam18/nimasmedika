@@ -42,7 +42,7 @@ export const OxygenHero = () => {
                 Lihat Opsi & Harga
               </a>
               <a
-                href="https://wa.me/628xxxxxx"
+                href="https://wa.me/628123436075"
                 className="inline-block rounded-full border border-primary px-8 py-3 font-semibold text-primary hover:bg-primary hover:text-white transition-colors"
               >
                 Konsultasi via WhatsApp
