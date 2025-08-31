@@ -15,7 +15,7 @@ const services = [
     longDescription:
       "Menyediakan berbagai alat medis dan perlengkapan dokter/bidan. Mulai dari tensimeter, stetoskop, kursi roda, hingga alat-alat laboratorium. Semua produk original dan berkualitas.",
     icon: Stethoscope,
-    imageSrc: "/images/IMG20210214184913.jpg", // TODO: ganti gambar SEO-friendly
+    imageSrc: "/images/IMG20200921181406.jpg", // TODO: ganti gambar SEO-friendly
   },
   {
     name: "Sewa & Isi Ulang Oksigen 5 Menit",
@@ -27,13 +27,13 @@ const services = [
     imageSrc: "/images/240717466_518896205873519_2457263916975335168_n.jpg", // TODO: ganti gambar SEO-friendly
   },
   {
-    name: "Cek Gula Darah, Asam Urat, Kolesterol",
+    name: "Alat Lab, Terapi & Kebidanan Deket Kamu",
     description:
-      "Layanan Cek Kesehatan. Cepat, Akurat - no Ribet Obat Langsung Tersedia",
+      "Butuh alat kesehatan untuk lab, terapi, atau kebidanan? Tenang, semua tersedia dengan pilihan terdekat dari lokasi kamu",
     longDescription:
       "Tidak perlu antre di lab. Lakukan pengecekan Gula Darah, Asam Urat, dan Kolesterol langsung di apotek kami. Hasil cepat, akurat, dan terjangkau.",
     icon: FlaskConical,
-    imageSrc: "/images/IMG20210428133927.jpg", // TODO: ganti gambar SEO-friendly
+    imageSrc: "/images/IMG20210428133900.jpg", // TODO: ganti gambar SEO-friendly
   },
   {
     name: "Langsung Diantar Via GoSend",

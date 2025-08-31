@@ -1,7 +1,7 @@
 // src/components/TrustGallery.tsx
 "use client";
 
-import React from "react";
+import React, { useState } from "react";
 import { Container } from "./Container";
 import Image from "next/image";
 import { motion } from "framer-motion";
@@ -11,7 +11,7 @@ import { Award, Package, Star } from "lucide-react";
 // TODO: ganti src dengan gambar real produk/etalase, simpan di /public/images
 const IMAGES = [
   {
-    src: "/images/IMG20211201094644_28_11zon.jpg",
+    src: "/images/IMG20201119174119.jpg",
     alt: "Produk kesehatan unggulan",
     ratio: "aspect-[4/5]", // portrait
   },
@@ -26,7 +26,7 @@ const IMAGES = [
     ratio: "aspect-[3/4]", // portrait
   },
   {
-    src: "/images/IMG20240105122528_7_11zon.jpg",
+    src: "/images/IMG20211201094720_27_11zon.jpg",
     alt: "Interior apotek modern",
     ratio: "aspect-[16/10]", // landscape
   },
@@ -51,7 +51,7 @@ const IMAGES = [
     ratio: "aspect-[16/9]", // wide landscape
   },
   {
-    src: "/images/toko alkes madiun (15)_11_11zon.jpg",
+    src: "/images/IMG20210702220153.jpg",
     alt: "Stok alat medis lengkap",
     ratio: "aspect-[3/4]", // portrait
   },
@@ -61,17 +61,16 @@ const IMAGES = [
     ratio: "aspect-[4/3]", // landscape medium
   },
   {
-    src: "/images/IMG20211201094720_27_11zon.jpg",
+    src: "/images/IMG20200921181336.jpg",
     alt: "Toko alat kesehatan Nimas Medika",
     ratio: "aspect-[16/10]", // landscape
   },
   {
-    src: "/images/gallery-12.jpg",
+    src: "/images/IMG20200916121618.jpg",
     alt: "Konsultasi pelanggan",
     ratio: "aspect-[1/1]", // square
   },
 ];
-
 
 const stats = [
   { name: "Ready Stock", value: "Sejak 2001", icon: Award },
@@ -96,48 +95,86 @@ const GlowCard: React.FC<{
   ratio?: string;
   i?: number;
 }> = ({ src, alt, ratio = "aspect-[4/5]", i = 0 }) => {
-  return (
-    <motion.div
-      custom={i}
-      initial={{ opacity: 0, y: 40 }}
-      whileInView={{ opacity: 1, y: 0 }}
-      viewport={{ once: true, amount: 0.25 }}
-      transition={{ duration: 0.6, ease: "easeOut" }}
-      whileHover={{
-        y: -6,
-        rotate: -0.5,
-        transition: { type: "spring", stiffness: 260, damping: 18 },
-      }}
-      className={`group relative ${ratio} w-full rounded-3xl`}
-    >
-      {/* Neon Glow Biru */}
-      <div
-        className="pointer-events-none absolute -inset-2 -z-10 rounded-[34px] blur-2xl opacity-50 
-        bg-[conic-gradient(from_40deg,#4E71FF,#8DD8FF,#BBFBFF,#4E71FF)] 
-        group-hover:opacity-80 transition-opacity duration-500"
-      />
+  const [isOpen, setIsOpen] = useState(false); // Untuk menampilkan pop-up
+  const [selectedImage, setSelectedImage] = useState<string | null>(null); // Menyimpan gambar yang dipilih
 
-      {/* Frame Glass */}
-      <div
-        className="relative h-full w-full overflow-hidden rounded-3xl ring-1 ring-slate-200
-        bg-white/70 backdrop-blur-md shadow-[0_8px_30px_rgba(78,113,255,0.15)]"
+  const handleImageClick = (imageSrc: string) => {
+    setSelectedImage(imageSrc);
+    setIsOpen(true);
+  };
+  return (
+    <>
+      <motion.div
+        custom={i}
+        initial={{ opacity: 0, y: 40 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true, amount: 0.25 }}
+        transition={{ duration: 0.6, ease: "easeOut" }}
+        whileHover={{
+          y: -6,
+          rotate: -0.5,
+          transition: { type: "spring", stiffness: 260, damping: 18 },
+        }}
+        className={`group relative ${ratio} w-full rounded-3xl`}
+        onClick={() => handleImageClick(src)} // Klik gambar untuk pop-up
       >
-        <Image
-          src={src}
-          alt={alt}
-          fill
-          sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
-          className="object-cover"
-          priority={i < 3}
-        />
+        {/* Neon Glow Biru */}
         <div
-          className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-300 
-          bg-gradient-to-t from-black/30 via-black/10 to-transparent"
+          className="pointer-events-none absolute -inset-2 -z-10 rounded-[34px] blur-2xl opacity-50 
+          bg-[conic-gradient(from_40deg,#4E71FF,#8DD8FF,#BBFBFF,#4E71FF)] 
+          group-hover:opacity-80 transition-opacity duration-500"
         />
-      </div>
-    </motion.div>
+
+        {/* Frame Glass */}
+        <div
+          className="relative h-full w-full overflow-hidden rounded-3xl ring-1 ring-slate-200
+          bg-white/70 backdrop-blur-md shadow-[0_8px_30px_rgba(78,113,255,0.15)]"
+        >
+          <Image
+            src={src}
+            alt={alt}
+            fill
+            sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
+            className="object-cover"
+            priority={i < 3}
+          />
+          <div
+            className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-300 
+            bg-gradient-to-t from-black/30 via-black/10 to-transparent"
+          />
+        </div>
+      </motion.div>
+
+      {/* Pop-up Gambar (Full Screen) */}
+      {isOpen && (
+        <div
+          className="fixed inset-0 bg-black/50 flex justify-center items-center z-50"
+          onClick={() => setIsOpen(false)} // Klik di luar gambar untuk menutup
+        >
+          <div
+            className="relative"
+            onClick={(e) => e.stopPropagation()} // Cegah klik pada gambar menutup pop-up
+          >
+            <Image
+              src={selectedImage!}
+              alt="Enlarged view"
+              width={1000}
+              height={1000}
+              className="rounded-2xl"
+            />
+            <button
+              onClick={() => setIsOpen(false)}
+              className="absolute top-0 right-0 p-2 bg-white rounded-full"
+            >
+              X
+            </button>
+          </div>
+        </div>
+      )}
+    </>
   );
 };
+
 
 export const TrustGallery = () => {
   return (

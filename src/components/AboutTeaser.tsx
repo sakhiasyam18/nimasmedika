@@ -135,7 +135,7 @@ export const AboutTeaser = () => {
         bg-white/60 backdrop-blur-xl shadow-[0_0_20px_rgba(78,113,255,0.25)] border border-slate-200"
             >
               <Image
-                src="/images/IMG20160121070554.jpg"
+                src="/images/IMG20160121065709.jpg"
                 alt="Tentang Nimas Medika - Foto 1"
                 fill
                 className="object-cover"
@@ -153,7 +153,7 @@ export const AboutTeaser = () => {
         bg-white/60 backdrop-blur-xl shadow-[0_0_20px_rgba(78,113,255,0.25)] border border-slate-200"
             >
               <Image
-                src="/images/about-2.jpg"
+                src="/images/IMG20171116083839.jpg"
                 alt="Tentang Nimas Medika - Foto 2"
                 fill
                 className="object-cover"
@@ -171,7 +171,7 @@ export const AboutTeaser = () => {
         bg-white/60 backdrop-blur-xl shadow-[0_0_24px_rgba(78,113,255,0.3)] border border-slate-200"
             >
               <Image
-                src="/images/cover shopee minim.jpg"
+                src="/images/IMG20220411084615(1).jpg"
                 alt="Tentang Nimas Medika - Foto 3"
                 fill
                 className="object-cover"
