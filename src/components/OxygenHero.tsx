@@ -64,11 +64,11 @@ export const OxygenHero = () => {
                 className="col-span-2 rounded-xl overflow-hidden shadow-lg neon-border"
               >
                 <Image
-                  src="/images/service-oksigen.jpg"
+                  src="/images/pic1756648782.jpg"
                   alt="Tabung Oksigen 1m³ Nimas Medika"
                   width={500}
-                  height={500}
-                  className="w-full h-full object-cover"
+                  height={334}
+                  // className="w-full h-full object-cover"
                 />
               </motion.div>
               {/* Gambar kecil tambahan */}
@@ -77,11 +77,11 @@ export const OxygenHero = () => {
                 className="rounded-xl overflow-hidden shadow-md neon-border"
               >
                 <Image
-                  src="/images/gallery-1.jpg"
+                  src="/images/pic1756648963.jpg"
                   alt="Tabung Oksigen Lengkap"
-                  width={240}
-                  height={240}
-                  className="w-full h-full object-cover"
+                  width={214}
+                  height={320}
+                  // className="w-[320px] h-[214px] object-cover"
                 />
               </motion.div>
               <motion.div
@@ -89,11 +89,11 @@ export const OxygenHero = () => {
                 className="rounded-xl overflow-hidden shadow-md neon-border"
               >
                 <Image
-                  src="/images/gallery-2.jpg"
+                  src="/images/pic1756649014.jpg"
                   alt="Isi Ulang Tabung Oksigen"
-                  width={240}
-                  height={240}
-                  className="w-full h-full object-cover"
+                  width={214}
+                  height={320}
+                  // className="w-full h-full object-cover"
                 />
               </motion.div>
             </div>
