@@ -2,6 +2,7 @@
 import type { Metadata } from "next";
 import { Inter, Plus_Jakarta_Sans } from "next/font/google";
 import "./globals.css"; // Pastikan ini mengimpor file CSS global kita
+import Script from "next/script";
 
 // Konfigurasi font Inter untuk teks biasa
 const inter = Inter({
@@ -26,11 +27,25 @@ export const metadata: Metadata = {
 
 export default function RootLayout({
   children,
-}: Readonly<{
+}: {
   children: React.ReactNode;
-}>) {
+}) {
   return (
     <html lang="id">
+      {/* Google Analytics */}
+      <Script
+        async
+        src="https://www.googletagmanager.com/gtag/js?id=G-HYL3TMH3PJ"
+      />
+      <Script id="google-analytics">
+        {`
+          window.dataLayer = window.dataLayer || [];
+          function gtag(){dataLayer.push(arguments);}
+          gtag('js', new Date());
+          gtag('config', 'G-HYL3TMH3PJ');
+        `}
+      </Script>
+
       <body
         className={`${inter.variable} ${plusJakartaSans.variable} font-sans antialiased`}
         suppressHydrationWarning
