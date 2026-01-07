@@ -11,62 +11,62 @@ import { Award, Package, Star } from "lucide-react";
 // TODO: ganti src dengan gambar real produk/etalase, simpan di /public/images
 const IMAGES = [
   {
-    src: "/images/IMG20201119174119.jpg",
+    src: "/images/toko alkes madiun.avif",
     alt: "Produk kesehatan unggulan",
     ratio: "aspect-[4/5]", // portrait
   },
   {
-    src: "/images/Etalase alat kesehatan modern (2).jpg",
+    src: "/images/toko alkes madiun (3)_8_11zon.avif",
     alt: "Etalase alat kesehatan modern",
     ratio: "aspect-[1/1]", // square
   },
   {
-    src: "/images/IMG20250831143715_26_11zon.jpg",
+    src: "/images/alkes madiun 8.avif",
     alt: "Tabung oksigen ready",
     ratio: "aspect-[3/4]", // portrait
   },
   {
-    src: "/images/IMG20211201094720_27_11zon.jpg",
+    src: "/images/pengiriman alkes 2.avif",
     alt: "Interior apotek modern",
     ratio: "aspect-[16/10]", // landscape
   },
   {
-    src: "/images/IMG20231113133802_6_11zon.jpg",
+    src: "/images/alkes madiun9.avif",
     alt: "Perlengkapan medis lengkap",
     ratio: "aspect-[4/3]", // landscape medium
   },
   {
-    src: "/images/toko alkes madiun (9)_1_11zon.jpg",
+    src: "/images/pesan-antar-alat-kesehatan-di-madiun.avif",
     alt: "Layanan cek kesehatan",
     ratio: "aspect-[1/1]", // square
   },
   {
-    src: "/images/pesan-antar-alat-kesehatan-di-madiun.webp",
+    src: "/images/tabung oksigen di madiun.avif",
     alt: "Pesan antar cepat",
     ratio: "aspect-[5/7]", // portrait tipis
   },
   {
-    src: "/images/IMG20240105122528_7_11zon.jpg",
+    src: "/images/toko alat kesehatan di madiun nimas medika.avif",
     alt: "Produk farmasi pilihan",
     ratio: "aspect-[16/9]", // wide landscape
   },
   {
-    src: "/images/IMG20210702220153.jpg",
+    src: "/images/jual jas dokter di madiun.avif",
     alt: "Stok alat medis lengkap",
     ratio: "aspect-[3/4]", // portrait
   },
   {
-    src: "/images/IMG20250831144110_36_11zon.jpg",
+    src: "/images/alkes madiun shopee.avif",
     alt: "Alat medis rumah sakit",
     ratio: "aspect-[4/3]", // landscape medium
   },
   {
-    src: "/images/IMG20200921181336.jpg",
+    src: "/images/oxican di madiun.avif",
     alt: "Toko alat kesehatan Nimas Medika",
     ratio: "aspect-[16/10]", // landscape
   },
   {
-    src: "/images/IMG20200916121618.jpg",
+    src: "/images/alat lab madiun.avif",
     alt: "Konsultasi pelanggan",
     ratio: "aspect-[1/1]", // square
   },

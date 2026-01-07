@@ -24,7 +24,7 @@ const services = [
     longDescription:
       "Layanan jual dan isi ulang tabung oksigen di Madiun yang selalu siaga. Stok kami terjamin, proses aman dan cepat untuk kebutuhan pernapasan Anda.",
     icon: Droplet,
-    imageSrc: "/images/240717466_518896205873519_2457263916975335168_n.jpg", // TODO: ganti gambar SEO-friendly
+    imageSrc: "/images/toko alkes madiun (9)_1_11zon.avif", // TODO: ganti gambar SEO-friendly
   },
   {
     name: "Alat Lab, Terapi & Kebidanan Deket Kamu",
@@ -33,7 +33,7 @@ const services = [
     longDescription:
       "Tidak perlu antre di lab. Lakukan pengecekan Gula Darah, Asam Urat, dan Kolesterol langsung di apotek kami. Hasil cepat, akurat, dan terjangkau.",
     icon: FlaskConical,
-    imageSrc: "/images/IMG20210428133900.jpg", // TODO: ganti gambar SEO-friendly
+    imageSrc: "/images/jual alat lab madiun.avif", // TODO: ganti gambar SEO-friendly
   },
   {
     name: "Langsung Diantar Via GoSend",
@@ -42,7 +42,7 @@ const services = [
     longDescription:
       "Butuh obat atau alkes mendadak? Manfaatkan layanan pesan antar instan kami. Pesanan Anda akan tiba dengan cepat dan aman di depan pintu rumah.",
     icon: Truck,
-    imageSrc: "/images/photo-collage.png", // TODO: ganti gambar SEO-friendly
+    imageSrc: "/images/alat kesehatan madiun pesan antar.avif", // TODO: ganti gambar SEO-friendly
   },
 ];
 
