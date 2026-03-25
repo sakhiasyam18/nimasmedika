@@ -1,25 +1,24 @@
 // src/app/layout.tsx
 import type { Metadata } from "next";
 import { Inter, Plus_Jakarta_Sans } from "next/font/google";
-import "./globals.css"; // Pastikan ini mengimpor file CSS global kita
+import "./globals.css";
 import Script from "next/script";
+import { SpeedInsights } from "@vercel/speed-insights/next"; // 1. Import komponen
 
-// Konfigurasi font Inter untuk teks biasa
 const inter = Inter({
   subsets: ["latin"],
-  variable: "--font-inter", // Ini akan menghubungkan ke tailwind.config.ts
+  variable: "--font-inter",
 });
 
-// Konfigurasi font Plus Jakarta Sans untuk judul
 const plusJakartaSans = Plus_Jakarta_Sans({
   subsets: ["latin"],
-  variable: "--font-plus-jakarta-sans", // Ini akan menghubungkan ke tailwind.config.ts
+  variable: "--font-plus-jakarta-sans",
 });
 
 export const metadata: Metadata = {
-  title: "Nimas Medika - Toko Alat Kesehatan Terlengkap di Madiun", // Judul SEO kita
+  title: "Nimas Medika - Toko Alat Kesehatan Terlengkap di Madiun",
   description:
-    "Nimas Medika Alkes: Toko alat kesehatan terlengkap di Madiun. Menyediakan alat kedokteran, kebidanan, lab, & terapi. Melayani jual, beli, dan sewa oksigen.", // Deskripsi SEO kita
+    "Nimas Medika Alkes: Toko alat kesehatan terlengkap di Madiun. Menyediakan alat kedokteran, kebidanan, lab, & terapi. Melayani jual, beli, dan sewa oksigen.",
   icons: {
     icon: "/logo-nimas-medika-alkes-madiun.ico",
   },
@@ -32,7 +31,6 @@ export default function RootLayout({
 }) {
   return (
     <html lang="id">
-      {/* Google Analytics */}
       <Script
         async
         src="https://www.googletagmanager.com/gtag/js?id=G-HYL3TMH3PJ"
@@ -51,6 +49,8 @@ export default function RootLayout({
         suppressHydrationWarning
       >
         {children}
+        {/* 2. Tambahkan komponen ini di sini */}
+        <SpeedInsights />
       </body>
     </html>
   );
