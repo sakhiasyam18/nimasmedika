@@ -5,6 +5,7 @@ import { Footer } from "@/components/Footer";
 import { OriginBlock } from "@/components/tentang-kami/OriginBlock";
 import { OxygenBlock } from "@/components/tentang-kami/OxygenBlock"; // <-- Import komponen baru
 import { QualityBlock } from "@/components/tentang-kami/QualityBlock"; // <-- Import baru
+import { ClosingBlock } from "@/components/tentang-kami/ClosingBlock"; // <-- Import Penutup
 
 export default function AboutPage() {
   return (
@@ -19,10 +20,13 @@ export default function AboutPage() {
 
       {/* Blok 3: Kualitas & Kelengkapan */}
       <QualityBlock />
-      {/* Space untuk Blok berikutnya (Oksigen, dll) nanti di sini */}
+
+      {/* Bagian Penutup & Aksi */}
+      <ClosingBlock />
+      {/* Space untuk Blok berikutnya (Oksigen, dll) nanti di sini
       <div className="py-20 text-center text-slate-700 italic">
         [ Blok berikutnya akan kita susun di sini... ]
-      </div>
+      </div> */}
 
       <Footer />
     </main>
