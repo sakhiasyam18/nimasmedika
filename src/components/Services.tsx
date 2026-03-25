@@ -27,7 +27,7 @@ const services = [
     imageSrc: "/images/toko alkes madiun (9)_1_11zon.avif", // TODO: ganti gambar SEO-friendly
   },
   {
-    name: "Alat Lab, Terapi & Kebidanan Deket Kamu",
+    name: "Alat Lab, Terapi & Kebidanan",
     description:
       "Butuh alat kesehatan untuk lab, terapi, atau kebidanan? Tenang, semua tersedia dengan pilihan terdekat dari lokasi kamu",
     longDescription:

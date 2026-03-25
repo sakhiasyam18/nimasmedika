@@ -127,7 +127,7 @@ const GlowCard: React.FC<GlowCardProps> = memo(
         </div>
       </motion.div>
     );
-  }
+  },
 );
 GlowCard.displayName = "GlowCard";
 
@@ -173,11 +173,11 @@ export const TrustGallery: React.FC = () => {
           className="mx-auto max-w-3xl text-center"
         >
           <h2 className="capitalize font-heading text-4xl sm:text-5xl font-extrabold tracking-tight bg-clip-text text-transparent bg-gradient-to-r from-[#2C5BFF] via-[#4E71FF] to-[#8DD8FF]">
-            Alkes lengkap. Oksigen ready. Satu tempat semua ada
+            Pusat Alat Kesehatan Terlengkap & Layanan Oksigen di Madiun.
           </h2>
-          <p className="mt-3 text-base sm:text-lg text-slate-600">
+          {/* <p className="mt-3 text-base sm:text-lg text-slate-600">
             Satu tempat, kebutuhanmu beres!
-          </p>
+          </p> */}
         </motion.div>
 
         {/* Social Proof Chips */}
