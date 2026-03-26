@@ -22,6 +22,10 @@ export const metadata: Metadata = {
   icons: {
     icon: "/logo-nimas-medika-alkes-madiun.ico",
   },
+  // Tambahkan bagian verification ini:
+  verification: {
+    google: "p71dgnqT2WYzBHldNGas6___BBvsRlazj5J0JwGyVJc",
+  },
 };
 
 export default function RootLayout({
