@@ -180,7 +180,7 @@ const Lightbox: React.FC<LightboxProps> = React.memo(
             break;
         }
       },
-      [handlePrevious, handleNext, onClose]
+      [handlePrevious, handleNext, onClose],
     );
 
     // Handle drag end untuk swipe navigation
@@ -193,7 +193,7 @@ const Lightbox: React.FC<LightboxProps> = React.memo(
           handleNext();
         }
       },
-      [handlePrevious, handleNext]
+      [handlePrevious, handleNext],
     );
 
     if (!open) return null;
@@ -295,7 +295,7 @@ const Lightbox: React.FC<LightboxProps> = React.memo(
                         "h-2 w-2 rounded-full transition-all duration-200",
                         index === currentIndex
                           ? "bg-white scale-125"
-                          : "bg-white/60 hover:bg-white/80 hover:scale-110"
+                          : "bg-white/60 hover:bg-white/80 hover:scale-110",
                       )}
                       aria-label={`Lihat gambar ${index + 1}`}
                     />
@@ -312,7 +312,7 @@ const Lightbox: React.FC<LightboxProps> = React.memo(
         </motion.div>
       </AnimatePresence>
     );
-  }
+  },
 );
 
 Lightbox.displayName = "Lightbox";
@@ -355,7 +355,7 @@ const PricingCard: React.FC<{ option: PricingOption; index: number }> =
           setSelectedImageIndex(selectedImageIndex + 1);
         }
       },
-      [selectedImageIndex, option.images.length]
+      [selectedImageIndex, option.images.length],
     );
 
     // Memoized icon component
@@ -503,7 +503,7 @@ const PricingCard: React.FC<{ option: PricingOption; index: number }> =
                                   "relative aspect-video overflow-hidden rounded-lg ring-2 transition-all duration-200 group hover:scale-105",
                                   selectedImageIndex === imgIndex
                                     ? "ring-primary shadow-lg"
-                                    : "ring-transparent hover:ring-primary/40"
+                                    : "ring-transparent hover:ring-primary/40",
                                 )}
                                 aria-label={`Pilih gambar ${imgIndex + 1}`}
                                 style={{
@@ -521,7 +521,7 @@ const PricingCard: React.FC<{ option: PricingOption; index: number }> =
                                     "object-cover transition-opacity duration-200",
                                     selectedImageIndex === imgIndex
                                       ? "opacity-100"
-                                      : "opacity-80 group-hover:opacity-100"
+                                      : "opacity-80 group-hover:opacity-100",
                                   )}
                                   sizes="100px"
                                 />
@@ -595,18 +595,9 @@ const OxygenPricing: React.FC = () => {
             transition={{ duration: 0.4 }}
             className="font-heading text-2xl sm:text-4xl font-black tracking-tight text-gray-900 dark:text-white"
           >
-            Tabung Oksigen 1m³ & 6m³ di Madiun — Beli, Sewa, atau Isi Ulang
+            Butuh alat kesehatan mendadak? Nimas Medika Madiun sedia alkes dan
+            tabung oksigen ready stock setiap hari, tanpa harus menunggu lama.
           </motion.h2>
-          <motion.p
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.4, delay: 0.1 }}
-            className="mt-3 text-gray-600 dark:text-gray-300"
-          >
-            Pilihan lengkap dengan harga transparan. Klik kartu untuk melihat
-            detail, fitur, dan galeri gambar.
-          </motion.p>
         </header>
 
         {/* Pricing Cards */}
