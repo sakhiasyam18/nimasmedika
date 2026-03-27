@@ -36,8 +36,8 @@ export default function RootLayout({
   return (
     <html lang="id">
       <Script
-        async
         src="https://www.googletagmanager.com/gtag/js?id=G-HYL3TMH3PJ"
+        strategy="lazyOnload"
       />
       <Script id="google-analytics">
         {`

@@ -51,7 +51,8 @@ export const Header = () => {
               src="/images/logo-nimas-medika-alkes-madiun.svg"
               alt="Nimas Medika Alkes - Toko Alat Kesehatan Madiun"
               width={75}
-              height={0}
+              height={40}
+              priority
             />
           </Link>
         </h1>
@@ -75,7 +76,7 @@ export const Header = () => {
         <button
           onClick={() => setIsOpen(!isOpen)}
           className="md:hidden inline-flex items-center justify-center rounded-md p-2 text-slate-700 hover:bg-slate-100 transition"
-          aria-label="Toggle menu"
+          aria-label={isOpen ? "Tutup menu navigasi" : "Buka menu navigasi"}
         >
           {isOpen ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
         </button>

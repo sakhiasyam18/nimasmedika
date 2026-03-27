@@ -21,14 +21,9 @@ export const Hero = () => {
 
       <Container className="relative z-10 py-28 sm:py-36">
         {/* Heading SEO-friendly */}
-        <motion.h1
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8 }}
-          className="text-center font-heading text-4xl sm:text-5xl md:text-6xl font-extrabold leading-tight tracking-tight"
-        >
+        <h1 className="text-center font-heading text-4xl sm:text-5xl md:text-6xl font-extrabold leading-tight tracking-tight">
           Nimas Medika Alkes – Apotek & Alat Kesehatan di Madiun
-        </motion.h1>
+        </h1>
 
         {/* Subtext */}
         <motion.div
@@ -100,6 +95,7 @@ export const Hero = () => {
               title="Etalase Nimas Medika: alat kesehatan lengkap dan tabung oksigen ready"
               allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
               allowFullScreen
+              loading="lazy"
             ></iframe>
 
             {/* Frame glass + neon tipis */}
