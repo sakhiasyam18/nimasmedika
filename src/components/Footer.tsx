@@ -166,7 +166,7 @@ function IconLink({
       href={href}
       target="_blank"
       rel="noopener noreferrer"
-      aria-label={label}
+      aria-label={label} // Tambahkan baris ini agar Google bisa membaca nama link-nya
       className="text-slate-400 hover:text-blue-600 transition-colors"
     >
       {children}

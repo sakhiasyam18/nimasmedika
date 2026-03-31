@@ -21,7 +21,10 @@ export const Hero = () => {
 
       <Container className="relative z-10 py-28 sm:py-36">
         {/* Heading SEO-friendly */}
-        <h1 className="text-center font-heading text-4xl sm:text-5xl md:text-6xl font-extrabold leading-tight tracking-tight">
+        <h1
+          className="text-center font-heading text-4xl sm:text-5xl md:text-6xl font-extrabold leading-tight tracking-tight text-transparent bg-clip-text bg-gradient-to-r from-blue-700 to-cyan-500" // Tambahan efek gradient text untuk estetik!
+          itemProp="headline" // Schema markup untuk bot AI Google
+        >
           Nimas Medika Alkes – Apotek & Alat Kesehatan di Madiun
         </h1>
 
@@ -36,7 +39,7 @@ export const Hero = () => {
             Perlengkapan Kedokteran Kesehatan Kebidanan Laboratorium Alat Terapi
           </p>
           <p className="capitalize mt-2 text-lg text-slate-600">
-            Jual, beli, &amp; sewa tabung oksigen madiun
+            Jual, beli, & sewa tabung oksigen madiun
           </p>
         </motion.div>
 
@@ -50,6 +53,7 @@ export const Hero = () => {
           <motion.a
             href="https://wa.me/628123436075"
             target="_blank"
+            rel="noopener noreferrer" // Tambahkan pengaman ini
             whileHover={{ scale: 1.06 }}
             whileTap={{ scale: 0.98 }}
             className="inline-flex items-center gap-3 rounded-full px-8 py-4
@@ -67,6 +71,7 @@ export const Hero = () => {
           <motion.a
             href="https://maps.app.goo.gl/KgHkYQ6x1PkvxugX9"
             target="_blank"
+            rel="noopener noreferrer" // Wajib ada untuk skor Best Practices 100
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.98 }}
             className="inline-flex items-center gap-3 rounded-full px-8 py-4
@@ -96,6 +101,8 @@ export const Hero = () => {
               allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
               allowFullScreen
               loading="lazy"
+              // Teknik srcDoc: Mencegah YouTube memuat script berat sebelum user mengklik tombol Play. Ini kunci performa 100!
+              srcDoc="<style>*{padding:0;margin:0;overflow:hidden}html,body{height:100%}img,span{position:absolute;width:100%;top:0;bottom:0;margin:auto}span{height:1.5em;text-align:center;font:48px/1.5 sans-serif;color:white;text-shadow:0 0 0.5em black}</style><a href=https://www.youtube.com/embed/9YOuzwQS8OI?autoplay=1><img src=https://img.youtube.com/vi/9YOuzwQS8OI/hqdefault.jpg alt='Etalase Nimas Medika: alat kesehatan lengkap dan tabung oksigen ready'><span>▶</span></a>"
             ></iframe>
 
             {/* Frame glass + neon tipis */}

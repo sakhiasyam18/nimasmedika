@@ -136,8 +136,9 @@ export const AboutTeaser = () => {
             >
               <Image
                 src="/images/anim maulana nimas medika.avif"
-                alt="Tentang Nimas Medika - Foto 1"
+                alt="Pemilik Nimas Medika melayani pelanggan di Madiun" // Alt text deskriptif untuk Accessibility & SEO
                 fill
+                sizes="(max-width: 768px) 100vw, 50vw" // Wajib ada! Agar HP mengunduh versi kecil, Laptop mengunduh versi besar
                 className="object-cover"
               />
               <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent" />
@@ -154,8 +155,9 @@ export const AboutTeaser = () => {
             >
               <Image
                 src="/images/menerima pengiriman alkes di madiun.avif"
-                alt="Tentang Nimas Medika - Foto 2"
+                alt="Armada pengiriman alat kesehatan Nimas Medika Madiun siap antar"
                 fill
+                sizes="(max-width: 768px) 100vw, 50vw"
                 className="object-cover"
               />
               <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent" />
@@ -172,8 +174,9 @@ export const AboutTeaser = () => {
             >
               <Image
                 src="/images/nimas medika alkes 10.avif"
-                alt="Tentang Nimas Medika - Foto 3"
+                alt="Koleksi lengkap alat kedokteran dan laboratorium Nimas Medika"
                 fill
+                sizes="(max-width: 768px) 100vw, 80vw"
                 className="object-cover"
               />
               <div className="absolute inset-0 bg-gradient-to-t from-black/25 to-transparent" />

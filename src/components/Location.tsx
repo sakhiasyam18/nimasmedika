@@ -99,8 +99,13 @@ export const Location = () => {
                   whileHover={{ scale: 1.05, x: 6 }}
                   className="flex items-center gap-3 group"
                 >
-                  <landmark.icon className="h-5 w-5 text-[#4E71FF] drop-shadow-[0_0_6px_rgba(141,216,255,0.6)] group-hover:rotate-12 transition-transform" />
+                  {/* Tambahkan aria-hidden="true" agar fokus screen reader hanya pada teksnya saja */}
+                  <landmark.icon
+                    aria-hidden="true"
+                    className="h-5 w-5 text-[#4E71FF] drop-shadow-[0_0_6px_rgba(141,21..."
+                  />
                   <p className="text-sm text-slate-600">{landmark.name}</p>
+                  {/* Teks landmark */}
                 </motion.div>
               ))}
             </div>

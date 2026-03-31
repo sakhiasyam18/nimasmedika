@@ -20,17 +20,19 @@ export const Header = () => {
   ];
 
   // Hide/show header saat scroll
+  // Hide/show header saat scroll
   useEffect(() => {
     const handleScroll = () => {
       if (window.scrollY > lastScrollY) {
         setVisible(false);
+        setIsOpen(false); // Estetika UX: Tutup menu mobile otomatis saat di-scroll ke bawah
       } else {
         setVisible(true);
       }
       setLastScrollY(window.scrollY);
     };
 
-    window.addEventListener("scroll", handleScroll);
+    window.addEventListener("scroll", handleScroll, { passive: true });
     return () => window.removeEventListener("scroll", handleScroll);
   }, [lastScrollY]);
 
@@ -42,23 +44,26 @@ export const Header = () => {
     >
       <Container className="flex items-center justify-between h-16">
         {/* Logo */}
-        <h1 className="flex items-center transition-transform duration-300 hover:scale-105 hover:drop-shadow-[0_0_8px_rgba(78,113,255,0.5)]">
-          <Link
-            href="/"
-            aria-label="Nimas Medika Alkes - Toko Alat Kesehatan Madiun"
-          >
+        {/* Logo */}
+        {/* Ubah h1 menjadi div agar tidak merusak struktur SEO halaman utama */}
+        <div className="flex items-center transition-transform duration-300 hover:scale-105 hover:drop-shadow-[0_0_8px_rgba(78,113,255,0.5)]">
+          <Link href="/" aria-label="Halaman Utama Nimas Medika Alkes">
             <Image
               src="/images/logo-nimas-medika-alkes-madiun.svg"
               alt="Nimas Medika Alkes - Toko Alat Kesehatan Madiun"
               width={75}
               height={40}
               priority
+              className="w-auto h-[40px]" // Tambahan pengaman CSS agar gambar tidak gepeng (menghindari CLS)
             />
           </Link>
-        </h1>
+        </div>
 
         {/* Desktop Nav */}
-        <nav className="hidden md:flex items-center gap-8 text-sm font-medium">
+        <nav
+          aria-label="Navigasi Utama" // Memberitahu robot bahwa ini adalah menu utama
+          className="hidden md:flex items-center gap-8 text-sm font-medium"
+        >
           {navItems.map((item) => (
             <Link
               key={item.label}
@@ -73,8 +78,11 @@ export const Header = () => {
         </nav>
 
         {/* Mobile Hamburger */}
+        {/* Mobile Hamburger */}
         <button
           onClick={() => setIsOpen(!isOpen)}
+          aria-expanded={isOpen} // Syarat wajib Google untuk tombol Dropdown/Menu
+          aria-controls="mobile-menu" // Menyambungkan tombol dengan isi menunya
           className="md:hidden inline-flex items-center justify-center rounded-md p-2 text-slate-700 hover:bg-slate-100 transition"
           aria-label={isOpen ? "Tutup menu navigasi" : "Buka menu navigasi"}
         >
@@ -92,12 +100,17 @@ export const Header = () => {
             transition={{ duration: 0.25 }}
             className="md:hidden absolute inset-x-0 top-16 z-40 px-4"
           >
-            <div className="rounded-2xl border border-slate-200 bg-white/90 backdrop-blur-xl shadow-[0_0_25px_rgba(78,113,255,0.25)] p-4 space-y-2">
+            {/* Tambahkan id="mobile-menu" sebagai pasangan aria-controls di atas */}
+            <div
+              id="mobile-menu"
+              className="rounded-2xl border border-slate-200 bg-white/90 backdrop-blur-xl shadow-[0_0_25px_rgba(78,113,255,0.25)] p-4 space-y-2"
+            >
               {navItems.map((item) => (
                 <Link
                   key={item.label}
                   href={item.href}
-                  className="block rounded-lg px-4 py-2 text-slate-700 hover:bg-[#2C5BFF]/10 hover:text-[#2C5BFF] transition-colors duration-300"
+                  onClick={() => setIsOpen(false)} // UX Estetik: Auto-close menu saat link diklik
+                  className="block rounded-lg px-4 py-2 text-slate-700 hover:bg-[#2C5BFF]/10 hover:text-[#2C5BFF] transition-colors duration-300 font-medium"
                 >
                   {item.label}
                 </Link>
