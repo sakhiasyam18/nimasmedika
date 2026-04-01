@@ -26,6 +26,10 @@ export const metadata: Metadata = {
   verification: {
     google: "p71dgnqT2WYzBHldNGas6___BBvsRlazj5J0JwGyVJc",
   },
+  // Di dalam metadata layout.tsx
+  alternates: {
+    canonical: "https://nimasmedika.com",
+  },
 };
 
 export default function RootLayout({
