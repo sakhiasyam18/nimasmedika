@@ -3,7 +3,7 @@ import type { Metadata } from "next";
 import { Inter, Plus_Jakarta_Sans } from "next/font/google";
 import "./globals.css";
 import { SpeedInsights } from "@vercel/speed-insights/next";
-import { GoogleTagManager, GoogleAnalytics } from "@next/third-parties/google"; // Metode modern & cepat
+import { GoogleTagManager, GoogleAnalytics } from "@next/third-parties/google";
 
 const inter = Inter({
   subsets: ["latin"],
@@ -23,10 +23,10 @@ export const metadata: Metadata = {
     icon: "/logo-nimas-medika-alkes-madiun.ico",
   },
   verification: {
-    google: "p71dgnqT2WYzBHldNGas6___BBvsRlazj5J0JwGyVJc", // Token GSC Anda
+    google: "p71dgnqT2WYzBHldNGas6___BBvsRlazj5J0JwGyVJc",
   },
   alternates: {
-    canonical: "https://nimasmedika.com", // Kunci SEO ke domain utama
+    canonical: "https://nimasmedika.com",
   },
 };
 
@@ -36,14 +36,16 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="id">
-      {/* SINKRONISASI TOTAL: Menggunakan ID asli dari hasil audit dashboard Anda */}
-      <GoogleTagManager gtmId="GTM-T8B4XNZV" />
-      <GoogleAnalytics gaId="G-5M3G96S5S4" />
+    // suppressHydrationWarning dipasang di sini agar aman dari error script Google
+    <html lang="id" suppressHydrationWarning>
+      <head>
+        {/* SINKRONISASI TOTAL ID HASIL AUDIT */}
+        <GoogleTagManager gtmId="GTM-T8B4XNZV" />
+        <GoogleAnalytics gaId="G-5M3G96S5S4" />
+      </head>
 
       <body
         className={`${inter.variable} ${plusJakartaSans.variable} font-sans antialiased`}
-        suppressHydrationWarning
       >
         {children}
         <SpeedInsights />
