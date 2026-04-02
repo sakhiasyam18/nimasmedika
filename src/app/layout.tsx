@@ -3,7 +3,7 @@ import type { Metadata } from "next";
 import { Inter, Plus_Jakarta_Sans } from "next/font/google";
 import "./globals.css";
 import { SpeedInsights } from "@vercel/speed-insights/next";
-import { GoogleTagManager, GoogleAnalytics } from "@next/third-parties/google"; // Library modern untuk performa 100
+import { GoogleTagManager, GoogleAnalytics } from "@next/third-parties/google"; // Metode modern & cepat
 
 const inter = Inter({
   subsets: ["latin"],
@@ -23,10 +23,10 @@ export const metadata: Metadata = {
     icon: "/logo-nimas-medika-alkes-madiun.ico",
   },
   verification: {
-    google: "p71dgnqT2WYzBHldNGas6___BBvsRlazj5J0JwGyVJc", // Token verifikasi sesuai GSC Anda
+    google: "p71dgnqT2WYzBHldNGas6___BBvsRlazj5J0JwGyVJc", // Token GSC Anda
   },
   alternates: {
-    canonical: "https://nimasmedika.com", // Kunci agar AI Google fokus ke domain utama .com
+    canonical: "https://nimasmedika.com", // Kunci SEO ke domain utama
   },
 };
 
@@ -37,10 +37,8 @@ export default function RootLayout({
 }) {
   return (
     <html lang="id">
-      {/* SINKRONISASI 1: GTM ID (GTM-T8B4XNZV) */}
+      {/* SINKRONISASI TOTAL: Menggunakan ID asli dari hasil audit dashboard Anda */}
       <GoogleTagManager gtmId="GTM-T8B4XNZV" />
-
-      {/* SINKRONISASI 2: GA4 ID (G-5M3G96S5S4) */}
       <GoogleAnalytics gaId="G-5M3G96S5S4" />
 
       <body
