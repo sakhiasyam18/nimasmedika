@@ -41,7 +41,7 @@ export default function RootLayout({
       <head>
         {/* SINKRONISASI TOTAL ID HASIL AUDIT */}
         <GoogleTagManager gtmId="GTM-T8B4XNZV" />
-        <GoogleAnalytics gaId="G-5M3G96S5S4" />
+        <GoogleAnalytics gaId="G-HYL3TMH3PJ" />
       </head>
 
       <body
