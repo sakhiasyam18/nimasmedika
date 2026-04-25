@@ -4,9 +4,10 @@
 import { Container } from "@/components/Container";
 import { Header } from "@/components/Header";
 import { Footer } from "@/components/Footer";
-import { OxygenHero } from "@/components/OxygenHero";
-import { OxygenPricing } from "@/components/OxygenPricing";
-import { UsageGuide } from "@/components/UsageGuide";
+import { OxygenHero } from "@/components/oksigen/OxygenHero";
+import { OxygenPricing } from "@/components/oksigen/OxygenPricing";
+import { UsageGuide } from "@/components/oksigen/UsageGuide";
+import { OxygenFAQ } from "@/components/oksigen/OxygenFAQ";
 
 export default function Oksigen() {
   return (
@@ -17,6 +18,7 @@ export default function Oksigen() {
           <OxygenHero />
           <OxygenPricing />
           <UsageGuide />
+          <OxygenFAQ />
           {/* <OtherSizes /> */}
         </main>
         <Footer />

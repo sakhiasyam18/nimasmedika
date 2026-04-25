@@ -28,11 +28,12 @@ export const OxygenHero = () => {
               Tabung Oksigen di Madiun - Beli atau Sewa
             </h1>
             <p className="mt-6 text-lg leading-8 text-gray-700">
-              Nimas Medika menyediakan layanan{" "}
-              <strong>jual tabung oksigen 1m³ & 6m³</strong>
-              dan <strong>sewa tabung oksigen murah di Madiun</strong>. Tabung
-              sudah terisi penuh 2000 PSI diisi dengan 8 tabung, yang bisa
-              ditunggu di tempat 5 menit langsung siap dipakai
+              Jika Anda sedang mencari layanan{" "}
+              <strong>jual atau sewa tabung oksigen di Madiun</strong>,
+              <strong> Nimas Medika</strong> memberikan solusi medis yang cepat
+              dan terpercaya. Melalui nimasmedika.com, kami menyediakan tabung
+              oksigen ukuran 1m³ dan 6m³ dengan layanan isi ulang cepat hanya 5
+              menit, terisi penuh 2000 PSI, dan siap antar ke rumah.
             </p>
             <div className="mt-8 flex flex-wrap gap-4">
               <a

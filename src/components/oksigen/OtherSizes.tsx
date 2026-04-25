@@ -3,7 +3,7 @@
 
 import React from "react";
 import { motion } from "framer-motion";
-import { Container } from "./Container";
+import { Container } from "../Container";
 import { ArrowRight, Box, PackagePlus } from "lucide-react";
 import Link from "next/link";
 
