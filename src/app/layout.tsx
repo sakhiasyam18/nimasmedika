@@ -4,9 +4,8 @@ import { Inter, Plus_Jakarta_Sans } from "next/font/google";
 import "./globals.css";
 import { SpeedInsights } from "@vercel/speed-insights/next";
 import { GoogleAnalytics } from "@next/third-parties/google";
-import Script from "next/script";
 
-// Konfigurasi Font untuk performa maksimal
+// Konfigurasi Font
 const inter = Inter({
   subsets: ["latin"],
   variable: "--font-inter",
@@ -19,25 +18,25 @@ const plusJakartaSans = Plus_Jakarta_Sans({
   display: "swap",
 });
 
-// Konfigurasi Viewport untuk responsivitas mobile
 export const viewport: Viewport = {
   themeColor: "#ffffff",
   width: "device-width",
   initialScale: 1,
 };
 
-// METADATA SEO (Sangat penting untuk ranking Google)
+// METADATA SEO & AEO
 export const metadata: Metadata = {
-  title: "Nimas Medika - Toko Alat Kesehatan Terlengkap di Madiun",
+  metadataBase: new URL("https://nimasmedika.com"), // Penting untuk absolute URL resolve
+  title: "Nimas Medika - Toko Alat Kesehatan & Tabung Oksigen di Madiun", // Dipertajam sedikit
   description:
-    "Nimas Medika Alkes: Toko alat kesehatan terlengkap di Madiun. Menyediakan alat kedokteran, kebidanan, lab, & terapi. Melayani jual, beli, dan sewa oksigen.",
+    "Nimas Medika Madiun: Toko alat kesehatan (alkes) terlengkap, melayani jual, beli, sewa, dan isi ulang tabung oksigen 24 jam dengan layanan pesan antar.",
   keywords: [
     "alat kesehatan madiun",
     "alkes madiun",
     "sewa oksigen madiun",
+    "isi ulang oksigen madiun", // Tambahan keyword potensial
     "nimas medika madiun",
-    "alat kedokteran madiun",
-    "toko alkes terlengkap",
+    "toko alkes 24 jam madiun",
   ],
   authors: [{ name: "Nimas Medika" }],
   creator: "Nimas Medika",
@@ -47,6 +46,18 @@ export const metadata: Metadata = {
     address: true,
     telephone: true,
   },
+  // Undang bot dengan eksplisit
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      "max-video-preview": -1,
+      "max-image-preview": "large",
+      "max-snippet": -1,
+    },
+  },
   icons: {
     icon: "/logo-nimas-medika-alkes-madiun.ico",
   },
@@ -54,13 +65,12 @@ export const metadata: Metadata = {
     google: "p71dgnqT2WYzBHldNGas6___BBvsRlazj5J0JwGyVJc",
   },
   alternates: {
-    canonical: "https://nimasmedika.com",
+    canonical: "/", // Akan otomatis digabung dengan metadataBase
   },
-  // OpenGraph untuk tampilan share di Media Sosial/WhatsApp
   openGraph: {
-    title: "Nimas Medika - Toko Alat Kesehatan Terlengkap di Madiun",
+    title: "Nimas Medika - Toko Alkes & Oksigen Terlengkap di Madiun",
     description:
-      "Menyediakan alat kedokteran, kebidanan, lab, & terapi. Jual, beli, dan sewa oksigen di Madiun.",
+      "Melayani jual, beli, sewa, dan isi ulang tabung oksigen 24 jam di Madiun. Proses cepat dan bisa diantar ke rumah.",
     url: "https://nimasmedika.com",
     siteName: "Nimas Medika Alkes",
     locale: "id_ID",
@@ -73,19 +83,22 @@ export default function RootLayout({
 }: {
   children: React.ReactNode;
 }) {
-  // DATA TERSTRUKTUR (JSON-LD) - Membantu Google mengenali Bisnis Lokal kamu
+  // DATA TERSTRUKTUR (JSON-LD) SUPERCHARGED
   const jsonLd = {
     "@context": "https://schema.org",
-    "@type": "MedicalBusiness",
+    "@type": ["MedicalBusiness", "LocalBusiness"], // Kombinasi agar lebih dikenali sebagai toko fisik lokal
     name: "Nimas Medika Alkes Madiun",
-    image: "https://nimasmedika.com/logo-nimas-medika-alkes-madiun.ico", // Ganti dengan URL logo asli jika ada
+    description:
+      "Toko alat kesehatan terlengkap di Madiun. Menyediakan layanan sewa, beli, dan isi ulang tabung oksigen dengan cepat.",
+    image: "https://nimasmedika.com/logo-nimas-medika-alkes-madiun.ico",
     "@id": "https://nimasmedika.com",
     url: "https://nimasmedika.com",
-    telephone: "+628123436075", // Masukkan nomor telepon toko kamu di sini
+    telephone: "+628123436075",
+    priceRange: "$$", // Menghindari warning di Search Console
     address: {
       "@type": "PostalAddress",
       streetAddress:
-        "Jl. Kapten Tendean No.68, Demangan, Kec. Taman, Kota Madiun, Jawa Timur 63136, Indonesia",
+        "Jl. Kapten Tendean No.68, Demangan, Kec. Taman, Kota Madiun",
       addressLocality: "Madiun",
       addressRegion: "Jawa Timur",
       postalCode: "63136",
@@ -110,28 +123,28 @@ export default function RootLayout({
       opens: "06:00",
       closes: "22:00",
     },
+    // Sinyal kuat untuk AI Bot agar tahu relasi ekosistem digital kamu
+    sameAs: [
+      "https://maps.app.goo.gl/ZajN9TRUo8KvFyn8A",
+      "https://instagram.com/nimasmedika",
+      "https://www.youtube.com/@alatkesehatanmadiun",
+    ],
   };
 
   return (
     <html lang="id" suppressHydrationWarning>
       <head>
-        {/* Schema Markup untuk Google Search Rich Snippets */}
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
         />
-
-        {/* Google Analytics 4 - Menggunakan ID valid dari akun kamu */}
-        {/* GTM dihapus karena akun belum dibuat di dashboard Google untuk mencegah error */}
-        <GoogleAnalytics gaId="G-HYL3TMH3PJ" />
       </head>
 
       <body
         className={`${inter.variable} ${plusJakartaSans.variable} font-sans antialiased`}
       >
         {children}
-
-        {/* Insight Performa dari Vercel */}
+        <GoogleAnalytics gaId="G-HYL3TMH3PJ" />
         <SpeedInsights />
       </body>
     </html>
