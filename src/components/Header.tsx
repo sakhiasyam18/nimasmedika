@@ -51,14 +51,11 @@ export const Header = () => {
             <Image
               src="/images/logo-nimas-medika-alkes-madiun.svg"
               alt="Nimas Medika Alkes - Toko Alat Kesehatan Madiun"
-              // Gunakan ukuran asli atau rasio aslinya di sini
               width={75}
               height={40}
               priority
-              // h-[40px] menentukan tinggi tetap, w-auto menjaga lebar tetap proporsional
-              className="h-10 w-auto object-contain"
-              // Tambahan style inline untuk memastikan aspek rasio tetap terjaga oleh browser
-              style={{ width: "auto", height: "40px" }}
+              className="object-contain"
+              style={{ width: "auto", height: "auto", maxHeight: "40px" }}
             />
           </Link>
         </div>

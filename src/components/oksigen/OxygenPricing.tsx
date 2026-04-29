@@ -471,7 +471,7 @@ const PricingCard: React.FC<{ option: PricingOption; index: number }> =
                               <button
                                 type="button"
                                 onClick={openLightbox}
-                                className="w-full h-full focus:outline-none focus:ring-2 focus:ring-primary/60 focus:ring-offset-2 rounded-xl"
+                                className="relative w-full h-full focus:outline-none focus:ring-2 focus:ring-primary/60 focus:ring-offset-2 rounded-xl"
                                 aria-label={`Perbesar gambar ${
                                   selectedImageIndex + 1
                                 } dari ${option.title}`}
