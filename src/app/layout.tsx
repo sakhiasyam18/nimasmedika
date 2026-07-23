@@ -3,7 +3,7 @@ import type { Metadata, Viewport } from "next";
 import { Inter, Plus_Jakarta_Sans } from "next/font/google";
 import "./globals.css";
 import { SpeedInsights } from "@vercel/speed-insights/next";
-import { GoogleAnalytics, GoogleTagManager } from "@next/third-parties/google";
+import { GoogleTagManager } from "@next/third-parties/google";
 
 // Konfigurasi Font
 const inter = Inter({
@@ -145,7 +145,6 @@ export default function RootLayout({
       >
         <GoogleTagManager gtmId="GTM-KP7NSPBV" />
         {children}
-        <GoogleAnalytics gaId="G-HYL3TMH3PJ" />
         <SpeedInsights />
       </body>
     </html>
