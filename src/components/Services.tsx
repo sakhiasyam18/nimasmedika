@@ -3,7 +3,7 @@
 
 import React, { useState } from "react";
 import { Container } from "./Container";
-import { motion, AnimatePresence } from "framer-motion";
+import { m, LazyMotion, domAnimation, AnimatePresence } from "framer-motion";
 import Image from "next/image";
 
 const services = [
@@ -42,15 +42,16 @@ export const Services = () => {
   const [active, setActive] = useState(0);
 
   return (
-    <section
-      className="relative overflow-hidden bg-white py-20 sm:py-32"
-      aria-label="Layanan Utama Nimas Medika"
-    >
+    <LazyMotion features={domAnimation}>
+      <section
+        className="relative overflow-hidden bg-white py-20 sm:py-32"
+        aria-label="Layanan Utama Nimas Medika"
+      >
       <Container className="relative z-10">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-20 items-start">
           {/* KOLOM KIRI: Narasi & Preview (Sticky di Desktop) */}
           <div className="lg:col-span-5 lg:sticky lg:top-24">
-            <motion.div
+            <m.div
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
@@ -70,10 +71,9 @@ export const Services = () => {
                 </span>
               </div>
 
-              {/* Preview Gambar Besar (Hanya Desktop) */}
               <div className="mt-12 relative hidden lg:block aspect-[4/3] rounded-[2.5rem] overflow-hidden bg-slate-100 shadow-2xl shadow-blue-900/10 border border-slate-100">
                 <AnimatePresence mode="wait">
-                  <motion.div
+                  <m.div
                     key={active}
                     initial={{ opacity: 0, scale: 1.1 }}
                     animate={{ opacity: 1, scale: 1 }}
@@ -89,16 +89,16 @@ export const Services = () => {
                       sizes="500px"
                       loading="lazy"
                     />
-                  </motion.div>
+                  </m.div>
                 </AnimatePresence>
               </div>
-            </motion.div>
+            </m.div>
           </div>
 
           {/* KOLOM KANAN: Daftar Kartu (Interaktif) */}
           <div className="lg:col-span-7 space-y-4">
             {services.map((item, i) => (
-              <motion.div
+              <m.div
                 key={i}
                 onMouseEnter={() => setActive(i)}
                 onClick={() => setActive(i)}
@@ -135,7 +135,7 @@ export const Services = () => {
                   {/* Gambar Mobile: Muncul otomatis di dalam kartu saat kartu aktif */}
                   <AnimatePresence>
                     {active === i && (
-                      <motion.div
+                      <m.div
                         initial={{ height: 0, opacity: 0 }}
                         animate={{ height: "auto", opacity: 1 }}
                         exit={{ height: 0, opacity: 0 }}
@@ -150,15 +150,16 @@ export const Services = () => {
                             sizes="(max-width: 768px) 100vw, 1px"
                           />
                         </div>
-                      </motion.div>
+                      </m.div>
                     )}
                   </AnimatePresence>
                 </div>
-              </motion.div>
+              </m.div>
             ))}
           </div>
         </div>
       </Container>
     </section>
+    </LazyMotion>
   );
 };

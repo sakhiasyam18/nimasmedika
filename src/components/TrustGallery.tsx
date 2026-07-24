@@ -4,7 +4,7 @@
 import React, { useEffect, useRef, useState, memo } from "react";
 import { Container } from "./Container";
 import Image from "next/image";
-import { motion, AnimatePresence } from "framer-motion";
+import { m, LazyMotion, domAnimation, AnimatePresence } from "framer-motion";
 import { Award, Package, Star } from "lucide-react";
 
 // ====== Gambar Moodboard ======
@@ -92,7 +92,7 @@ interface GlowCardProps {
 const GlowCard: React.FC<GlowCardProps> = memo(
   ({ src, alt, ratio = "aspect-[4/5]", i = 0, onOpen }) => {
     return (
-      <motion.div
+      <m.div
         custom={i}
         initial={{ opacity: 0, y: 40 }}
         whileInView={{ opacity: 1, y: 0 }}
@@ -125,7 +125,7 @@ const GlowCard: React.FC<GlowCardProps> = memo(
           />
           <div className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-300 bg-gradient-to-t from-black/30 via-black/10 to-transparent" />
         </div>
-      </motion.div>
+      </m.div>
     );
   },
 );
@@ -153,10 +153,11 @@ export const TrustGallery: React.FC = () => {
   }, [lightbox.open]);
 
   return (
-    <section
-      className="relative isolate overflow-hidden bg-white py-24 sm:py-32 text-gray-900"
-      aria-label="Galeri Produk & Bukti Pelayanan Nimas Medika"
-    >
+    <LazyMotion features={domAnimation}>
+      <section
+        className="relative isolate overflow-hidden bg-white py-24 sm:py-32 text-gray-900"
+        aria-label="Galeri Produk & Bukti Pelayanan Nimas Medika"
+      >
       {/* Dekorasi Radial */}
       <div aria-hidden className="absolute inset-0">
         <div className="absolute -top-20 left-1/2 -translate-x-1/2 h-[40rem] w-[40rem] rounded-full blur-3xl opacity-40 bg-[radial-gradient(closest-side,rgba(141,216,255,0.3),transparent_70%)]" />
@@ -165,7 +166,7 @@ export const TrustGallery: React.FC = () => {
 
       <Container>
         {/* Headline */}
-        <motion.div
+        <m.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, amount: 0.6 }}
@@ -178,12 +179,12 @@ export const TrustGallery: React.FC = () => {
           {/* <p className="mt-3 text-base sm:text-lg text-slate-600">
             Satu tempat, kebutuhanmu beres!
           </p> */}
-        </motion.div>
+        </m.div>
 
         {/* Social Proof Chips */}
         <div className="mt-10 flex flex-wrap justify-center gap-5">
           {stats.map((s, i) => (
-            <motion.div
+            <m.div
               key={s.name}
               initial={{ opacity: 0, y: 40 }}
               whileInView={{ opacity: 1, y: 0 }}
@@ -199,13 +200,13 @@ export const TrustGallery: React.FC = () => {
               </span>
               <span>{s.value}</span>
               <span className="text-slate-500">• {s.name}</span>
-            </motion.div>
+            </m.div>
           ))}
         </div>
 
         {/* Grid Moodboard */}
         <div className="mt-14 sm:mt-16">
-          <motion.div
+          <m.div
             initial="hidden"
             whileInView="show"
             viewport={{ once: true, amount: 0.2 }}
@@ -221,10 +222,10 @@ export const TrustGallery: React.FC = () => {
                 onOpen={(imgData) => setLightbox({ open: true, ...imgData })}
               />
             ))}
-          </motion.div>
+          </m.div>
 
           {/* CTA Ringkas */}
-          <motion.div
+          <m.div
             initial={{ opacity: 0, y: 40 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, amount: 0.4 }}
@@ -253,14 +254,14 @@ export const TrustGallery: React.FC = () => {
                 />
               </svg>
             </a>
-          </motion.div>
+          </m.div>
         </div>
       </Container>
 
       {/* ===== Modal Global (klik luar/tombol/Esc untuk tutup) ===== */}
       <AnimatePresence>
         {lightbox.open && (
-          <motion.div
+          <m.div
             className="fixed inset-0 bg-black/50 flex justify-center items-center z-[100]"
             onClick={() => setLightbox((v) => ({ ...v, open: false }))}
             initial={{ opacity: 0 }}
@@ -273,7 +274,7 @@ export const TrustGallery: React.FC = () => {
               className="relative w-[90vw] h-[90vh] max-w-[1200px] max-h-[90vh]"
               onClick={(e) => e.stopPropagation()}
             >
-              <motion.div
+              <m.div
                 drag
                 dragConstraints={containerRef}
                 dragElastic={0.2}
@@ -288,7 +289,7 @@ export const TrustGallery: React.FC = () => {
                   className="rounded-2xl max-h-[90vh] w-auto h-auto object-contain shadow-[0_0_50px_rgba(0,0,0,0.5)]" // Ide UI: Tambahkan shadow pekat agar gambar "mengambang"
                   loading="lazy" // Ganti priority dengan lazy agar modal tidak mengganggu LCP halaman utama
                 />
-              </motion.div>
+              </m.div>
 
               <button
                 onClick={() => setLightbox((v) => ({ ...v, open: false }))}
@@ -298,10 +299,11 @@ export const TrustGallery: React.FC = () => {
                 ✕
               </button>
             </div>
-          </motion.div>
+          </m.div>
         )}
       </AnimatePresence>
     </section>
+    </LazyMotion>
   );
 };
 

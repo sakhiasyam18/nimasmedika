@@ -2,7 +2,7 @@
 
 import React from "react";
 import { Container } from "./Container";
-import { motion } from "framer-motion";
+import { m, LazyMotion, domAnimation } from "framer-motion";
 import Image from "next/image";
 import Link from "next/link";
 
@@ -43,10 +43,11 @@ import Link from "next/link";
 
 export const AboutTeaser = () => {
   return (
-    <section
-      className="relative isolate overflow-hidden bg-white py-24 sm:py-32 text-gray-900"
-      aria-label="Tentang Nimas Medika Alkes"
-    >
+    <LazyMotion features={domAnimation}>
+      <section
+        className="relative isolate overflow-hidden bg-white py-24 sm:py-32 text-gray-900"
+        aria-label="Tentang Nimas Medika Alkes"
+      >
       {/* Background dekorasi neon lembut */}
       <div
         aria-hidden
@@ -56,14 +57,14 @@ export const AboutTeaser = () => {
       <Container>
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
           {/* Kolom kiri: narasi */}
-          <motion.div
+          <m.div
             initial={{ opacity: 0, x: -50 }}
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true, amount: 0.3 }}
             transition={{ duration: 0.8 }}
             className="relative z-10"
           >
-            <motion.div
+            <m.div
               initial={{ opacity: 0 }}
               whileInView={{ opacity: 1 }}
               viewport={{ once: true }}
@@ -87,7 +88,7 @@ export const AboutTeaser = () => {
                 masyarakat Madiun.
               </p>
 
-              <motion.div
+              <m.div
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.97 }}
                 className="mt-10 inline-block"
@@ -103,7 +104,7 @@ export const AboutTeaser = () => {
                   aria-label="Pelajari selengkapnya tentang Nimas Medika"
                 >
                   Kisah Kita Selama 24 Tahun
-                  {/* <motion.svg
+                  {/* <m.svg
                     className="h-5 w-5"
                     xmlns="http://www.w3.org/2000/svg"
                     fill="none"
@@ -117,16 +118,16 @@ export const AboutTeaser = () => {
                       strokeWidth={2}
                       d="M17 8l4 4m0 0l-4 4m4-4H3"
                     />
-                  </motion.svg> */}
+                  </m.svg> */}
                 </Link>
-              </motion.div>
-            </motion.div>
-          </motion.div>
+              </m.div>
+            </m.div>
+          </m.div>
 
           {/* Kolom kanan: foto kolase */}
           <div className="relative grid grid-cols-2 gap-4">
             {/* Foto kiri atas */}
-            <motion.div
+            <m.div
               initial={{ opacity: 0, x: -50, scale: 0.9 }}
               whileInView={{ opacity: 1, x: 0, scale: 1 }}
               transition={{ duration: 0.8, delay: 0.2, ease: "easeOut" }}
@@ -142,10 +143,10 @@ export const AboutTeaser = () => {
                 className="object-cover"
               />
               <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent" />
-            </motion.div>
+            </m.div>
 
             {/* Foto kanan atas */}
-            <motion.div
+            <m.div
               initial={{ opacity: 0, x: 50, scale: 0.9 }}
               whileInView={{ opacity: 1, x: 0, scale: 1 }}
               transition={{ duration: 0.8, delay: 0.4, ease: "easeOut" }}
@@ -161,10 +162,10 @@ export const AboutTeaser = () => {
                 className="object-cover"
               />
               <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent" />
-            </motion.div>
+            </m.div>
 
             {/* Foto besar bawah */}
-            <motion.div
+            <m.div
               initial={{ opacity: 0, y: 50, scale: 0.9 }}
               whileInView={{ opacity: 1, y: 0, scale: 1 }}
               transition={{ duration: 0.9, delay: 0.6, ease: "easeOut" }}
@@ -180,10 +181,11 @@ export const AboutTeaser = () => {
                 className="object-cover"
               />
               <div className="absolute inset-0 bg-gradient-to-t from-black/25 to-transparent" />
-            </motion.div>
+            </m.div>
           </div>
         </div>
       </Container>
     </section>
+    </LazyMotion>
   );
 };

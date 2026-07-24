@@ -29,9 +29,7 @@ export const Hero = () => {
         </h1>
 
         {/* Subtext */}
-        <div
-          className="mt-6 max-w-3xl mx-auto text-center animate-fade-in-up [animation-delay:150ms] opacity-0 [animation-fill-mode:forwards]"
-        >
+        <div className="mt-6 max-w-3xl mx-auto text-center">
           <p className="text-lg sm:text-xl text-slate-700">
             Perlengkapan Kedokteran Kesehatan Kebidanan Laboratorium Alat Terapi
           </p>
