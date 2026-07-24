@@ -121,7 +121,7 @@ const GlowCard: React.FC<GlowCardProps> = memo(
             fill
             sizes="(max-width: 640px) 50vw, (max-width: 1024px) 33vw, 25vw" // Optimasi: Gambar grid harus disesuaikan dengan proporsi kolom
             className="object-cover transition-transform duration-700 group-hover:scale-110" // Ide UI: Efek zoom perlahan ke dalam (Ken Burns) saat disentuh
-            priority={i! < 4} // Muat 4 gambar pertama lebih cepat
+            loading="lazy"
           />
           <div className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-300 bg-gradient-to-t from-black/30 via-black/10 to-transparent" />
         </div>

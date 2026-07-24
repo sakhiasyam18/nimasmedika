@@ -29,11 +29,8 @@ export const Hero = () => {
         </h1>
 
         {/* Subtext */}
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8, delay: 0.15 }}
-          className="mt-6 max-w-3xl mx-auto text-center"
+        <div
+          className="mt-6 max-w-3xl mx-auto text-center animate-fade-in-up [animation-delay:150ms] opacity-0 [animation-fill-mode:forwards]"
         >
           <p className="text-lg sm:text-xl text-slate-700">
             Perlengkapan Kedokteran Kesehatan Kebidanan Laboratorium Alat Terapi
@@ -41,7 +38,7 @@ export const Hero = () => {
           <p className="capitalize mt-2 text-lg text-slate-600">
             Jual, beli, & sewa tabung oksigen madiun
           </p>
-        </motion.div>
+        </div>
 
         {/* CTA Buttons */}
         <motion.div

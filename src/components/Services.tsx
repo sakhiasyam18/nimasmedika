@@ -87,7 +87,7 @@ export const Services = () => {
                       fill
                       className="object-cover"
                       sizes="500px"
-                      priority
+                      loading="lazy"
                     />
                   </motion.div>
                 </AnimatePresence>

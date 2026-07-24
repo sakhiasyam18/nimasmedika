@@ -2,11 +2,13 @@
 import { Container } from "@/components/Container";
 import { Header } from "@/components/Header";
 import { Hero } from "@/components/Hero";
-import { TrustGallery } from "@/components/TrustGallery";
-import { Services } from "@/components/Services";
-import { AboutTeaser } from "@/components/AboutTeaser";
-import { Location } from "@/components/Location";
-import { Footer } from "@/components/Footer";
+import dynamic from "next/dynamic";
+
+const TrustGallery = dynamic(() => import("@/components/TrustGallery").then(m => m.TrustGallery));
+const Services = dynamic(() => import("@/components/Services").then(m => m.Services));
+const AboutTeaser = dynamic(() => import("@/components/AboutTeaser").then(m => m.AboutTeaser));
+const Location = dynamic(() => import("@/components/Location").then(m => m.Location));
+const Footer = dynamic(() => import("@/components/Footer").then(m => m.Footer));
 
 export default function Home() {
   return (
