@@ -125,8 +125,8 @@ export const UsageGuide = () => {
                     className="z-10 flex-shrink-0 grid place-items-center h-11 w-11 rounded-full
                       bg-gradient-to-br from-[#4E71FF] to-[#8DD8FF]
                       text-white font-bold text-lg
-                      shadow-[0_0_0_5px_rgba(78,113,255,0.12)]
-                      ring-4 ring-primary/10"
+                      shadow-[0_4px_14px_rgba(78,113,255,0.35)]
+                      ring-4 ring-primary/20"
                   >
                     {i + 1}
                   </div>
@@ -134,16 +134,16 @@ export const UsageGuide = () => {
                   {/* Connecting line ke step berikutnya */}
                   {/* Hanya tampil jika bukan step terakhir */}
                   {i < steps.length - 1 && (
-                    <div className="w-px h-6 bg-gradient-to-b from-primary/25 to-transparent" />
+                    <div className="w-px h-6 bg-gradient-to-b from-primary/30 via-blue-300/30 to-transparent" />
                   )}
                 </div>
 
                 {/* --- Kolom Kanan: Content Card --- */}
                 <div
-                  className={`flex-1 rounded-xl border border-slate-100/80
-                    bg-white/70 backdrop-blur-sm p-5
-                    shadow-[0_4px_20px_rgb(0,0,0,0.03)]
-                    hover:border-primary/20 hover:shadow-lg
+                  className={`flex-1 rounded-2xl border border-white/60
+                    bg-white/70 backdrop-blur-md p-5
+                    shadow-[0_4px_20px_rgb(0,0,0,0.04)]
+                    hover:border-primary/30 hover:shadow-[0_8px_30px_rgba(78,113,255,0.1)]
                     transition-all duration-300
                     ${i < steps.length - 1 ? "mb-4" : ""}`}
                 >
@@ -162,47 +162,6 @@ export const UsageGuide = () => {
               </div>
             </motion.div>
           ))}
-        </motion.div>
-
-        {/* ===== Safety Warning Box ===== */}
-        {/* Alert penting tentang keamanan penggunaan oksigen */}
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.5, delay: 0.4 }}
-          className="mt-12 max-w-2xl mx-auto"
-        >
-          <div
-            className="flex items-start gap-4 rounded-2xl border border-amber-200/60
-              bg-gradient-to-r from-amber-50/80 to-orange-50/60 backdrop-blur-sm
-              p-5 shadow-[0_4px_20px_rgb(0,0,0,0.03)]"
-          >
-            {/* Ikon peringatan */}
-            <div className="flex-shrink-0 grid place-items-center h-10 w-10 rounded-xl bg-amber-100 text-amber-600">
-              <AlertTriangle className="h-5 w-5" />
-            </div>
-            {/* Teks peringatan */}
-            <div>
-              <h4 className="font-heading text-sm font-bold text-amber-800 mb-1">
-                Peringatan Keamanan
-              </h4>
-              <p className="text-sm text-amber-700 leading-relaxed">
-                Jauhkan tabung oksigen dari sumber api dan panas berlebih. Simpan
-                dalam posisi tegak di tempat berventilasi baik. Jika ragu,
-                hubungi tim kami di{" "}
-                <a
-                  href={buildWhatsAppUrl("Halo, saya butuh panduan penggunaan tabung oksigen.")}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="font-semibold underline hover:text-amber-900 transition-colors"
-                >
-                  WhatsApp
-                </a>{" "}
-                untuk panduan penggunaan.
-              </p>
-            </div>
-          </div>
         </motion.div>
       </Container>
     </section>

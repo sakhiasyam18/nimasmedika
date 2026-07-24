@@ -423,8 +423,8 @@ const PricingCard: React.FC<{ option: PricingOption; index: number }> =
                 damping: 12,
                 delay: 0.1,
               }}
-              className="z-10 grid place-items-center h-10 w-10 rounded-full bg-primary text-white
-                shadow-[0_0_0_6px_rgba(78,113,255,0.15)] ring-4 ring-primary/20"
+              className="z-10 grid place-items-center h-10 w-10 rounded-full bg-gradient-to-br from-primary to-blue-600 text-white
+                shadow-[0_4px_14px_rgba(78,113,255,0.4)] ring-4 ring-primary/20"
             >
               <IconComponent className="h-5 w-5" />
             </motion.div>
@@ -443,11 +443,11 @@ const PricingCard: React.FC<{ option: PricingOption; index: number }> =
           >
             <div
               className={cn(
-                "group relative bg-white/80 dark:bg-white/5 backdrop-blur-xl rounded-2xl border shadow-xl hover:shadow-neon transition-shadow duration-300",
+                "group relative bg-white/70 backdrop-blur-xl rounded-2xl border shadow-[0_8px_30px_rgb(0,0,0,0.06)] hover:shadow-neon transition-all duration-300",
                 // Card "Populer" dapat ring biru spesial
                 option.isPopular
-                  ? "border-primary/30 ring-2 ring-primary/10"
-                  : "border-white/60 dark:border-white/10",
+                  ? "border-primary/40 ring-4 ring-primary/10 bg-white/80"
+                  : "border-white/60",
               )}
             >
               {/* Badge "Populer" — hanya tampil pada opsi sewa */}

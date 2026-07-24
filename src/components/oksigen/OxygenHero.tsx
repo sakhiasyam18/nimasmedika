@@ -133,12 +133,12 @@ export const OxygenHero = () => {
                 whileHover={{ scale: 1.04 }}
                 whileTap={{ scale: 0.97 }}
                 className="inline-flex items-center gap-2 rounded-full px-8 py-3.5
-                  border border-slate-200 bg-white/70 backdrop-blur-xl
+                  border border-white/60 bg-white/70 backdrop-blur-md
                   font-semibold text-slate-800
-                  shadow-[0_10px_30px_-12px_rgba(15,23,42,0.15)]
-                  hover:shadow-[0_14px_40px_-10px_rgba(78,113,255,0.25)]
-                  hover:border-primary/30
-                  transition-shadow"
+                  shadow-[0_8px_30px_rgb(0,0,0,0.06)]
+                  hover:shadow-[0_14px_40px_-10px_rgba(78,113,255,0.3)]
+                  hover:border-primary/40 hover:bg-white/90
+                  transition-all duration-300"
               >
                 Konsultasi via WhatsApp
               </motion.a>
@@ -156,13 +156,15 @@ export const OxygenHero = () => {
                 <motion.div
                   key={badge.label}
                   variants={itemVariants}
-                  className="flex items-start gap-3 rounded-xl border border-slate-100
-                    bg-white/60 backdrop-blur-sm p-3.5
-                    hover:border-primary/20 hover:shadow-md transition-all"
+                  className="flex items-start gap-3 rounded-2xl border border-white/60
+                    bg-white/70 backdrop-blur-md p-4
+                    shadow-[0_4px_20px_rgb(0,0,0,0.03)]
+                    hover:border-primary/30 hover:shadow-[0_8px_30px_rgba(78,113,255,0.12)]
+                    transition-all duration-300 group"
                 >
                   {/* Ikon badge — warna primary */}
-                  <div className="flex-shrink-0 grid place-items-center h-9 w-9 rounded-lg bg-primary/10 text-primary">
-                    <badge.icon className="h-4.5 w-4.5" />
+                  <div className="flex-shrink-0 grid place-items-center h-10 w-10 rounded-xl bg-gradient-to-br from-primary/10 to-primary/5 text-primary group-hover:scale-110 transition-transform duration-300">
+                    <badge.icon className="h-5 w-5" />
                   </div>
                   {/* Label + deskripsi singkat */}
                   <div>
