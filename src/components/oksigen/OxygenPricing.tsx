@@ -1,5 +1,25 @@
-// src/components/OxygenPricing.tsx
+// src/components/oksigen/OxygenPricing.tsx
+// ============================================================
+// Section Pricing — Menampilkan 4 opsi layanan oksigen:
+//   1. Sewa bulanan (+ add-on regulator/troli)
+//   2. Beli paket lengkap (all-in-one)
+//   3. Beli tabung saja (1m³ & 6m³)
+//   4. Isi ulang cepat (±5 menit, 2000 PSI)
+//
+// Arsitektur komponen:
+//   OxygenPricing (parent) → PricingCard (per opsi) → Lightbox (modal galeri)
+//
+// Fitur:
+//   - Timeline layout vertikal dengan ikon + connector line
+//   - Expand/collapse card detail (animasi framer-motion)
+//   - Galeri gambar dengan swipe/drag support
+//   - Lightbox modal full-screen dengan keyboard navigation
+//   - Badge "Populer" pada opsi pertama (sewa)
+//   - CTA WhatsApp langsung di setiap card
+//   - Optimasi performa: React.memo, useCallback, useMemo
+// ============================================================
 "use client";
+
 import { PanInfo } from "framer-motion";
 import React, { useState, useCallback, useMemo } from "react";
 import Image from "next/image";
@@ -14,23 +34,30 @@ import {
   X,
   ChevronLeft,
   ChevronRight,
+  MessageCircle,
+  Star,
 } from "lucide-react";
+import { buildWhatsAppUrl } from "@/lib/whatsapp";
 
-// ===== Utility Function (untuk className conditional) =====
+// ===== Utility: Conditional className =====
+// Menggabungkan class names dengan filter falsy values
 const cn = (...classes: Array<string | false | undefined | null>) =>
   classes.filter(Boolean).join(" ");
 
-// ===== Types =====
+// ===== Type Definitions =====
+// Tipe data untuk setiap opsi pricing (sewa/beli/isi ulang)
 type PricingOption = {
-  id: string;
-  title: string;
-  price: string;
-  description: string;
-  icon: React.ComponentType<React.SVGProps<SVGSVGElement>>;
-  features: string[];
-  images: string[];
+  id: string; // Identifier unik untuk key & aria controls
+  title: string; // Judul opsi (SEO-friendly)
+  price: string; // Teks harga yang ditampilkan
+  description: string; // Deskripsi singkat layanan
+  icon: React.ComponentType<React.SVGProps<SVGSVGElement>>; // Ikon Lucide
+  features: string[]; // List fitur/keunggulan
+  images: string[]; // Array path gambar galeri
+  isPopular?: boolean; // Flag untuk badge "Populer"
 };
 
+// Props untuk komponen Lightbox (modal galeri full-screen)
 type LightboxProps = {
   open: boolean;
   onClose: () => void;
@@ -40,7 +67,9 @@ type LightboxProps = {
   title: string;
 };
 
-// ===== Data Static (untuk mengurangi re-render) =====
+// ===== Data Pricing (Static) =====
+// Di-definisikan di luar komponen agar tidak re-create setiap render.
+// Setiap item memiliki gambar-gambar galeri yang bisa di-swipe/click.
 const pricingOptions: PricingOption[] = [
   {
     id: "sewa",
@@ -48,6 +77,7 @@ const pricingOptions: PricingOption[] = [
     price: "Mulai dari Rp 200.000",
     description: "Layanan Oksigen di Madiun yang Bisa Diantarkan ke Rumah",
     icon: Tag,
+    isPopular: true, // Opsi yang paling sering dipilih — tampilkan badge
     features: [
       "Sewa tabung + isi: Rp 200.000/bln",
       "Add-on sewa regulator: +Rp 50.000/bln",
@@ -129,30 +159,27 @@ const pricingOptions: PricingOption[] = [
   },
 ];
 
-// ===== Animation Variants (untuk performance) =====
-// const fadeInUp = {
-//   initial: { opacity: 0, y: 40 },
-//   animate: { opacity: 1, y: 0 },
-//   exit: { opacity: 0, y: -40 },
-// };
-
-// const scaleIn = {
-//   initial: { scale: 0 },
-//   animate: { scale: 1 },
-// };
-
+// ===== Animation Variant: Slide dari kanan =====
+// Digunakan di Lightbox untuk transisi antar gambar
 const slideInFromRight = {
   initial: { opacity: 0, x: 30 },
   animate: { opacity: 1, x: 0 },
   exit: { opacity: 0, x: -30 },
 };
 
-// ===== Lightbox Component (diperbaiki navigasi) =====
+// ============================================================
+// Lightbox Component — Modal galeri gambar full-screen
+// - Navigasi: tombol prev/next, keyboard arrows, swipe/drag
+// - Pagination dots di bawah gambar
+// - Counter gambar di pojok kiri atas
+// - Click backdrop untuk tutup
+// ============================================================
 const Lightbox: React.FC<LightboxProps> = React.memo(
   ({ open, onClose, images, currentIndex, setCurrentIndex, title }) => {
     const totalImages = images.length;
 
-    // Memoize navigation functions untuk mengurangi re-render
+    // ===== Navigation Handlers =====
+    // Di-memoize agar tidak trigger re-render anak komponen
     const handlePrevious = useCallback(() => {
       if (totalImages > 0) {
         setCurrentIndex((currentIndex - 1 + totalImages) % totalImages);
@@ -165,7 +192,8 @@ const Lightbox: React.FC<LightboxProps> = React.memo(
       }
     }, [currentIndex, totalImages, setCurrentIndex]);
 
-    // Handle keyboard navigation
+    // ===== Keyboard Navigation =====
+    // ArrowLeft/Right untuk navigasi, Escape untuk tutup
     const handleKeyDown = useCallback(
       (e: React.KeyboardEvent) => {
         switch (e.key) {
@@ -183,7 +211,8 @@ const Lightbox: React.FC<LightboxProps> = React.memo(
       [handlePrevious, handleNext, onClose],
     );
 
-    // Handle drag end untuk swipe navigation
+    // ===== Swipe/Drag Navigation =====
+    // Threshold 100px — jika drag melebihi threshold, navigasi ke gambar berikutnya
     const handleDragEnd = useCallback(
       (_: PointerEvent | TouchEvent | MouseEvent, info: PanInfo) => {
         const threshold = 100;
@@ -196,10 +225,12 @@ const Lightbox: React.FC<LightboxProps> = React.memo(
       [handlePrevious, handleNext],
     );
 
+    // Jangan render jika modal tidak terbuka
     if (!open) return null;
 
     return (
       <AnimatePresence>
+        {/* Backdrop overlay — klik untuk tutup */}
         <motion.div
           className="fixed inset-0 z-50 grid place-items-center bg-black/80 backdrop-blur-sm"
           initial={{ opacity: 0 }}
@@ -213,7 +244,7 @@ const Lightbox: React.FC<LightboxProps> = React.memo(
           onKeyDown={handleKeyDown}
           tabIndex={-1}
         >
-          {/* Close Button */}
+          {/* Tombol tutup — pojok kanan atas */}
           <button
             onClick={(e) => {
               e.stopPropagation();
@@ -225,9 +256,10 @@ const Lightbox: React.FC<LightboxProps> = React.memo(
             <X className="h-5 w-5" />
           </button>
 
-          {/* Navigation Buttons */}
+          {/* Tombol navigasi kiri & kanan — hanya tampil jika gambar > 1 */}
           {totalImages > 1 && (
             <>
+              {/* Tombol Previous */}
               <button
                 onClick={(e) => {
                   e.stopPropagation();
@@ -239,6 +271,7 @@ const Lightbox: React.FC<LightboxProps> = React.memo(
                 <ChevronLeft className="h-6 w-6" />
               </button>
 
+              {/* Tombol Next */}
               <button
                 onClick={(e) => {
                   e.stopPropagation();
@@ -252,7 +285,8 @@ const Lightbox: React.FC<LightboxProps> = React.memo(
             </>
           )}
 
-          {/* Main Image Container */}
+          {/* ===== Kontainer Gambar Utama ===== */}
+          {/* Draggable: swipe kiri/kanan untuk navigasi di mobile */}
           <motion.div
             key={currentIndex}
             drag="x"
@@ -265,6 +299,7 @@ const Lightbox: React.FC<LightboxProps> = React.memo(
             className="relative w-[92vw] max-w-4xl aspect-video overflow-hidden rounded-2xl bg-white/5 ring-1 ring-white/20 shadow-2xl cursor-grab active:cursor-grabbing"
             onClick={(e) => e.stopPropagation()}
           >
+            {/* Gambar yang sedang aktif */}
             {images[currentIndex] && (
               <Image
                 src={images[currentIndex]}
@@ -277,10 +312,10 @@ const Lightbox: React.FC<LightboxProps> = React.memo(
               />
             )}
 
-            {/* Gradient overlay untuk aesthetic */}
+            {/* Gradient overlay kiri-kanan untuk estetika */}
             <div className="absolute inset-0 rounded-2xl pointer-events-none bg-gradient-to-r from-black/20 via-transparent to-black/20" />
 
-            {/* Pagination Dots */}
+            {/* Pagination dots — indikator gambar aktif */}
             {totalImages > 1 && (
               <div className="absolute bottom-6 left-1/2 -translate-x-1/2 z-10">
                 <div className="px-4 py-2 rounded-full bg-black/50 backdrop-blur-sm flex gap-2">
@@ -304,7 +339,7 @@ const Lightbox: React.FC<LightboxProps> = React.memo(
               </div>
             )}
 
-            {/* Image Counter */}
+            {/* Counter — "1 / 6" di pojok kiri atas */}
             <div className="absolute top-6 left-6 px-3 py-1 rounded-full bg-black/50 backdrop-blur-sm text-white text-sm font-medium">
               {currentIndex + 1} / {totalImages}
             </div>
@@ -317,15 +352,20 @@ const Lightbox: React.FC<LightboxProps> = React.memo(
 
 Lightbox.displayName = "Lightbox";
 
-// ===== Pricing Card Component =====
+// ============================================================
+// PricingCard Component — Card individual untuk setiap opsi
+// - State: isExpanded (toggle detail), selectedImageIndex, isLightboxOpen
+// - Fitur: badge "Populer", galeri swipeable, tombol WA per card
+// ============================================================
 const PricingCard: React.FC<{ option: PricingOption; index: number }> =
   React.memo(({ option, index }) => {
-    // State management
+    // ===== State Management =====
+    // Card pertama (index 0) otomatis expand saat load
     const [isExpanded, setIsExpanded] = useState(index === 0);
     const [selectedImageIndex, setSelectedImageIndex] = useState(0);
     const [isLightboxOpen, setIsLightboxOpen] = useState(false);
 
-    // Memoized handlers untuk mengurangi re-render
+    // ===== Event Handlers (memoized untuk performa) =====
     const toggleExpanded = useCallback(() => {
       setIsExpanded((prev) => !prev);
     }, []);
@@ -342,7 +382,7 @@ const PricingCard: React.FC<{ option: PricingOption; index: number }> =
       setSelectedImageIndex(index);
     }, []);
 
-    // Handle image navigation dengan drag
+    // Navigasi galeri via drag/swipe
     const handleImageDragEnd = useCallback(
       (_: PointerEvent | TouchEvent | MouseEvent, info: PanInfo) => {
         const threshold = 100;
@@ -358,19 +398,25 @@ const PricingCard: React.FC<{ option: PricingOption; index: number }> =
       [selectedImageIndex, option.images.length],
     );
 
-    // Memoized icon component
+    // Memoize icon agar tidak re-create tiap render
     const IconComponent = useMemo(() => option.icon, [option.icon]);
+
+    // Buat URL WhatsApp pre-filled sesuai opsi + footer promosi
+    const waUrl = buildWhatsAppUrl(
+      `Halo Nimas Medika, saya tertarik dengan layanan: ${option.title}. Bisa info lebih lanjut?`,
+    );
 
     return (
       <>
         <div className="flex gap-4 sm:gap-8">
-          {/* Timeline Node */}
+          {/* ===== Timeline Node (kiri) ===== */}
+          {/* Ikon bulat + garis vertikal penghubung ke card berikutnya */}
           <div className="relative flex flex-col items-center">
+            {/* Ikon animasi: spring bounce saat masuk viewport */}
             <motion.div
-              // Animasi masuk saat scroll terlihat
-              initial={{ scale: 0 }} // awalnya mengecil
-              whileInView={{ scale: 1 }} // saat terlihat, membesar ke ukuran normal
-              viewport={{ once: true }} // animasi hanya sekali
+              initial={{ scale: 0 }}
+              whileInView={{ scale: 1 }}
+              viewport={{ once: true }}
               transition={{
                 type: "spring",
                 stiffness: 200,
@@ -378,37 +424,57 @@ const PricingCard: React.FC<{ option: PricingOption; index: number }> =
                 delay: 0.1,
               }}
               className="z-10 grid place-items-center h-10 w-10 rounded-full bg-primary text-white
-              shadow-[0_0_0_6px_rgba(78,113,255,0.15)] ring-4 ring-primary/20"
+                shadow-[0_0_0_6px_rgba(78,113,255,0.15)] ring-4 ring-primary/20"
             >
               <IconComponent className="h-5 w-5" />
             </motion.div>
 
-            {/* Timeline connector line */}
+            {/* Connector line — gradient vertikal ke bawah */}
             <div className="w-px grow bg-gradient-to-b from-primary/30 via-blue-300/30 to-transparent" />
           </div>
 
-          {/* Main Card */}
+          {/* ===== Main Card (kanan) ===== */}
           <motion.div
-            initial={{ opacity: 0, y: 20 }} // Mulai transparan & sedikit turun
-            whileInView={{ opacity: 1, y: 0 }} // Muncul + naik ke posisi normal
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, amount: 0.3 }}
             transition={{ duration: 0.4, delay: index * 0.05 }}
             className="flex-1 pb-16"
           >
-            <div className="group bg-white/80 dark:bg-white/5 backdrop-blur-xl rounded-2xl border border-white/60 dark:border-white/10 shadow-xl hover:shadow-neon transition-shadow duration-300">
+            <div
+              className={cn(
+                "group relative bg-white/80 dark:bg-white/5 backdrop-blur-xl rounded-2xl border shadow-xl hover:shadow-neon transition-shadow duration-300",
+                // Card "Populer" dapat ring biru spesial
+                option.isPopular
+                  ? "border-primary/30 ring-2 ring-primary/10"
+                  : "border-white/60 dark:border-white/10",
+              )}
+            >
+              {/* Badge "Populer" — hanya tampil pada opsi sewa */}
+              {option.isPopular && (
+                <div className="absolute -top-3 right-6 z-10">
+                  <span className="inline-flex items-center gap-1.5 rounded-full bg-gradient-to-r from-[#4E71FF] to-[#8DD8FF] px-4 py-1.5 text-xs font-bold text-white shadow-lg">
+                    <Star className="h-3.5 w-3.5 fill-current" />
+                    Paling Populer
+                  </span>
+                </div>
+              )}
+
               <div className="p-6">
-                {/* Card Header */}
+                {/* ===== Card Header ===== */}
                 <h3 className="font-heading text-xl sm:text-2xl font-extrabold tracking-tight text-gray-900 dark:text-white">
                   {option.title}
                 </h3>
                 <p className="mt-1 text-gray-600 dark:text-gray-300 leading-relaxed">
                   {option.description}
                 </p>
+                {/* Harga — prominent dan berwarna primary */}
                 <p className="mt-4 text-2xl sm:text-3xl font-black text-primary drop-shadow-sm">
                   {option.price}
                 </p>
 
-                {/* Expandable Content */}
+                {/* ===== Expandable Content ===== */}
+                {/* AnimatePresence untuk animasi masuk/keluar */}
                 <AnimatePresence>
                   {isExpanded && (
                     <motion.div
@@ -419,38 +485,41 @@ const PricingCard: React.FC<{ option: PricingOption; index: number }> =
                       className="overflow-hidden"
                     >
                       <div className="border-t border-black/5 dark:border-white/10 pt-6 grid grid-cols-1 md:grid-cols-2 gap-6">
-                        {/* Features List */}
+                        {/* ===== Kolom Kiri: Features List ===== */}
                         <div>
-                          {/* <h4 className="font-semibold text-gray-900 dark:text-white mb-3">
-                            Fitur & Keunggulan
-                          </h4> */}
                           <ul className="space-y-3 text-sm leading-6 text-gray-700 dark:text-gray-300">
                             {option.features.map((feature, idx) => (
                               <li
                                 key={`${option.id}-feature-${idx}`}
                                 className="flex gap-2"
                               >
+                                {/* Checkmark hijau untuk setiap fitur */}
                                 <CheckCircle className="h-5 w-5 flex-none text-primary" />
                                 <span>{feature}</span>
                               </li>
                             ))}
                           </ul>
 
-                          {/* SEO Keywords */}
-                          {/* <p className="mt-4 text-xs text-gray-500 dark:text-gray-400">
-                            Kata kunci: layanan oksigen Madiun, tabung oksigen,
-                            isi ulang oksigen, sewa tabung oksigen, paket
-                            oksigen lengkap.
-                          </p> */}
+                          {/* ===== CTA WhatsApp per Card ===== */}
+                          {/* Pre-filled message sesuai opsi + footer promosi Nimas Medika */}
+                          <a
+                            href={waUrl}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="mt-6 inline-flex items-center gap-2 rounded-full bg-[#25D366] px-5 py-2.5 text-sm font-semibold text-white shadow-md hover:shadow-lg hover:bg-[#20BD5A] transition-all hover:scale-[1.02]"
+                          >
+                            <MessageCircle className="h-4 w-4" />
+                            Pesan via WhatsApp
+                          </a>
                         </div>
 
-                        {/* Image Gallery */}
+                        {/* ===== Kolom Kanan: Image Gallery ===== */}
                         <div className="space-y-3">
                           <h4 className="font-semibold text-gray-900 dark:text-white mb-2">
                             Galeri
                           </h4>
 
-                          {/* Main Image Display */}
+                          {/* Gambar utama — klik untuk buka lightbox */}
                           <AnimatePresence mode="wait">
                             <motion.div
                               key={selectedImageIndex}
@@ -462,11 +531,10 @@ const PricingCard: React.FC<{ option: PricingOption; index: number }> =
                               exit={{ opacity: 0, x: -50 }}
                               transition={{ duration: 0.3, ease: "easeInOut" }}
                               className="relative aspect-video w-full overflow-hidden rounded-xl
-               ring-2 ring-transparent
-               hover:ring-primary/60
-               focus-within:ring-primary/60
-               transition-all duration-200
-               cursor-grab active:cursor-grabbing"
+                                ring-2 ring-transparent hover:ring-primary/60
+                                focus-within:ring-primary/60
+                                transition-all duration-200
+                                cursor-grab active:cursor-grabbing"
                             >
                               <button
                                 type="button"
@@ -492,7 +560,7 @@ const PricingCard: React.FC<{ option: PricingOption; index: number }> =
                             </motion.div>
                           </AnimatePresence>
 
-                          {/* Thumbnail Grid */}
+                          {/* Thumbnail grid — klik untuk select gambar */}
                           <div className="grid grid-cols-3 sm:grid-cols-4 gap-2">
                             {option.images.map((imageSrc, imgIndex) => (
                               <button
@@ -507,6 +575,7 @@ const PricingCard: React.FC<{ option: PricingOption; index: number }> =
                                 )}
                                 aria-label={`Pilih gambar ${imgIndex + 1}`}
                                 style={{
+                                  // Efek polaroid: rotasi bergantian
                                   transform:
                                     imgIndex % 2 === 0
                                       ? "rotate(-1.2deg)"
@@ -534,7 +603,7 @@ const PricingCard: React.FC<{ option: PricingOption; index: number }> =
                   )}
                 </AnimatePresence>
 
-                {/* Toggle Button */}
+                {/* ===== Toggle Button (Lihat Detail / Sembunyikan) ===== */}
                 <button
                   onClick={toggleExpanded}
                   className="mt-6 inline-flex items-center gap-2 rounded-full bg-gradient-5 text-white px-4 py-2 text-sm font-semibold ring-2 ring-primary/30 hover:translate-y-[-1px] active:translate-y-[1px] transition"
@@ -544,6 +613,7 @@ const PricingCard: React.FC<{ option: PricingOption; index: number }> =
                   <span>
                     {isExpanded ? "Sembunyikan Detail" : "Lihat Detail Lengkap"}
                   </span>
+                  {/* Chevron rotate 180° saat expanded */}
                   <motion.span
                     animate={{ rotate: isExpanded ? 180 : 0 }}
                     transition={{ duration: 0.3 }}
@@ -556,7 +626,7 @@ const PricingCard: React.FC<{ option: PricingOption; index: number }> =
           </motion.div>
         </div>
 
-        {/* Lightbox Modal */}
+        {/* Modal Lightbox — render di luar card agar z-index tidak bentrok */}
         <Lightbox
           open={isLightboxOpen}
           onClose={closeLightbox}
@@ -571,7 +641,12 @@ const PricingCard: React.FC<{ option: PricingOption; index: number }> =
 
 PricingCard.displayName = "PricingCard";
 
-// ===== Main Component =====
+// ============================================================
+// OxygenPricing — Section utama yang menampung semua PricingCard
+// - Section header dengan heading yang lebih pendek & impactful
+// - Decorative gradient rail di sisi kanan
+// - Mapping data pricing ke PricingCard components
+// ============================================================
 const OxygenPricing: React.FC = () => {
   return (
     <section
@@ -579,14 +654,14 @@ const OxygenPricing: React.FC = () => {
       aria-label="Harga Tabung Oksigen Madiun"
       className="relative py-20 sm:py-28 bg-section"
     >
-      {/* Decorative gradient (optional) */}
+      {/* Dekorasi: gradient rail animasi di sisi kanan (halus, tidak mengganggu) */}
       <div
         aria-hidden="true"
         className="pointer-events-none absolute inset-y-0 right-0 w-24 sm:w-36 gradient-rail opacity-50"
       />
 
       <div className="container mx-auto max-w-5xl px-4">
-        {/* Section Header */}
+        {/* ===== Section Header ===== */}
         <header className="mb-10 sm:mb-14 text-center">
           <motion.h2
             initial={{ opacity: 0, y: 20 }}
@@ -595,12 +670,25 @@ const OxygenPricing: React.FC = () => {
             transition={{ duration: 0.4 }}
             className="font-heading text-2xl sm:text-4xl font-black tracking-tight text-gray-900 dark:text-white"
           >
-            Butuh alat kesehatan mendadak? Nimas Medika Madiun sedia alkes dan
-            tabung oksigen ready stock setiap hari, tanpa harus menunggu lama.
+            Pilih Layanan Oksigen yang{" "}
+            <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#4E71FF] to-[#8DD8FF]">
+              Tepat untuk Anda
+            </span>
           </motion.h2>
+          {/* Subtitle — menjelaskan keunggulan ringkas */}
+          <motion.p
+            initial={{ opacity: 0, y: 10 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.4, delay: 0.1 }}
+            className="mt-4 text-gray-600 text-base sm:text-lg max-w-2xl mx-auto"
+          >
+            Tersedia layanan sewa, beli, dan isi ulang — semua ready stock dan
+            bisa diantar ke rumah Anda di Madiun.
+          </motion.p>
         </header>
 
-        {/* Pricing Cards */}
+        {/* ===== Pricing Cards (Timeline Layout) ===== */}
         <div className="space-y-4">
           {pricingOptions.map((option, index) => (
             <PricingCard key={option.id} option={option} index={index} />
@@ -611,6 +699,6 @@ const OxygenPricing: React.FC = () => {
   );
 };
 
-// Export dengan nama yang konsisten
+// Export dengan nama yang konsisten — default + named export
 export default OxygenPricing;
 export { OxygenPricing };
