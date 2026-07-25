@@ -45,6 +45,7 @@ export const AboutTeaser = () => {
   return (
     <LazyMotion features={domAnimation}>
       <section
+        id="about"
         className="relative isolate overflow-hidden bg-white py-24 sm:py-32 text-gray-900"
         aria-label="Tentang Nimas Medika Alkes"
       >

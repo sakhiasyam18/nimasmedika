@@ -4,120 +4,188 @@
 import Link from "next/link";
 import Image from "next/image";
 import React, { useState, useEffect } from "react";
-import { Container } from "./Container";
 import { motion, AnimatePresence } from "framer-motion";
-import { Menu, X } from "lucide-react";
+import { Menu, X, Phone } from "lucide-react";
+import { usePathname } from "next/navigation";
 
 export const Header = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [visible, setVisible] = useState(true);
-  const [lastScrollY, setLastScrollY] = useState(0);
+  const [isScrolled, setIsScrolled] = useState(false);
+  const pathname = usePathname();
 
   const navItems = [
-    { label: "Layanan", href: "layanan/oksigen" },
-    { label: "Tentang Kami", href: "#about" },
-    // { label: "Kontak", href: "#contact" },
+    { label: "Layanan", href: "/layanan/oksigen" },
+    { label: "Tentang Kami", href: "/#about" },
   ];
 
   // Hide/show header saat scroll
-  // Hide/show header saat scroll
   useEffect(() => {
+    let lastScrollY = window.scrollY;
+
     const handleScroll = () => {
-      if (window.scrollY > lastScrollY) {
+      const currentScrollY = window.scrollY;
+      
+      setIsScrolled(currentScrollY > 20);
+
+      // Hide header on scroll down, show on scroll up
+      if (currentScrollY > lastScrollY && currentScrollY > 100) {
         setVisible(false);
-        setIsOpen(false); // Estetika UX: Tutup menu mobile otomatis saat di-scroll ke bawah
+        setIsOpen(false); 
       } else {
         setVisible(true);
       }
-      setLastScrollY(window.scrollY);
+      
+      lastScrollY = currentScrollY;
     };
 
     window.addEventListener("scroll", handleScroll, { passive: true });
     return () => window.removeEventListener("scroll", handleScroll);
-  }, [lastScrollY]);
+  }, []);
 
   return (
     <header
-      className={`sticky top-0 z-50 bg-white/80 backdrop-blur-md border-b border-slate-200 shadow-[0_1px_12px_rgba(78,113,255,0.12)] transition-transform duration-300 ${
-        visible ? "translate-y-0" : "-translate-y-full"
+      className={`fixed inset-x-0 top-0 z-50 flex justify-center px-4 pt-4 md:px-8 md:pt-6 transition-all duration-[400ms] ease-out ${
+        visible ? "translate-y-0 opacity-100 blur-0" : "-translate-y-full opacity-0 blur-sm"
       }`}
     >
-      <Container className="flex items-center justify-between h-16">
+      <div
+        className={`relative flex items-center justify-between w-full max-w-7xl mx-auto rounded-full transition-all duration-[400ms] ease-out px-6 ${
+          isScrolled 
+            ? "py-[12px] bg-white/[0.58] backdrop-blur-[26px] backdrop-saturate-[180%] border border-white/30 shadow-[0_10px_35px_rgba(15,23,42,0.08),inset_0_1px_0_rgba(255,255,255,0.6)]" 
+            : "py-[20px] bg-transparent border border-transparent"
+        }`}
+      >
+        {/* Top Highlight (subtle lighting effect) */}
+        {isScrolled && (
+          <div className="absolute top-0 inset-x-0 h-[1px] rounded-t-full bg-gradient-to-r from-transparent via-white/90 to-transparent pointer-events-none" />
+        )}
+
         {/* Logo */}
-        {/* Logo */}
-        {/* Ubah h1 menjadi div agar tidak merusak struktur SEO halaman utama */}
-        <div className="flex items-center transition-transform duration-300 hover:scale-105 hover:drop-shadow-[0_0_8px_rgba(78,113,255,0.5)]">
+        <div className="flex items-center transition-all duration-300 hover:drop-shadow-[0_0_10px_rgba(44,91,255,0.18)]">
           <Link href="/" aria-label="Halaman Utama Nimas Medika Alkes">
             <Image
               src="/images/logo-nimas-medika-alkes-madiun.svg"
               alt="Nimas Medika Alkes - Toko Alat Kesehatan Madiun"
-              width={75}
-              height={40}
+              width={80}
+              height={42}
               priority
               className="object-contain"
-              style={{ width: "auto", height: "auto", maxHeight: "40px" }}
+              style={{ width: "auto", height: "auto", maxHeight: "42px" }}
             />
           </Link>
         </div>
 
         {/* Desktop Nav */}
         <nav
-          aria-label="Navigasi Utama" // Memberitahu robot bahwa ini adalah menu utama
-          className="hidden md:flex items-center gap-8 text-sm font-medium"
+          aria-label="Navigasi Utama"
+          className="hidden md:flex items-center gap-10 text-[15px] font-medium"
         >
-          {navItems.map((item) => (
-            <Link
-              key={item.label}
-              href={item.href}
-              className="group relative text-slate-700 hover:text-[#2C5BFF] transition-colors"
-            >
-              {item.label}
-              {/* Underline animasi neon */}
-              <span className="absolute left-0 -bottom-1 h-[2px] w-0 bg-gradient-to-r from-[#2C5BFF] via-[#4E71FF] to-[#8DD8FF] transition-all duration-300 group-hover:w-full" />
-            </Link>
-          ))}
+          {navItems.map((item) => {
+            const isActive = pathname === item.href || (item.href === "/#about" && pathname === "/");
+            return (
+              <Link
+                key={item.label}
+                href={item.href}
+                className={`group relative transition-all duration-[350ms] hover:-translate-y-[1px] ${
+                  isActive ? "text-[#2C5BFF]" : "text-slate-600 hover:text-slate-900"
+                }`}
+              >
+                {item.label}
+                {/* Underline halus */}
+                <span className={`absolute left-0 -bottom-1.5 h-[3px] rounded-full bg-gradient-to-r from-[#4E71FF] to-[#8DD8FF] shadow-[0_0_10px_rgba(78,113,255,0.2)] transition-all duration-300 ${
+                  isActive ? "w-full" : "w-0 group-hover:w-full"
+                }`} />
+              </Link>
+            )
+          })}
         </nav>
 
-        {/* Mobile Hamburger */}
+        {/* Desktop CTA */}
+        <div className="hidden md:flex items-center">
+          <Link
+            href="https://wa.me/628123436075"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="group flex items-center gap-2 rounded-full px-6 py-2.5 bg-gradient-to-b from-[#5B8CFF] to-[#2C5BFF] text-white font-medium text-sm border border-white/30 shadow-[inset_0_1px_rgba(255,255,255,0.45)] transition-all duration-[350ms] hover:scale-[1.02] hover:shadow-[0_8px_24px_rgba(44,91,255,0.18)]"
+          >
+            <Phone className="w-4 h-4 transition-transform group-hover:rotate-12" />
+            Hubungi Kami
+          </Link>
+        </div>
+
         {/* Mobile Hamburger */}
         <button
           onClick={() => setIsOpen(!isOpen)}
-          aria-expanded={isOpen} // Syarat wajib Google untuk tombol Dropdown/Menu
-          aria-controls="mobile-menu" // Menyambungkan tombol dengan isi menunya
-          className="md:hidden inline-flex items-center justify-center rounded-md p-2 text-slate-700 hover:bg-slate-100 transition"
+          aria-expanded={isOpen}
+          aria-controls="mobile-menu"
+          className={`md:hidden relative z-50 inline-flex items-center justify-center rounded-full p-2.5 transition-all duration-300 active:scale-95 ${
+            isScrolled ? "text-slate-700 hover:bg-slate-100" : "text-slate-800 hover:bg-white/50"
+          }`}
           aria-label={isOpen ? "Tutup menu navigasi" : "Buka menu navigasi"}
         >
-          {isOpen ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
+          {isOpen ? <X className="h-5 w-5" /> : <Menu className="h-5 w-5" />}
         </button>
-      </Container>
+      </div>
 
       {/* Mobile Nav */}
       <AnimatePresence>
         {isOpen && (
-          <motion.div
-            initial={{ opacity: 0, y: -15 }}
-            animate={{ opacity: 1, y: 0 }}
-            exit={{ opacity: 0, y: -15 }}
-            transition={{ duration: 0.25 }}
-            className="md:hidden absolute inset-x-0 top-16 z-40 px-4"
-          >
-            {/* Tambahkan id="mobile-menu" sebagai pasangan aria-controls di atas */}
-            <div
-              id="mobile-menu"
-              className="rounded-2xl border border-slate-200 bg-white/90 backdrop-blur-xl shadow-[0_0_25px_rgba(78,113,255,0.25)] p-4 space-y-2"
+          <>
+            {/* Backdrop */}
+            <motion.div
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              exit={{ opacity: 0 }}
+              transition={{ duration: 0.3 }}
+              className="md:hidden fixed inset-0 z-40 bg-slate-900/10 backdrop-blur-sm"
+              onClick={() => setIsOpen(false)}
+            />
+            {/* Floating Sheet Menu */}
+            <motion.div
+              initial={{ opacity: 0, y: 15, scale: 0.98 }}
+              animate={{ opacity: 1, y: 0, scale: 1 }}
+              exit={{ opacity: 0, y: 15, scale: 0.98 }}
+              transition={{ type: "spring", stiffness: 260, damping: 24 }}
+              className="md:hidden absolute inset-x-4 top-[92px] z-50"
             >
-              {navItems.map((item) => (
-                <Link
-                  key={item.label}
-                  href={item.href}
-                  onClick={() => setIsOpen(false)} // UX Estetik: Auto-close menu saat link diklik
-                  className="block rounded-lg px-4 py-2 text-slate-700 hover:bg-[#2C5BFF]/10 hover:text-[#2C5BFF] transition-colors duration-300 font-medium"
-                >
-                  {item.label}
-                </Link>
-              ))}
-            </div>
-          </motion.div>
+              <div
+                id="mobile-menu"
+                className="rounded-[2rem] bg-white/[0.85] backdrop-blur-[26px] backdrop-saturate-[180%] border border-white/40 shadow-[0_15px_40px_rgba(15,23,42,0.12),inset_0_1px_0_rgba(255,255,255,0.8)] p-6 space-y-4"
+              >
+                {navItems.map((item) => {
+                  const isActive = pathname === item.href || (item.href === "/#about" && pathname === "/");
+                  return (
+                    <Link
+                      key={item.label}
+                      href={item.href}
+                      onClick={() => setIsOpen(false)}
+                      className={`flex items-center justify-between rounded-2xl px-5 py-3.5 transition-all duration-[350ms] font-medium active:scale-[0.98] ${
+                        isActive 
+                          ? "bg-blue-50/50 text-[#2C5BFF]" 
+                          : "text-slate-700 hover:bg-blue-50/30 hover:text-slate-900"
+                      }`}
+                    >
+                      {item.label}
+                    </Link>
+                  )
+                })}
+                
+                <div className="pt-2">
+                  <Link
+                    href="https://wa.me/628123436075"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    onClick={() => setIsOpen(false)}
+                    className="flex items-center justify-center gap-2 w-full rounded-full px-5 py-4 bg-gradient-to-b from-[#5B8CFF] to-[#2C5BFF] text-white font-medium border border-white/30 shadow-[inset_0_1px_rgba(255,255,255,0.45)] transition-all duration-[350ms] hover:scale-[1.02] hover:shadow-[0_8px_24px_rgba(44,91,255,0.18)] active:scale-[0.98]"
+                  >
+                    <Phone className="w-5 h-5" />
+                    Hubungi Kami
+                  </Link>
+                </div>
+              </div>
+            </motion.div>
+          </>
         )}
       </AnimatePresence>
     </header>
