@@ -88,24 +88,21 @@ export const OxygenHero = () => {
           >
             {/* Headline utama — h1 untuk SEO, kata kunci di depan */}
             <h1 className="font-heading text-4xl font-extrabold tracking-tight text-gray-900 sm:text-5xl leading-tight">
-              Tabung Oksigen di Madiun —{" "}
+              Sewa, Jual &amp; Isi Ulang{" "}
               <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#4E71FF] to-[#8DD8FF]">
-                Beli atau Sewa
+                Tabung Oksigen Madiun
               </span>
             </h1>
 
             {/* Subtitle — penjelasan layanan yang meyakinkan */}
-            <p className="mt-6 text-lg leading-8 text-gray-600">
-              Jika Anda sedang mencari layanan{" "}
-              <strong className="text-gray-900">
-                jual atau sewa tabung oksigen di Madiun
-              </strong>
-              ,{" "}
-              <strong className="text-primary">Nimas Medika</strong>{" "}
-              memberikan solusi medis yang cepat dan terpercaya. Kami menyediakan
-              tabung oksigen ukuran 1m³ dan 6m³ dengan layanan isi ulang cepat
-              hanya 5 menit, terisi penuh 2000 PSI, dan siap antar ke rumah.
-            </p>
+            <div className="mt-6 text-lg leading-8 text-gray-600 space-y-4">
+              <p>
+                Sedang mencari tempat sewa tabung oksigen di Madiun? Ingin isi ulang tabung oksigen medis dengan cepat? Atau membutuhkan pengiriman tabung oksigen ke rumah?
+              </p>
+              <p>
+                <strong className="text-primary">Nimas Medika Alkes</strong> siap membantu kebutuhan Anda. Kami adalah toko alat kesehatan di Kota Madiun yang menyediakan layanan <strong className="text-gray-900">sewa tabung oksigen</strong>, <strong className="text-gray-900">jual tabung oksigen</strong>, <strong className="text-gray-900">isi ulang oksigen medis</strong>, regulator, troli, dan layanan pengantaran ke rumah setiap hari.
+              </p>
+            </div>
 
             {/* ===== CTA Buttons ===== */}
             {/* 2 tombol: primary (lihat harga) & secondary (WhatsApp) */}
@@ -195,7 +192,7 @@ export const OxygenHero = () => {
               >
                 <Image
                   src="/images/pic1756648782.jpg"
-                  alt="Tabung Oksigen 1m³ Nimas Medika Madiun — siap pakai dan terisi penuh"
+                  alt="Tabung oksigen medis 1m³ Nimas Medika Madiun"
                   width={500}
                   height={334}
                   className="w-full h-auto object-cover"
@@ -213,7 +210,7 @@ export const OxygenHero = () => {
               >
                 <Image
                   src="/images/pic1756648963.jpg"
-                  alt="Tabung Oksigen lengkap dengan regulator dan troli"
+                  alt="Tabung oksigen 6m³ siap pakai lengkap dengan regulator dan troli"
                   width={214}
                   height={320}
                   className="w-full h-full object-cover"
@@ -228,7 +225,7 @@ export const OxygenHero = () => {
               >
                 <Image
                   src="/images/pic1756649014.jpg"
-                  alt="Proses isi ulang tabung oksigen cepat 5 menit"
+                  alt="Proses isi ulang tabung oksigen di Nimas Medika"
                   width={214}
                   height={320}
                   className="w-full h-full object-cover"

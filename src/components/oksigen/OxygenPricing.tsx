@@ -75,7 +75,7 @@ const pricingOptions: PricingOption[] = [
     id: "sewa",
     title: "Sewa Tabung Oksigen Bulanan di Madiun",
     price: "Mulai dari Rp 200.000",
-    description: "Layanan Oksigen di Madiun yang Bisa Diantarkan ke Rumah",
+    description: "Bagi Anda yang mencari tempat sewa tabung oksigen terdekat di Madiun, Nimas Medika Alkes menyediakan layanan sewa bulanan. Kami melayani pengiriman langsung ke rumah Anda di wilayah Kota Madiun dan sekitarnya.",
     icon: Tag,
     isPopular: true, // Opsi yang paling sering dipilih — tampilkan badge
     features: [
@@ -97,7 +97,7 @@ const pricingOptions: PricingOption[] = [
     id: "beli-paket",
     title: "Beli Paket Oksigen Lengkap Siap Pakai di Madiun",
     price: "Rp 1.000.000 & Rp 1.700.000",
-    description: "All-in-One Oksigen. Gaskeun!",
+    description: "Mencari toko alat kesehatan terdekat yang menjual tabung oksigen medis lengkap? Paket all-in-one dari Nimas Medika Alkes siap pakai, sudah termasuk tabung, regulator oksigen original, dan troli.",
     icon: ShoppingCart,
     features: [
       "Tabung + Regulator & Selang + Troli = Beres",
@@ -118,7 +118,7 @@ const pricingOptions: PricingOption[] = [
     id: "beli-tabung",
     title: "Beli Tabung Oksigen 1m³ & 6m³ di Madiun",
     price: "Rp 500.000 & Rp 1.300.000",
-    description: "Tabung Baru. Isi Penuh. Siap Pakai.",
+    description: "Solusi bagi Anda yang ingin beli tabung oksigen baru tanpa perlengkapan tambahan. Produk terdaftar dan aman, tersedia langsung di toko kami di Jalan Kapten Tendean No. 68, Demangan, Kecamatan Taman.",
     icon: Box,
     features: [
       "Beli Oksigen Saja",
@@ -140,7 +140,7 @@ const pricingOptions: PricingOption[] = [
     title: "Isi Ulang Oksigen Cepat di Madiun",
     price: "Rp 45.000 & Rp 110.000",
     description:
-      "Jasa isi ulang tabung oksigen cepat ±5 menit. Tekanan penuh 2000 PSI dengan 8 tabung besar, bisa langsung ditunggu di tempat dan siap dibawa pulang.",
+      "Sedang mencari tempat isi ulang oksigen terdekat di Madiun? Kami menyediakan jasa isi ulang tabung oksigen cepat ±5 menit. Tekanan penuh 2000 PSI dengan 8 tabung besar, bisa ditunggu langsung di Nimas Medika.",
     icon: RefreshCw,
     features: [
       "Isi ulang ±5 menit",

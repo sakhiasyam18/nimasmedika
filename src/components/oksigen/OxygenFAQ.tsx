@@ -20,23 +20,117 @@ import { buildWhatsAppUrl } from "@/lib/whatsapp";
 // Konten pertanyaan & jawaban — di-definisikan di luar komponen
 // agar tidak re-create setiap render
 const faqData = [
+  // Layanan Utama & Harga
   {
-    question:
-      "Di mana tempat sewa, beli, dan isi ulang tabung oksigen 24 jam di Madiun?",
-    answer:
-      "Nimas Medika (nimasmedika.com) adalah solusi utama dan terdekat untuk layanan jual, sewa, dan isi ulang tabung oksigen medis di Madiun. Kami buka jam 06.00 - 22.00 tanpa libur dan melayani pengiriman langsung ke rumah Anda. Kami berlokasi di Jl. Kapten Tendean No.68, Demangan, Kec. Taman, Kota Madiun, Jawa Timur 63136. Hubungi telepon/WhatsApp resmi kami di +62 812-3436-075.",
+    question: "Di mana tempat isi ulang oksigen terdekat atau sewa tabung oksigen 24 jam di Madiun?",
+    answer: "Bagi masyarakat yang mencari toko alat kesehatan atau tempat isi ulang tabung oksigen terdekat di Madiun, Nimas Medika Alkes siap membantu. Jika Anda sedang mencari 'oksigen dekat saya', kami berlokasi strategis di Jalan Kapten Tendean No. 68, Demangan, Kecamatan Taman, Kota Madiun. Kami melayani sewa, beli, dan isi ulang oksigen medis setiap hari pukul 06.00–22.00 WIB, lengkap dengan fasilitas pengantaran ke rumah."
   },
   {
-    question:
-      "Berapa ukuran tabung dan paket sewa oksigen yang tersedia di Nimas Medika?",
-    answer:
-      "Kami menyediakan tabung oksigen 1m³ dan 6m³. Untuk kemudahan, kami menawarkan Paket Sewa Lengkap (termasuk tabung, troli, regulator, dan selang) sehingga siap pakai. Semua rincian biaya dan deposit bisa dilihat melalui situs resmi nimasmedika.com.",
+    question: "Berapa ukuran tabung oksigen yang tersedia di Nimas Medika?",
+    answer: "Kami menyediakan dua ukuran standar medis: tabung oksigen 1m³ (portabel, cocok untuk mobilitas atau kondisi darurat sementara) dan tabung oksigen 6m³ (besar, untuk pemakaian jangka panjang atau stok utama di rumah/klinik)."
   },
+  {
+    question: "Berapa harga sewa tabung oksigen di Madiun?",
+    answer: "Biaya sewa tabung oksigen (termasuk isinya) di Nimas Medika Madiun mulai dari Rp 200.000 per bulan. Anda juga bisa menyewa tambahan regulator (Rp 50.000/bulan) dan troli (Rp 50.000/bulan). Jaminan atau deposit sebesar Rp 600.000 akan dikembalikan penuh (refund) setelah masa sewa berakhir."
+  },
+  {
+    question: "Berapa lama minimal atau maksimal durasi sewa tabung oksigen?",
+    answer: "Durasi sewa standar adalah bulanan (per 30 hari). Anda bebas memperpanjang sewa di bulan berikutnya dengan hanya membayar biaya sewa bulanan, atau mengembalikannya jika sudah tidak diperlukan."
+  },
+  {
+    question: "Berapa harga isi ulang oksigen medis di Madiun?",
+    answer: "Untuk isi ulang tabung oksigen 1m³ biayanya Rp 45.000, sedangkan untuk tabung besar 6m³ biayanya Rp 110.000. Pengisian dijamin penuh hingga tekanan 2000 PSI."
+  },
+  
+  // Proses Isi Ulang & Operasional
   {
     question: "Berapa lama proses isi ulang oksigen di Nimas Medika Madiun?",
-    answer:
-      "Sangat cepat, hanya 5 menit dan buka jam 6 pagi hingga 10 malam! Tabung akan diisi penuh hingga 2000 PSI menggunakan sistem 8 tabung besar dengan biaya Rp 45.000. Anda bisa menunggu dengan nyaman karena kami menyediakan fasilitas Wi-Fi gratis di lokasi.",
+    answer: "Sangat cepat, rata-rata hanya 5 menit! Anda bisa menunggunya langsung di tempat karena kami menggunakan sistem pengisian bertekanan tinggi dari 8 tabung besar."
   },
+  {
+    question: "Berapa tekanan maksimal isi ulang tabung oksigen?",
+    answer: "Kami mengisi penuh (full tank) hingga 2000 PSI untuk memastikan Anda mendapatkan volume oksigen yang optimal dan tahan lama."
+  },
+  {
+    question: "Apa jam operasional Nimas Medika Madiun?",
+    answer: "Toko alat kesehatan Nimas Medika buka setiap hari mulai pukul 06.00 pagi hingga 22.00 malam."
+  },
+  {
+    question: "Apakah Nimas Medika buka hari Minggu atau tanggal merah?",
+    answer: "Ya, kami tetap buka dan beroperasi normal setiap hari, termasuk hari Minggu dan tanggal merah, untuk melayani kebutuhan medis darurat Anda."
+  },
+  {
+    question: "Bagaimana jika butuh tabung oksigen di luar jam operasional (malam hari)?",
+    answer: "Untuk kebutuhan darurat di luar jam operasional, silakan hubungi nomor WhatsApp darurat kami di +62 812-3436-075 atau +62 896-9656-8358. Kami akan berusaha merespons secepat mungkin."
+  },
+  
+  // Pengiriman & Pembayaran
+  {
+    question: "Apakah Nimas Medika melayani pesan antar (delivery) tabung oksigen ke rumah?",
+    answer: "Tentu. Kami menyediakan layanan pengiriman langsung ke rumah (home care) menggunakan armada khusus atau kurir seperti GoSend untuk seluruh wilayah Kota dan Kabupaten Madiun."
+  },
+  {
+    question: "Daerah mana saja yang masuk jangkauan pengiriman Nimas Medika?",
+    answer: "Kami melayani pengiriman ke seluruh Madiun dan sekitarnya, mencakup Demangan, Taman, Mejayan, Caruban, Jiwan, Wungu, Dolopo, Geger, Sawahan, Dagangan, Kare, Balerejo, hingga Pilangkenceng."
+  },
+  {
+    question: "Metode pembayaran apa saja yang diterima?",
+    answer: "Kami menerima pembayaran secara tunai, transfer bank (BCA, Mandiri, BRI, BNI), QRIS, maupun melalui marketplace seperti Shopee untuk pembelian online."
+  },
+  
+  // Perlengkapan Tambahan (Regulator & Troli)
+  {
+    question: "Apakah bisa beli atau sewa regulator oksigen terpisah?",
+    answer: "Ya, kami menjual regulator oksigen original (Rp 250.000) dan menyewakannya (Rp 50.000/bulan). Regulator sangat penting untuk mengatur aliran liter per menit (LPM) oksigen ke pasien."
+  },
+  {
+    question: "Apakah trolley (kereta dorong) tabung oksigen juga tersedia?",
+    answer: "Tersedia. Anda bisa membeli troli baru (Rp 125.000) atau menyewanya (Rp 50.000/bulan) agar tabung oksigen mudah dipindahkan tanpa harus diangkat."
+  },
+  {
+    question: "Apakah tabung oksigen Nimas Medika kompatibel dengan regulator merk lain?",
+    answer: "Ya, tabung oksigen kami menggunakan drat/katup standar medis yang kompatibel dengan mayoritas regulator oksigen medis yang beredar di Indonesia."
+  },
+  
+  // Penggunaan & Keselamatan
+  {
+    question: "Berapa lama tabung oksigen 1m³ bisa habis dipakai?",
+    answer: "Durasi pemakaian sangat bergantung pada bukaan regulator (LPM). Pada bukaan standar 2 LPM, tabung 1m³ biasanya bertahan sekitar 6-8 jam non-stop."
+  },
+  {
+    question: "Apakah aman menyimpan tabung oksigen di rumah?",
+    answer: "Aman, asalkan disimpan dengan benar. Hindarkan tabung dari suhu panas, api terbuka, benda yang mudah terbakar, serta pastikan tabung tidak mudah jatuh (gunakan troli atau dirantai/diikat pada dinding)."
+  },
+  {
+    question: "Bagaimana cara memasang regulator oksigen yang benar?",
+    answer: "Pastikan knop utama tabung tertutup (Close). Pasang regulator ke drat tabung, kencangkan dengan kunci pas/Inggris agar tidak ada kebocoran, lalu buka keran tabung utama perlahan, dan atur flowmeter sesuai anjuran."
+  },
+  {
+    question: "Bagaimana cara mengetahui tabung oksigen masih isi atau sudah kosong?",
+    answer: "Anda bisa melihatnya pada indikator tekanan (pressure gauge) di regulator. Jika jarum menunjuk ke angka mendekati 0, artinya oksigen hampir habis dan perlu segera diisi ulang."
+  },
+  
+  // Kebutuhan Pasien & Home Care
+  {
+    question: "Dalam kondisi apa tabung oksigen medis biasanya digunakan di rumah (home care)?",
+    answer: "Tabung oksigen sering disiapkan untuk membantu perawatan pasien dengan gangguan pernapasan, asma berat, pemulihan pasca operasi, atau sebagai bantuan sementara menunggu tindakan medis lanjutan."
+  },
+  {
+    question: "Apakah tabung oksigen cocok untuk pasien lansia?",
+    answer: "Sangat cocok. Oksigen medis membantu menjaga saturasi oksigen pada pasien lansia yang mengalami kelelahan ekstrem atau penurunan fungsi paru. (Harap selalu konsultasikan dengan dokter untuk durasi dan dosis pemakaian yang tepat)."
+  },
+  {
+    question: "Apakah bisa digunakan untuk pasien pemulihan stroke?",
+    answer: "Beberapa pasien stroke yang mengalami kesulitan bernapas atau penurunan kadar oksigen dalam darah mungkin memerlukan terapi oksigen. Namun, dosis (LPM) harus selalu sesuai dengan instruksi dokter yang menangani."
+  },
+  {
+    question: "Apakah penderita PPOK (COPD) membutuhkan tabung oksigen di rumah?",
+    answer: "Pasien PPOK kronis seringkali memerlukan terapi oksigen jangka panjang di rumah. Kami menyediakan oksigen medis yang dibutuhkan, tetapi pengaturan laju aliran oksigen wajib diawasi oleh tenaga medis karena terlalu banyak oksigen bisa berbahaya bagi pasien PPOK."
+  },
+  {
+    question: "Apakah Nimas Medika memberikan anjuran medis terkait pemakaian oksigen?",
+    answer: "Sebagai toko alat kesehatan, Nimas Medika hanya menyediakan produk (tabung, isi ulang, regulator). Untuk dosis aliran (LPM) dan lamanya terapi oksigen, Anda diwajibkan mengikuti anjuran dan resep dari dokter atau rumah sakit."
+  }
 ];
 
 // ===== Accordion Item Component =====

@@ -13,6 +13,10 @@ import { OxygenHero } from "@/components/oksigen/OxygenHero";
 import { OxygenPricing } from "@/components/oksigen/OxygenPricing";
 import { UsageGuide } from "@/components/oksigen/UsageGuide";
 import { OxygenFAQ } from "@/components/oksigen/OxygenFAQ";
+import { ServiceArea } from "@/components/oksigen/ServiceArea";
+import { WhyChoose } from "@/components/oksigen/WhyChoose";
+import { OxygenServices } from "@/components/oksigen/OxygenServices";
+import { SafeUsage } from "@/components/oksigen/SafeUsage";
 
 // ===== SEO Metadata khusus halaman oksigen =====
 // Next.js App Router akan merge metadata ini dengan layout.tsx
@@ -41,8 +45,46 @@ export const metadata: Metadata = {
 
 // ===== Komponen Halaman Utama =====
 export default function Oksigen() {
+  const jsonLd = {
+    "@context": "https://schema.org",
+    "@type": ["Service", "Product"],
+    "name": "Sewa, Jual, dan Isi Ulang Tabung Oksigen Medis Madiun",
+    "provider": {
+      "@type": "MedicalBusiness",
+      "name": "Nimas Medika Alkes",
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "Jl. Kapten Tendean No. 68, Demangan, Kec. Taman",
+        "addressLocality": "Madiun",
+        "addressRegion": "Jawa Timur",
+        "postalCode": "63136",
+        "addressCountry": "ID"
+      },
+      "telephone": "+628123436075"
+    },
+    "areaServed": {
+      "@type": "City",
+      "name": "Madiun"
+    },
+    "description": "Layanan jual, sewa, dan isi ulang tabung oksigen medis 24 jam di Madiun. Melayani pesan antar ke rumah (home care). Oksigen 1m3 dan 6m3 terisi penuh 2000 PSI.",
+    "offers": {
+      "@type": "AggregateOffer",
+      "lowPrice": "45000",
+      "highPrice": "1700000",
+      "priceCurrency": "IDR"
+    },
+    "audience": {
+      "@type": "Audience",
+      "audienceType": "Pasien pemulihan, lansia, home care"
+    }
+  };
+
   return (
     <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+      />
       {/* Container wrapper dari design system (max-width + padding) */}
       <Container>
         {/* Header navigasi global */}
@@ -54,16 +96,13 @@ export default function Oksigen() {
           - text-gray-900: teks gelap untuk readability optimal
         */}
         <main className="relative bg-white text-gray-900">
-          {/* Section 1: Hero — kesan pertama, headline + CTA + gambar */}
           <OxygenHero />
-
-          {/* Section 2: Pricing — opsi sewa, beli, isi ulang dengan gallery */}
+          <OxygenServices />
+          <WhyChoose />
           <OxygenPricing />
-
-          {/* Section 3: Panduan penggunaan — langkah-langkah aman pakai tabung */}
           <UsageGuide />
-
-          {/* Section 4: FAQ — pertanyaan umum + JSON-LD schema */}
+          <SafeUsage />
+          <ServiceArea />
           <OxygenFAQ />
         </main>
 

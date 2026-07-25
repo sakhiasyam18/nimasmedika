@@ -101,8 +101,10 @@ export const UsageGuide = () => {
             </span>
           </h2>
           <p className="mt-6 text-lg leading-8 text-gray-600">
-            Santai aja, pakai tabung oksigen itu gampang kok. Yang penting
-            ikuti langkah-langkah ini secara berurutan:
+            Bagi Anda yang baru pertama kali menyewa atau membeli tabung oksigen
+            dari Nimas Medika Alkes, jangan khawatir. Penggunaan oksigen medis 
+            di rumah sangat mudah. Pastikan Anda mengikuti langkah-langkah aman 
+            berikut secara berurutan:
           </p>
         </motion.div>
 
