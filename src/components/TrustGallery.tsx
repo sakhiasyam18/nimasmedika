@@ -103,7 +103,7 @@ const GlowCard: React.FC<GlowCardProps> = memo(
           rotate: -0.5,
           transition: { type: "spring", stiffness: 260, damping: 18 },
         }}
-        className={`group relative ${ratio} w-full rounded-3xl cursor-zoom-in`}
+        className={`group relative ${ratio} w-full rounded-3xl cursor-zoom-in break-inside-avoid mb-4 sm:mb-6 inline-block`}
         onClick={() => onOpen({ src, alt })}
       >
         {/* Neon Glow Biru */}
@@ -158,151 +158,151 @@ export const TrustGallery: React.FC = () => {
         className="relative isolate overflow-hidden bg-white py-24 sm:py-32 text-gray-900"
         aria-label="Galeri Produk & Bukti Pelayanan Nimas Medika"
       >
-      {/* Dekorasi Radial */}
-      <div aria-hidden className="absolute inset-0">
-        <div className="absolute -top-20 left-1/2 -translate-x-1/2 h-[40rem] w-[40rem] rounded-full blur-3xl opacity-40 bg-[radial-gradient(closest-side,rgba(141,216,255,0.3),transparent_70%)]" />
-        <div className="absolute -bottom-20 -right-16 h-[36rem] w-[36rem] rounded-full blur-3xl opacity-40 bg-[radial-gradient(closest-side,rgba(78,113,255,0.25),transparent_70%)]" />
-      </div>
+        {/* Dekorasi Radial */}
+        <div aria-hidden className="absolute inset-0">
+          <div className="absolute -top-20 left-1/2 -translate-x-1/2 h-[40rem] w-[40rem] rounded-full blur-3xl opacity-40 bg-[radial-gradient(closest-side,rgba(141,216,255,0.3),transparent_70%)]" />
+          <div className="absolute -bottom-20 -right-16 h-[36rem] w-[36rem] rounded-full blur-3xl opacity-40 bg-[radial-gradient(closest-side,rgba(78,113,255,0.25),transparent_70%)]" />
+        </div>
 
-      <Container>
-        {/* Headline */}
-        <m.div
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true, amount: 0.6 }}
-          transition={{ duration: 0.7, ease: [0.22, 1, 0.36, 1] }}
-          className="mx-auto max-w-3xl text-center"
-        >
-          <h2 className="capitalize font-heading text-4xl sm:text-5xl font-extrabold tracking-tight bg-clip-text text-transparent bg-gradient-to-r from-[#2C5BFF] via-[#4E71FF] to-[#8DD8FF]">
-            Pusat Alat Kesehatan Terlengkap & Layanan Oksigen di Madiun.
-          </h2>
-          {/* <p className="mt-3 text-base sm:text-lg text-slate-600">
+        <Container>
+          {/* Headline */}
+          <m.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true, amount: 0.6 }}
+            transition={{ duration: 0.7, ease: [0.22, 1, 0.36, 1] }}
+            className="mx-auto max-w-3xl text-center"
+          >
+            <h2 className="capitalize font-heading text-4xl sm:text-5xl font-extrabold tracking-tight bg-clip-text text-transparent bg-gradient-to-r from-[#2C5BFF] via-[#4E71FF] to-[#8DD8FF]">
+              Pusat Alat Kesehatan Terlengkap & Layanan Oksigen di Madiun.
+            </h2>
+            {/* <p className="mt-3 text-base sm:text-lg text-slate-600">
             Satu tempat, kebutuhanmu beres!
           </p> */}
-        </m.div>
+          </m.div>
 
-        {/* Social Proof Chips */}
-        <div className="mt-10 flex flex-wrap justify-center gap-5">
-          {stats.map((s, i) => (
+          {/* Social Proof Chips */}
+          <div className="mt-10 flex flex-wrap justify-center gap-5">
+            {stats.map((s, i) => (
+              <m.div
+                key={s.name}
+                initial={{ opacity: 0, y: 40 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true, amount: 0.6 }}
+                transition={{ duration: 0.6, ease: "easeOut", delay: i * 0.1 }}
+                className="inline-flex items-center gap-2 rounded-full px-4 py-2 text-sm font-semibold text-slate-800 bg-white/70 backdrop-blur ring-1 ring-slate-200 shadow-sm hover:shadow-[0_0_20px_rgba(78,113,255,0.25)] transition-all cursor-default"
+              >
+                <span
+                  className="inline-flex h-6 w-6 items-center justify-center rounded-full bg-gradient-to-br from-[#2C5BFF] via-[#4E71FF] to-[#8DD8FF] text-white"
+                  aria-hidden="true"
+                >
+                  <s.icon className="h-3.5 w-3.5" aria-hidden="true" />
+                </span>
+                <span>{s.value}</span>
+                <span className="text-slate-500">• {s.name}</span>
+              </m.div>
+            ))}
+          </div>
+
+          {/* Grid Moodboard */}
+          <div className="mt-14 sm:mt-16">
             <m.div
-              key={s.name}
+              initial="hidden"
+              whileInView="show"
+              viewport={{ once: true, amount: 0.2 }}
+              className="columns-2 sm:columns-3 lg:columns-4 gap-4 sm:gap-6"
+            >
+              {IMAGES.map((img, i) => (
+                <GlowCard
+                  key={i}
+                  src={img.src}
+                  alt={img.alt}
+                  ratio={img.ratio}
+                  i={i}
+                  onOpen={(imgData) => setLightbox({ open: true, ...imgData })}
+                />
+              ))}
+            </m.div>
+
+            {/* CTA Ringkas */}
+            <m.div
               initial={{ opacity: 0, y: 40 }}
               whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true, amount: 0.6 }}
-              transition={{ duration: 0.6, ease: "easeOut", delay: i * 0.1 }}
-              className="inline-flex items-center gap-2 rounded-full px-4 py-2 text-sm font-semibold text-slate-800 bg-white/70 backdrop-blur ring-1 ring-slate-200 shadow-sm hover:shadow-[0_0_20px_rgba(78,113,255,0.25)] transition-all cursor-default"
+              viewport={{ once: true, amount: 0.4 }}
+              transition={{ duration: 0.6, ease: "easeOut" }}
+              className="mx-auto mt-10 flex justify-center"
             >
-              <span
-                className="inline-flex h-6 w-6 items-center justify-center rounded-full bg-gradient-to-br from-[#2C5BFF] via-[#4E71FF] to-[#8DD8FF] text-white"
-                aria-hidden="true"
+              <a
+                href="https://wa.me/628123436075" // Arahkan ke WhatsApp atau halaman valid lainnya
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="Tanya stok atau konsultasi produk Nimas Medika via WhatsApp"
+                className="group inline-flex items-center gap-2 rounded-full px-6 py-3 text-sm font-semibold text-white bg-gradient-to-r from-[#2C5BFF] via-[#4E71FF] to-[#8DD8FF] shadow-[0_0_28px_rgba(78,113,255,0.45)] hover:shadow-[0_0_44px_rgba(141,216,255,0.65)] transition-all active:scale-[0.98]"
               >
-                <s.icon className="h-3.5 w-3.5" aria-hidden="true" />
-              </span>
-              <span>{s.value}</span>
-              <span className="text-slate-500">• {s.name}</span>
+                Scroll Foto
+                <svg
+                  className="h-4 w-4 transition-transform group-hover:translate-x-0.5"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                >
+                  <path
+                    d="M5 12h14M13 5l7 7-7 7"
+                    stroke="currentColor"
+                    strokeWidth="1.5"
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                  />
+                </svg>
+              </a>
             </m.div>
-          ))}
-        </div>
+          </div>
+        </Container>
 
-        {/* Grid Moodboard */}
-        <div className="mt-14 sm:mt-16">
-          <m.div
-            initial="hidden"
-            whileInView="show"
-            viewport={{ once: true, amount: 0.2 }}
-            className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-4 sm:gap-6"
-          >
-            {IMAGES.map((img, i) => (
-              <GlowCard
-                key={i}
-                src={img.src}
-                alt={img.alt}
-                ratio={img.ratio}
-                i={i}
-                onOpen={(imgData) => setLightbox({ open: true, ...imgData })}
-              />
-            ))}
-          </m.div>
-
-          {/* CTA Ringkas */}
-          <m.div
-            initial={{ opacity: 0, y: 40 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true, amount: 0.4 }}
-            transition={{ duration: 0.6, ease: "easeOut" }}
-            className="mx-auto mt-10 flex justify-center"
-          >
-            <a
-              href="https://wa.me/628123436075" // Arahkan ke WhatsApp atau halaman valid lainnya
-              target="_blank"
-              rel="noopener noreferrer"
-              aria-label="Tanya stok atau konsultasi produk Nimas Medika via WhatsApp"
-              className="group inline-flex items-center gap-2 rounded-full px-6 py-3 text-sm font-semibold text-white bg-gradient-to-r from-[#2C5BFF] via-[#4E71FF] to-[#8DD8FF] shadow-[0_0_28px_rgba(78,113,255,0.45)] hover:shadow-[0_0_44px_rgba(141,216,255,0.65)] transition-all active:scale-[0.98]"
+        {/* ===== Modal Global (klik luar/tombol/Esc untuk tutup) ===== */}
+        <AnimatePresence>
+          {lightbox.open && (
+            <m.div
+              className="fixed inset-0 bg-black/50 flex justify-center items-center z-[100]"
+              onClick={() => setLightbox((v) => ({ ...v, open: false }))}
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              exit={{ opacity: 0 }}
             >
-              Scroll Foto
-              <svg
-                className="h-4 w-4 transition-transform group-hover:translate-x-0.5"
-                viewBox="0 0 24 24"
-                fill="none"
+              {/* Batas drag */}
+              <div
+                ref={containerRef}
+                className="relative w-[90vw] h-[90vh] max-w-[1200px] max-h-[90vh]"
+                onClick={(e) => e.stopPropagation()}
               >
-                <path
-                  d="M5 12h14M13 5l7 7-7 7"
-                  stroke="currentColor"
-                  strokeWidth="1.5"
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                />
-              </svg>
-            </a>
-          </m.div>
-        </div>
-      </Container>
+                <m.div
+                  drag
+                  dragConstraints={containerRef}
+                  dragElastic={0.2}
+                  dragMomentum
+                  className="cursor-grab active:cursor-grabbing select-none"
+                >
+                  <Image
+                    src={lightbox.src}
+                    alt={lightbox.alt || "Enlarged view Nimas Medika"} // Alt text yang ramah SEO
+                    width={1200}
+                    height={1200}
+                    className="rounded-2xl max-h-[90vh] w-auto h-auto object-contain shadow-[0_0_50px_rgba(0,0,0,0.5)]" // Ide UI: Tambahkan shadow pekat agar gambar "mengambang"
+                    priority // Saat modal terbuka, gambar harus segera dimuat
+                  />
+                </m.div>
 
-      {/* ===== Modal Global (klik luar/tombol/Esc untuk tutup) ===== */}
-      <AnimatePresence>
-        {lightbox.open && (
-          <m.div
-            className="fixed inset-0 bg-black/50 flex justify-center items-center z-[100]"
-            onClick={() => setLightbox((v) => ({ ...v, open: false }))}
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            exit={{ opacity: 0 }}
-          >
-            {/* Batas drag */}
-            <div
-              ref={containerRef}
-              className="relative w-[90vw] h-[90vh] max-w-[1200px] max-h-[90vh]"
-              onClick={(e) => e.stopPropagation()}
-            >
-              <m.div
-                drag
-                dragConstraints={containerRef}
-                dragElastic={0.2}
-                dragMomentum
-                className="cursor-grab active:cursor-grabbing select-none"
-              >
-                <Image
-                  src={lightbox.src}
-                  alt={lightbox.alt || "Enlarged view Nimas Medika"} // Alt text yang ramah SEO
-                  width={1200}
-                  height={1200}
-                  className="rounded-2xl max-h-[90vh] w-auto h-auto object-contain shadow-[0_0_50px_rgba(0,0,0,0.5)]" // Ide UI: Tambahkan shadow pekat agar gambar "mengambang"
-                  loading="lazy" // Ganti priority dengan lazy agar modal tidak mengganggu LCP halaman utama
-                />
-              </m.div>
-
-              <button
-                onClick={() => setLightbox((v) => ({ ...v, open: false }))}
-                className="absolute top-3 right-3 p-2 bg-white/90 hover:bg-white rounded-full shadow"
-                aria-label="Close"
-              >
-                ✕
-              </button>
-            </div>
-          </m.div>
-        )}
-      </AnimatePresence>
-    </section>
+                <button
+                  onClick={() => setLightbox((v) => ({ ...v, open: false }))}
+                  className="absolute top-3 right-3 p-2 bg-white/90 hover:bg-white rounded-full shadow"
+                  aria-label="Close"
+                >
+                  ✕
+                </button>
+              </div>
+            </m.div>
+          )}
+        </AnimatePresence>
+      </section>
     </LazyMotion>
   );
 };
