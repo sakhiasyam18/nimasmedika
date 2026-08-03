@@ -114,7 +114,7 @@ export const Services = () => {
                 <div className="flex flex-col gap-4">
                   <div className="flex justify-between items-start">
                     <span
-                      className={`text-xs font-bold tracking-widest uppercase ${active === i ? "text-blue-600" : "text-slate-400"}`}
+                      className={`text-xs font-bold tracking-widest uppercase ${active === i ? "text-blue-600" : "text-slate-500"}`}
                     >
                       Layanan 0{i + 1}
                     </span>
@@ -127,7 +127,7 @@ export const Services = () => {
                   </h3>
 
                   <p
-                    className={`text-sm sm:text-base leading-relaxed ${active === i ? "text-slate-600" : "text-slate-400"}`}
+                    className={`text-sm sm:text-base leading-relaxed ${active === i ? "text-slate-600" : "text-slate-500"}`}
                   >
                     {active === i ? item.details : item.description}
                   </p>

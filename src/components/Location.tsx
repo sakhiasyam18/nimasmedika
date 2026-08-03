@@ -1,9 +1,6 @@
-//src/app/location.tsx
-"use client";
-
+//src/components/Location.tsx
 import React from "react";
 import { Container } from "./Container";
-import { motion } from "framer-motion";
 import {
   MapPin,
   Building,
@@ -11,7 +8,6 @@ import {
   Factory,
   ArrowUpDown,
 } from "lucide-react";
-// import Image from "next/image";
 
 const landmarks = [
   { name: "Kanan Jalan Sebelah Timur RS Darmayu", icon: Building },
@@ -39,19 +35,11 @@ export const Location = () => {
       />
 
       <Container>
-        {/* <motion.h2
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6 }}
-          viewport={{ once: true, amount: 0.5 }}
-          className="text-center font-heading text-4xl sm:text-5xl font-extrabold mb-12"
-        >
-          Lokasi Kami
-        </motion.h2> */}
         <div className="relative h-[500px] sm:h-[600px] rounded-3xl overflow-hidden shadow-[0_0_28px_rgba(78,113,255,0.25)]">
           {/* ====== Google Maps Embed ====== */}
           <iframe
             src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3954.2116681758357!2d111.5330224!3d-7.6603772!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e79bc2f3a7d4f99%3A0xbcc0af6ff8a96018!2sNimas%20Medika%20Alkes!5e0!3m2!1sid!2sid!4v1755791599163!5m2!1sid!2sid"
+            title="Peta Lokasi Nimas Medika"
             width="100%"
             height="100%"
             style={{ border: 0 }}
@@ -62,11 +50,7 @@ export const Location = () => {
           ></iframe>
 
           {/* Card info alamat + patokan */}
-          <motion.div
-            initial={{ opacity: 0, y: 50 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.7, delay: 0.3 }}
-            viewport={{ once: true }}
+          <div
             className="absolute bottom-6 left-1/2 -translate-x-1/2 sm:translate-x-0 sm:left-auto sm:right-8 sm:bottom-8
             w-[90%] sm:w-96 rounded-3xl border border-slate-200 bg-white/70 backdrop-blur-xl shadow-[0_0_24px_rgba(78,113,255,0.3)]
             p-6 text-gray-900 overflow-hidden"
@@ -94,22 +78,20 @@ export const Location = () => {
                 Patokan Lokasi
               </h3>
               {landmarks.map((landmark) => (
-                <motion.div
+                <div
                   key={landmark.name}
-                  whileHover={{ scale: 1.05, x: 6 }}
-                  className="flex items-center gap-3 group"
+                  className="flex items-center gap-3 group hover:scale-105 hover:translate-x-2 transition-transform duration-300 ease-out"
                 >
                   {/* Tambahkan aria-hidden="true" agar fokus screen reader hanya pada teksnya saja */}
                   <landmark.icon
                     aria-hidden="true"
-                    className="h-5 w-5 text-[#4E71FF] drop-shadow-[0_0_6px_rgba(141,21..."
+                    className="h-5 w-5 text-[#4E71FF] drop-shadow-[0_0_6px_rgba(141,216,255,0.5)] transition-transform group-hover:scale-110"
                   />
                   <p className="text-sm text-slate-600">{landmark.name}</p>
-                  {/* Teks landmark */}
-                </motion.div>
+                </div>
               ))}
             </div>
-          </motion.div>
+          </div>
         </div>
       </Container>
     </section>
