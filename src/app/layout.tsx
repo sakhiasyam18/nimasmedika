@@ -3,7 +3,7 @@ import type { Metadata, Viewport } from "next";
 import { Inter, Plus_Jakarta_Sans } from "next/font/google";
 import "./globals.css";
 import { SpeedInsights } from "@vercel/speed-insights/next";
-import Script from "next/script";
+import { GoogleTagManager } from "@next/third-parties/google";
 
 // Konfigurasi Font
 const inter = Inter({
@@ -26,7 +26,7 @@ export const viewport: Viewport = {
 
 // METADATA SEO & AEO
 export const metadata: Metadata = {
-  metadataBase: new URL("https://nimasmedika.com"), // Penting untuk absolute URL resolve
+  metadataBase: new URL("https://www.nimasmedika.com"), // Penting untuk absolute URL resolve
   title: "Nimas Medika - Toko Alat Kesehatan & Tabung Oksigen di Madiun", // Dipertajam sedikit
   description:
     "Nimas Medika Madiun: Toko alat kesehatan (alkes) terlengkap, melayani jual, beli, sewa, dan isi ulang tabung oksigen 24 jam dengan layanan pesan antar.",
@@ -143,17 +143,7 @@ export default function RootLayout({
       <body
         className={`${inter.variable} ${plusJakartaSans.variable} font-sans antialiased`}
       >
-        <Script
-          id="gtm"
-          strategy="lazyOnload"
-          dangerouslySetInnerHTML={{
-            __html: `(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
-            new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
-            j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
-            'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
-            })(window,document,'script','dataLayer','GTM-KP7NSPBV');`
-          }}
-        />
+        <GoogleTagManager gtmId="GTM-KP7NSPBV" />
         {children}
         <SpeedInsights />
       </body>
