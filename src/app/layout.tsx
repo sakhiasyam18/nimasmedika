@@ -128,6 +128,7 @@ export default function RootLayout({
       "https://maps.app.goo.gl/ZajN9TRUo8KvFyn8A",
       "https://instagram.com/nimasmedika",
       "https://www.youtube.com/@alatkesehatanmadiun",
+      "https://www.tiktok.com/@alkesmadiun",
     ],
   };
 

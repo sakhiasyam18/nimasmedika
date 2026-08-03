@@ -8,6 +8,17 @@ export default function sitemap(): MetadataRoute.Sitemap {
       changeFrequency: "weekly",
       priority: 1.0,
     },
-    // Kalau nanti ada halaman lain seperti /tentang-kami atau /katalog, tambahkan di sini
+    {
+      url: "https://nimasmedika.com/layanan/oksigen",
+      lastModified: new Date(),
+      changeFrequency: "weekly",
+      priority: 0.9,
+    },
+    {
+      url: "https://nimasmedika.com/tentang-kami",
+      lastModified: new Date(),
+      changeFrequency: "monthly",
+      priority: 0.8,
+    },
   ];
 }
