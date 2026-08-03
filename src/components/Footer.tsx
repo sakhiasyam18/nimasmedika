@@ -24,6 +24,7 @@ const PHONE_NUMBER = "081-2343-6075";
 const PHONE_NUMBER_2 = "0896-9656-8358";
 const SHOPEE_LINK = "https://shopee.co.id/nimasmedika";
 const INSTAGRAM_LINK = "https://instagram.com/nimasmedika";
+const TIKTOK_LINK = "https://www.tiktok.com/@alkesmadiun";
 const YOUTUBE_LINK = "https://www.youtube.com/@alatkesehatanmadiun";
 
 export function Footer() {
@@ -113,6 +114,9 @@ export function Footer() {
             <IconLink href={INSTAGRAM_LINK} label="Instagram">
               <Instagram className="h-6 w-6" />
             </IconLink>
+            <IconLink href={TIKTOK_LINK} label="TikTok">
+              <TiktokIcon className="h-6 w-6" />
+            </IconLink>
             <IconLink href={YOUTUBE_LINK} label="YouTube">
               <Youtube className="h-6 w-6" />
             </IconLink>
@@ -171,5 +175,18 @@ function IconLink({
     >
       {children}
     </a>
+  );
+}
+
+function TiktokIcon({ className }: { className?: string }) {
+  return (
+    <svg
+      xmlns="http://www.w3.org/2000/svg"
+      viewBox="0 0 24 24"
+      fill="currentColor"
+      className={className}
+    >
+      <path d="M19.59 6.69a4.83 4.83 0 0 1-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 0 1-5.2 1.74 2.89 2.89 0 0 1 2.31-4.64 2.93 2.93 0 0 1 .88.13V9.4a6.84 6.84 0 0 0-1-.05A6.33 6.33 0 0 0 5 20.1a6.34 6.34 0 0 0 10.86-4.43v-7a8.16 8.16 0 0 0 4.77 1.52v-3.4a4.85 4.85 0 0 1-1-.1z" />
+    </svg>
   );
 }
