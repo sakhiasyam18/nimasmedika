@@ -117,7 +117,7 @@ export const OxygenHero = () => {
                   font-semibold text-white
                   shadow-[0_0_28px_rgba(78,113,255,0.40)]
                   hover:shadow-[0_0_44px_rgba(141,216,255,0.55)]
-                  transition-shadow"
+                  transition-shadow focus:outline-none focus-visible:ring-4 focus-visible:ring-blue-600 focus-visible:ring-offset-2"
               >
                 Lihat Opsi & Harga
               </motion.a>
@@ -135,7 +135,7 @@ export const OxygenHero = () => {
                   shadow-[0_8px_30px_rgb(0,0,0,0.06)]
                   hover:shadow-[0_14px_40px_-10px_rgba(78,113,255,0.3)]
                   hover:border-primary/40 hover:bg-white/90
-                  transition-all duration-300"
+                  transition-all duration-300 focus:outline-none focus-visible:ring-4 focus-visible:ring-blue-600 focus-visible:ring-offset-2"
               >
                 Konsultasi via WhatsApp
               </motion.a>

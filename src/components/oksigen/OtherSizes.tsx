@@ -56,7 +56,7 @@ export const OtherSizes = () => {
               transition={{ duration: 0.5, delay: index * 0.1 }}
               viewport={{ once: true, amount: 0.5 }}
             >
-              <Link href={option.href} className="group block h-full">
+              <Link href={option.href} className="group block h-full rounded-2xl focus:outline-none focus-visible:ring-4 focus-visible:ring-blue-600 focus-visible:ring-offset-4">
                 <div className="flex flex-col justify-between h-full rounded-2xl bg-slate-50 p-8 shadow-lg border border-transparent transition-all duration-300 ease-in-out hover:border-primary/50 hover:shadow-2xl hover:shadow-primary/20">
                   <div>
                     <div className="flex items-center gap-4">

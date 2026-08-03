@@ -63,7 +63,7 @@ export const Header = () => {
 
         {/* Logo */}
         <div className="flex items-center transition-all duration-300 hover:drop-shadow-[0_0_10px_rgba(44,91,255,0.18)]">
-          <Link href="/" aria-label="Halaman Utama Nimas Medika Alkes">
+          <Link href="/" aria-label="Halaman Utama Nimas Medika Alkes" className="rounded-lg focus:outline-none focus-visible:ring-2 focus-visible:ring-blue-600 focus-visible:ring-offset-4">
             <Image
               src="/images/logo-nimas-medika-alkes-madiun.svg"
               alt="Nimas Medika Alkes - Toko Alat Kesehatan Madiun"
@@ -87,7 +87,7 @@ export const Header = () => {
               <Link
                 key={item.label}
                 href={item.href}
-                className={`group relative transition-all duration-[350ms] hover:-translate-y-[1px] ${
+                className={`group relative transition-all duration-[350ms] hover:-translate-y-[1px] focus:outline-none focus-visible:ring-2 focus-visible:ring-blue-600 focus-visible:ring-offset-4 rounded-md ${
                   isActive ? "text-[#2C5BFF]" : "text-slate-600 hover:text-slate-900"
                 }`}
               >
@@ -107,7 +107,7 @@ export const Header = () => {
             href="https://wa.me/628123436075"
             target="_blank"
             rel="noopener noreferrer"
-            className="group flex items-center gap-2 rounded-full px-6 py-2.5 bg-gradient-to-b from-[#5B8CFF] to-[#2C5BFF] text-white font-medium text-sm border border-white/30 shadow-[inset_0_1px_rgba(255,255,255,0.45)] transition-all duration-[350ms] hover:scale-[1.02] hover:shadow-[0_8px_24px_rgba(44,91,255,0.18)]"
+            className="group flex items-center gap-2 rounded-full px-6 py-2.5 bg-gradient-to-b from-[#5B8CFF] to-[#2C5BFF] text-white font-medium text-sm border border-white/30 shadow-[inset_0_1px_rgba(255,255,255,0.45)] transition-all duration-[350ms] hover:scale-[1.02] hover:shadow-[0_8px_24px_rgba(44,91,255,0.18)] focus:outline-none focus-visible:ring-2 focus-visible:ring-blue-600 focus-visible:ring-offset-2"
           >
             <Phone className="w-4 h-4 transition-transform group-hover:rotate-12" />
             Hubungi Kami
@@ -119,7 +119,7 @@ export const Header = () => {
           onClick={() => setIsOpen(!isOpen)}
           aria-expanded={isOpen}
           aria-controls="mobile-menu"
-          className={`md:hidden relative z-50 inline-flex items-center justify-center rounded-full p-2.5 transition-all duration-300 active:scale-95 ${
+          className={`md:hidden relative z-50 inline-flex items-center justify-center rounded-full p-2.5 transition-all duration-300 active:scale-95 focus:outline-none focus-visible:ring-2 focus-visible:ring-blue-600 focus-visible:ring-offset-2 ${
             isScrolled ? "text-slate-700 hover:bg-slate-100" : "text-slate-800 hover:bg-white/50"
           }`}
           aria-label={isOpen ? "Tutup menu navigasi" : "Buka menu navigasi"}

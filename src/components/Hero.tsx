@@ -48,7 +48,8 @@ export const Hero = () => {
             font-semibold text-white
             shadow-[0_0_28px_rgba(78,113,255,0.45)]
             hover:shadow-[0_0_44px_rgba(141,216,255,0.65)]
-            hover:scale-105 active:scale-95 transition-all duration-300 ease-out"
+            hover:scale-105 active:scale-95 transition-all duration-300 ease-out
+            focus:outline-none focus-visible:ring-4 focus-visible:ring-blue-600 focus-visible:ring-offset-2"
             aria-label="Chat Sekarang Nimas Medika"
           >
             Chat Sekarang
@@ -64,7 +65,8 @@ export const Hero = () => {
             font-semibold text-slate-800
             shadow-[0_10px_30px_-12px_rgba(15,23,42,0.2)]
             hover:shadow-[0_14px_40px_-10px_rgba(78,113,255,0.35)]
-            hover:scale-105 active:scale-95 transition-all duration-300 ease-out"
+            hover:scale-105 active:scale-95 transition-all duration-300 ease-out
+            focus:outline-none focus-visible:ring-4 focus-visible:ring-blue-600 focus-visible:ring-offset-2"
             aria-label="Arahkan ke Lokasi"
           >
             Arahkan ke Lokasi
@@ -87,7 +89,7 @@ export const Hero = () => {
               allowFullScreen
               // loading="lazy" -> DIHAPUS agar LCP (First Paint) instan tanpa nunggu layout
               // Teknik srcDoc: Mencegah YouTube memuat script berat sebelum user mengklik tombol Play. Ini kunci performa 100!
-              srcDoc="<style>*{padding:0;margin:0;overflow:hidden}html,body{height:100%}img,span{position:absolute;width:100%;top:0;bottom:0;margin:auto}span{height:1.5em;text-align:center;font:48px/1.5 sans-serif;color:white;text-shadow:0 0 0.5em black}</style><a href=https://www.youtube.com/embed/9YOuzwQS8OI?autoplay=1><img src=https://img.youtube.com/vi/9YOuzwQS8OI/hqdefault.jpg alt='Etalase Nimas Medika: alat kesehatan lengkap dan tabung oksigen ready'><span>▶</span></a>"
+              srcDoc="<style>*{padding:0;margin:0;overflow:hidden}html,body{height:100%}img,span{position:absolute;width:100%;top:0;bottom:0;margin:auto}span{height:1.5em;text-align:center;font:48px/1.5 sans-serif;color:white;text-shadow:0 0 0.5em black}a:focus-visible{outline:4px solid #2C5BFF;outline-offset:-4px;}</style><a href=https://www.youtube.com/embed/9YOuzwQS8OI?autoplay=1><img src=https://img.youtube.com/vi/9YOuzwQS8OI/hqdefault.jpg alt='Etalase Nimas Medika: alat kesehatan lengkap dan tabung oksigen ready'><span>▶</span></a>"
             ></iframe>
 
             {/* Frame glass + neon tipis */}

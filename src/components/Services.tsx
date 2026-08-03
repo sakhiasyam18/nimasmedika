@@ -100,10 +100,18 @@ export const Services = () => {
             {services.map((item, i) => (
               <m.div
                 key={i}
+                tabIndex={0}
                 onMouseEnter={() => setActive(i)}
                 onClick={() => setActive(i)}
+                onKeyDown={(e) => {
+                  if (e.key === "Enter" || e.key === " ") {
+                    e.preventDefault();
+                    setActive(i);
+                  }
+                }}
                 className={`
                   relative cursor-pointer rounded-[2rem] p-8 transition-all duration-500 border-2
+                  focus:outline-none focus-visible:ring-4 focus-visible:ring-blue-600 focus-visible:ring-offset-2
                   ${
                     active === i
                       ? "bg-white border-blue-600 shadow-[0_20px_50px_rgba(78,113,255,0.15)] scale-[1.02]"

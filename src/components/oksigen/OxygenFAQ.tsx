@@ -332,7 +332,7 @@ export const OxygenFAQ = () => {
               border border-slate-200 bg-white/70 backdrop-blur-sm
               text-sm font-semibold text-slate-700
               shadow-sm hover:shadow-md hover:border-primary/30
-              transition-all hover:scale-[1.02]"
+              transition-all hover:scale-[1.02] focus:outline-none focus-visible:ring-4 focus-visible:ring-blue-600 focus-visible:ring-offset-2"
           >
             Tanya via WhatsApp
           </a>

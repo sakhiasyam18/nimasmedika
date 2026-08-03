@@ -250,7 +250,7 @@ const Lightbox: React.FC<LightboxProps> = React.memo(
               e.stopPropagation();
               onClose();
             }}
-            className="absolute top-4 right-4 z-20 rounded-full p-2 bg-white/90 hover:bg-white text-gray-800 shadow-lg hover:scale-105 transition-all duration-200"
+            className="absolute top-4 right-4 z-20 rounded-full p-2 bg-white/90 hover:bg-white text-gray-800 shadow-lg hover:scale-105 transition-all duration-200 focus:outline-none focus-visible:ring-4 focus-visible:ring-blue-600 focus-visible:ring-offset-2"
             aria-label="Tutup galeri"
           >
             <X className="h-5 w-5" />
@@ -265,7 +265,7 @@ const Lightbox: React.FC<LightboxProps> = React.memo(
                   e.stopPropagation();
                   handlePrevious();
                 }}
-                className="absolute left-4 top-1/2 -translate-y-1/2 z-20 flex items-center justify-center rounded-full bg-white/90 hover:bg-white p-3 text-gray-800 shadow-lg transition-all duration-200 hover:scale-105"
+                className="absolute left-4 top-1/2 -translate-y-1/2 z-20 flex items-center justify-center rounded-full bg-white/90 hover:bg-white p-3 text-gray-800 shadow-lg transition-all duration-200 hover:scale-105 focus:outline-none focus-visible:ring-4 focus-visible:ring-blue-600 focus-visible:ring-offset-2"
                 aria-label="Gambar sebelumnya"
               >
                 <ChevronLeft className="h-6 w-6" />
@@ -277,7 +277,7 @@ const Lightbox: React.FC<LightboxProps> = React.memo(
                   e.stopPropagation();
                   handleNext();
                 }}
-                className="absolute right-4 top-1/2 -translate-y-1/2 z-20 flex items-center justify-center rounded-full bg-white/90 hover:bg-white p-3 text-gray-800 shadow-lg transition-all duration-200 hover:scale-105"
+                className="absolute right-4 top-1/2 -translate-y-1/2 z-20 flex items-center justify-center rounded-full bg-white/90 hover:bg-white p-3 text-gray-800 shadow-lg transition-all duration-200 hover:scale-105 focus:outline-none focus-visible:ring-4 focus-visible:ring-blue-600 focus-visible:ring-offset-2"
                 aria-label="Gambar berikutnya"
               >
                 <ChevronRight className="h-6 w-6" />
@@ -327,7 +327,7 @@ const Lightbox: React.FC<LightboxProps> = React.memo(
                         setCurrentIndex(index);
                       }}
                       className={cn(
-                        "h-2 w-2 rounded-full transition-all duration-200",
+                        "h-2 w-2 rounded-full transition-all duration-200 focus:outline-none focus-visible:ring-2 focus-visible:ring-blue-600 focus-visible:ring-offset-4",
                         index === currentIndex
                           ? "bg-white scale-125"
                           : "bg-white/60 hover:bg-white/80 hover:scale-110",
@@ -506,7 +506,7 @@ const PricingCard: React.FC<{ option: PricingOption; index: number }> =
                             href={waUrl}
                             target="_blank"
                             rel="noopener noreferrer"
-                            className="mt-6 inline-flex items-center gap-2 rounded-full bg-[#25D366] px-5 py-2.5 text-sm font-semibold text-white shadow-md hover:shadow-lg hover:bg-[#20BD5A] transition-all hover:scale-[1.02]"
+                            className="mt-6 inline-flex items-center gap-2 rounded-full bg-[#25D366] px-5 py-2.5 text-sm font-semibold text-white shadow-md hover:shadow-lg hover:bg-[#20BD5A] transition-all hover:scale-[1.02] focus:outline-none focus-visible:ring-4 focus-visible:ring-blue-600 focus-visible:ring-offset-2"
                           >
                             <MessageCircle className="h-4 w-4" />
                             Pesan via WhatsApp
@@ -539,7 +539,7 @@ const PricingCard: React.FC<{ option: PricingOption; index: number }> =
                               <button
                                 type="button"
                                 onClick={openLightbox}
-                                className="relative w-full h-full focus:outline-none focus:ring-2 focus:ring-primary/60 focus:ring-offset-2 rounded-xl"
+                                className="relative w-full h-full focus:outline-none focus-visible:ring-4 focus-visible:ring-primary/60 focus-visible:ring-offset-2 rounded-xl"
                                 aria-label={`Perbesar gambar ${
                                   selectedImageIndex + 1
                                 } dari ${option.title}`}
@@ -568,7 +568,7 @@ const PricingCard: React.FC<{ option: PricingOption; index: number }> =
                                 key={`${option.id}-thumb-${imgIndex}`}
                                 onClick={() => selectImage(imgIndex)}
                                 className={cn(
-                                  "relative aspect-video overflow-hidden rounded-lg ring-2 transition-all duration-200 group hover:scale-105",
+                                  "relative aspect-video overflow-hidden rounded-lg ring-2 transition-all duration-200 group hover:scale-105 focus:outline-none focus-visible:ring-4 focus-visible:ring-primary/60 focus-visible:ring-offset-2",
                                   selectedImageIndex === imgIndex
                                     ? "ring-primary shadow-lg"
                                     : "ring-transparent hover:ring-primary/40",
@@ -606,7 +606,7 @@ const PricingCard: React.FC<{ option: PricingOption; index: number }> =
                 {/* ===== Toggle Button (Lihat Detail / Sembunyikan) ===== */}
                 <button
                   onClick={toggleExpanded}
-                  className="mt-6 inline-flex items-center gap-2 rounded-full bg-gradient-5 text-white px-4 py-2 text-sm font-semibold ring-2 ring-primary/30 hover:translate-y-[-1px] active:translate-y-[1px] transition"
+                  className="mt-6 inline-flex items-center gap-2 rounded-full bg-gradient-5 text-white px-4 py-2 text-sm font-semibold ring-2 ring-primary/30 hover:translate-y-[-1px] active:translate-y-[1px] transition focus:outline-none focus-visible:ring-4 focus-visible:ring-primary/60 focus-visible:ring-offset-2"
                   aria-expanded={isExpanded}
                   aria-controls={`detail-${option.id}`}
                 >

@@ -53,14 +53,14 @@ export function Footer() {
             <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
               <a
                 href={`tel:${PHONE_NUMBER.replace(/-/g, "")}`}
-                className="w-full sm:w-auto flex items-center justify-center gap-2 rounded-full px-8 py-3 font-bold text-white bg-blue-600 hover:bg-blue-700 transition-all"
+                className="w-full sm:w-auto flex items-center justify-center gap-2 rounded-full px-8 py-3 font-bold text-white bg-blue-600 hover:bg-blue-700 transition-all focus:outline-none focus-visible:ring-4 focus-visible:ring-blue-600 focus-visible:ring-offset-2"
               >
                 <Phone className="w-5 h-5" />
                 <span>Telepon: {PHONE_NUMBER}</span>
               </a>
               <a
                 href={`https://wa.me/${WHATSAPP_NUMBER}`}
-                className="w-full sm:w-auto flex items-center justify-center gap-2 rounded-full border-2 border-slate-200 bg-white px-8 py-3 font-bold text-slate-700 hover:border-blue-400 hover:text-blue-600 transition-all"
+                className="w-full sm:w-auto flex items-center justify-center gap-2 rounded-full border-2 border-slate-200 bg-white px-8 py-3 font-bold text-slate-700 hover:border-blue-400 hover:text-blue-600 transition-all focus:outline-none focus-visible:ring-4 focus-visible:ring-blue-600 focus-visible:ring-offset-2"
               >
                 <Phone className="w-5 h-5 text-blue-500" />
                 <span>WhatsApp Cepat</span>
@@ -87,21 +87,21 @@ export function Footer() {
               <a
                 key="wa"
                 href={`https://wa.me/${WHATSAPP_NUMBER}`}
-                className="hover:text-blue-600 transition block"
+                className="hover:text-blue-600 transition block rounded-sm focus:outline-none focus-visible:ring-2 focus-visible:ring-blue-600 focus-visible:ring-offset-2"
               >
                 WA: {WHATSAPP_DISPLAY}
               </a>,
               <a
                 key="p1"
                 href={`tel:${PHONE_NUMBER.replace(/-/g, "")}`}
-                className="hover:text-blue-600 transition block"
+                className="hover:text-blue-600 transition block rounded-sm focus:outline-none focus-visible:ring-2 focus-visible:ring-blue-600 focus-visible:ring-offset-2"
               >
                 Telp 1: {PHONE_NUMBER}
               </a>,
               <a
                 key="p2"
                 href="tel:+6289696568358"
-                className="hover:text-blue-600 transition block"
+                className="hover:text-blue-600 transition block rounded-sm focus:outline-none focus-visible:ring-2 focus-visible:ring-blue-600 focus-visible:ring-offset-2"
               >
                 WA Telp 2: {PHONE_NUMBER_2}
               </a>,
@@ -171,7 +171,7 @@ function IconLink({
       target="_blank"
       rel="noopener noreferrer"
       aria-label={label} // Tambahkan baris ini agar Google bisa membaca nama link-nya
-      className="text-slate-400 hover:text-blue-600 transition-colors"
+      className="text-slate-400 hover:text-blue-600 transition-colors rounded-lg focus:outline-none focus-visible:ring-2 focus-visible:ring-blue-600 focus-visible:ring-offset-4"
     >
       {children}
     </a>
