@@ -1,8 +1,5 @@
-"use client";
-
 import React from "react";
 import { Container } from "./Container";
-import { motion } from "framer-motion";
 import { ArrowRight } from "lucide-react";
 
 export const Hero = () => {
@@ -19,7 +16,7 @@ export const Hero = () => {
         <div className="absolute -bottom-24 left-1/2 -translate-x-1/2 h-72 w-[85%] rounded-[60px] blur-3xl opacity-50 bg-[radial-gradient(closest-side,rgba(141,216,255,0.35),transparent_70%)]" />
       </div>
 
-      <Container className="relative z-10 py-28 sm:py-36">
+      <Container className="relative z-10 py-28 sm:py-36 animate-in fade-in slide-in-from-bottom-4 duration-1000">
         {/* Heading SEO-friendly */}
         <h1
           className="text-center font-heading text-4xl sm:text-5xl md:text-6xl font-extrabold leading-tight tracking-tight text-transparent bg-clip-text bg-gradient-to-r from-blue-700 to-cyan-500" // Tambahan efek gradient text untuk estetik!
@@ -39,47 +36,40 @@ export const Hero = () => {
         </div>
 
         {/* CTA Buttons */}
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8, delay: 0.3 }}
+        <div
           className="mt-10 flex flex-col sm:flex-row items-center justify-center gap-4 sm:gap-6"
         >
-          <motion.a
+          <a
             href="https://wa.me/628123436075"
             target="_blank"
             rel="noopener noreferrer" // Tambahkan pengaman ini
-            whileHover={{ scale: 1.06 }}
-            whileTap={{ scale: 0.98 }}
             className="inline-flex items-center gap-3 rounded-full px-8 py-4
             bg-gradient-to-r from-[#2C5BFF] via-[#4E71FF] to-[#8DD8FF]
             font-semibold text-white
             shadow-[0_0_28px_rgba(78,113,255,0.45)]
             hover:shadow-[0_0_44px_rgba(141,216,255,0.65)]
-            transition-all"
+            hover:scale-105 active:scale-95 transition-all duration-300 ease-out"
             aria-label="Chat Sekarang Nimas Medika"
           >
             Chat Sekarang
             <ArrowRight className="h-5 w-5" />
-          </motion.a>
+          </a>
 
-          <motion.a
+          <a
             href="https://maps.app.goo.gl/KgHkYQ6x1PkvxugX9"
             target="_blank"
             rel="noopener noreferrer" // Wajib ada untuk skor Best Practices 100
-            whileHover={{ scale: 1.05 }}
-            whileTap={{ scale: 0.98 }}
             className="inline-flex items-center gap-3 rounded-full px-8 py-4
             border border-slate-200 bg-white/70 backdrop-blur-xl
             font-semibold text-slate-800
             shadow-[0_10px_30px_-12px_rgba(15,23,42,0.2)]
             hover:shadow-[0_14px_40px_-10px_rgba(78,113,255,0.35)]
-            transition-all"
+            hover:scale-105 active:scale-95 transition-all duration-300 ease-out"
             aria-label="Arahkan ke Lokasi"
           >
             Arahkan ke Lokasi
-          </motion.a>
-        </motion.div>
+          </a>
+        </div>
 
         {/* ====== SLOT GAMBAR HERO (SEO) ======
           TODO: ganti src dengan gambar produk/etalase utama kamu,
@@ -95,14 +85,13 @@ export const Hero = () => {
               title="Etalase Nimas Medika: alat kesehatan lengkap dan tabung oksigen ready"
               allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
               allowFullScreen
-              loading="lazy"
+              // loading="lazy" -> DIHAPUS agar LCP (First Paint) instan tanpa nunggu layout
               // Teknik srcDoc: Mencegah YouTube memuat script berat sebelum user mengklik tombol Play. Ini kunci performa 100!
               srcDoc="<style>*{padding:0;margin:0;overflow:hidden}html,body{height:100%}img,span{position:absolute;width:100%;top:0;bottom:0;margin:auto}span{height:1.5em;text-align:center;font:48px/1.5 sans-serif;color:white;text-shadow:0 0 0.5em black}</style><a href=https://www.youtube.com/embed/9YOuzwQS8OI?autoplay=1><img src=https://img.youtube.com/vi/9YOuzwQS8OI/hqdefault.jpg alt='Etalase Nimas Medika: alat kesehatan lengkap dan tabung oksigen ready'><span>▶</span></a>"
             ></iframe>
 
             {/* Frame glass + neon tipis */}
             <div className="pointer-events-none absolute inset-0 rounded-3xl ring-1 ring-white/40" />
-            {/* <div className="pointer-events-none absolute -inset-2 rounded-[28px] blur-2xl opacity-60 bg-[conic-gradient(from_40deg,#4E71FF,#8DD8FF,#BBFBFF,#4E71FF)]" /> */}
           </div>
         </div>
       </Container>
