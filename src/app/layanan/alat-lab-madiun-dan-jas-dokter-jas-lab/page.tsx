@@ -1,9 +1,14 @@
 // src/app/layanan/alat-lab-madiun-dan-jas-dokter-jas-lab/page.tsx
+// ============================================================
+// Halaman landing page Alat Lab & Jas Medis Madiun
+// Premium Glassmorphism + Neumorphism + Ambient Design
+// ============================================================
 import type { Metadata } from "next";
 import { Container } from "@/components/Container";
 import { Header } from "@/components/Header";
 import { Footer } from "@/components/Footer";
 import { LabHero } from "@/components/lab/LabHero";
+import { LabBrands } from "@/components/lab/LabBrands";
 import { LabServices } from "@/components/lab/LabServices";
 import { LabWhyChoose } from "@/components/lab/LabWhyChoose";
 import { LabCatalog } from "@/components/lab/LabCatalog";
@@ -13,7 +18,7 @@ import { LabFAQ } from "@/components/lab/LabFAQ";
 export const metadata: Metadata = {
   title: "Jual Alat Lab & Jas Dokter Madiun – Lengkap & Terpercaya | Nimas Medika",
   description:
-    "Jual alat laboratorium medis, jas dokter, dan jas lab di Madiun. Stok lengkap, harga terjangkau, produk original bersertifikat KEMENKES. Siap antar area Madiun. Hubungi Nimas Medika sekarang!",
+    "Jual alat laboratorium medis, jas dokter, dan jas lab di Madiun. Stok lengkap dari brand Pyrex, Duran, Corning, Iwaki. Harga terjangkau, produk original bersertifikat KEMENKES. Siap antar area Madiun.",
   keywords: [
     "alat lab madiun",
     "jual alat laboratorium madiun",
@@ -23,6 +28,8 @@ export const metadata: Metadata = {
     "nimas medika alat lab",
     "jual jas dokter madiun",
     "toko alat lab madiun",
+    "pyrex madiun",
+    "alat lab praktikum madiun",
   ],
   alternates: {
     canonical: "/layanan/alat-lab-madiun-dan-jas-dokter-jas-lab",
@@ -30,7 +37,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: "Jual Alat Lab & Jas Dokter Madiun – Nimas Medika",
     description:
-      "Toko alat laboratorium dan jas medis terlengkap di Madiun. Produk original, harga transparan, siap antar.",
+      "Toko alat laboratorium dan jas medis terlengkap di Madiun. Brand internasional Pyrex, Duran, Corning. Produk original, harga transparan, siap antar.",
     url: "https://nimasmedika.com/layanan/alat-lab-madiun-dan-jas-dokter-jas-lab",
   },
 };
@@ -41,7 +48,7 @@ export default function AlatLabPage() {
     "@type": ["LocalBusiness", "MedicalBusiness"],
     name: "Nimas Medika Alkes – Alat Lab & Jas Dokter Madiun",
     description:
-      "Jual alat laboratorium medis, jas dokter, dan jas lab di Madiun. Stok lengkap, produk original bersertifikat KEMENKES.",
+      "Jual alat laboratorium medis, jas dokter, dan jas lab di Madiun. Stok lengkap dari brand ternama internasional, produk original bersertifikat KEMENKES.",
     provider: {
       "@type": "MedicalBusiness",
       name: "Nimas Medika Alkes",
@@ -61,7 +68,7 @@ export default function AlatLabPage() {
     },
     offers: {
       "@type": "AggregateOffer",
-      offerCount: "3",
+      offerCount: "8",
       priceCurrency: "IDR",
     },
     aggregateRating: {
@@ -81,6 +88,7 @@ export default function AlatLabPage() {
         <Header />
         <main className="relative bg-white text-gray-900">
           <LabHero />
+          <LabBrands />
           <LabServices />
           <LabWhyChoose />
           <LabCatalog />

@@ -1,4 +1,7 @@
 // src/components/lab/LabFAQ.tsx
+// ============================================================
+// FAQ Section — Glassmorphic Accordion + SEO keywords
+// ============================================================
 "use client";
 
 import React, { useState } from "react";
@@ -51,7 +54,15 @@ const FAQItem = ({
   isOpen: boolean;
   onToggle: () => void;
 }) => (
-  <div className="rounded-2xl border border-white/60 bg-white/60 backdrop-blur-sm overflow-hidden shadow-[0_2px_12px_rgba(0,0,0,0.04)]">
+  <div
+    className={`rounded-2xl overflow-hidden transition-all duration-300
+      bg-white/50 backdrop-blur-xl border
+      shadow-[3px_3px_10px_rgba(0,0,0,0.04),-3px_-3px_10px_rgba(255,255,255,0.7)]
+      ${isOpen
+        ? "border-blue-200/40 shadow-[4px_4px_16px_rgba(0,0,0,0.06),-4px_-4px_16px_rgba(255,255,255,0.8)]"
+        : "border-white/50 hover:border-blue-100/40"
+      }`}
+  >
     <button
       onClick={onToggle}
       className="w-full flex items-center justify-between gap-4 px-6 py-5 text-left focus:outline-none focus-visible:ring-2 focus-visible:ring-blue-600 focus-visible:ring-inset"
@@ -61,7 +72,7 @@ const FAQItem = ({
       <motion.span
         animate={{ rotate: isOpen ? 180 : 0 }}
         transition={{ duration: 0.25 }}
-        className="flex-shrink-0 text-primary"
+        className={`flex-shrink-0 transition-colors duration-300 ${isOpen ? "text-primary" : "text-gray-400"}`}
       >
         <ChevronDown className="h-5 w-5" />
       </motion.span>
@@ -74,7 +85,7 @@ const FAQItem = ({
           exit={{ height: 0, opacity: 0 }}
           transition={{ duration: 0.3, ease: "easeInOut" }}
         >
-          <div className="px-6 pb-5 text-sm text-gray-500 leading-relaxed border-t border-slate-100 pt-4">
+          <div className="px-6 pb-5 text-sm text-gray-500 leading-relaxed border-t border-slate-100/80 pt-4">
             {answer}
           </div>
         </motion.div>
@@ -87,8 +98,17 @@ export const LabFAQ = () => {
   const [openIndex, setOpenIndex] = useState<number | null>(0);
 
   return (
-    <section className="py-20 sm:py-28" aria-label="FAQ alat laboratorium dan jas medis Madiun">
-      <Container>
+    <section className="relative py-20 sm:py-28 overflow-hidden" aria-label="FAQ alat laboratorium dan jas medis Madiun">
+      {/* Ambient background */}
+      <div aria-hidden="true" className="absolute inset-0">
+        <div className="absolute inset-0 bg-gradient-to-b from-blue-50/20 via-white to-slate-50/30" />
+        <div
+          className="absolute top-[30%] right-[10%] w-[400px] h-[400px] rounded-full bg-[radial-gradient(closest-side,rgba(78,113,255,0.08),transparent_70%)] blur-3xl"
+          style={{ animation: "breathe 10s ease-in-out infinite 1s" }}
+        />
+      </div>
+
+      <Container className="relative z-10">
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -129,7 +149,7 @@ export const LabFAQ = () => {
           ))}
         </div>
 
-        {/* CTA Tanya WA */}
+        {/* CTA */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -142,9 +162,11 @@ export const LabFAQ = () => {
             target="_blank"
             rel="noopener noreferrer"
             className="inline-flex items-center gap-2 rounded-full px-6 py-2.5
-              border border-slate-200 bg-white/70 backdrop-blur-sm
+              bg-white/60 backdrop-blur-xl border border-white/50
+              shadow-[3px_3px_8px_rgba(0,0,0,0.04),-3px_-3px_8px_rgba(255,255,255,0.7)]
               text-sm font-semibold text-slate-700
-              shadow-sm hover:shadow-md hover:border-primary/30
+              hover:shadow-[4px_4px_12px_rgba(0,0,0,0.06),-4px_-4px_12px_rgba(255,255,255,0.8)]
+              hover:border-primary/30
               transition-all hover:scale-[1.02] focus:outline-none focus-visible:ring-4 focus-visible:ring-blue-600 focus-visible:ring-offset-2"
           >
             <MessageCircle className="h-4 w-4 text-[#25D366]" />

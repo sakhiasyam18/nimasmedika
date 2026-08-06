@@ -1,4 +1,7 @@
 // src/components/lab/LabWhyChoose.tsx
+// ============================================================
+// Why Choose Section — Glassmorphic cards with ambient glow
+// ============================================================
 "use client";
 
 import React from "react";
@@ -41,8 +44,24 @@ const reasons = [
 
 export const LabWhyChoose = () => {
   return (
-    <section className="py-20 sm:py-28" aria-label="Mengapa memilih Nimas Medika untuk alat lab dan jas medis">
-      <Container>
+    <section
+      className="relative py-20 sm:py-28 overflow-hidden"
+      aria-label="Mengapa memilih Nimas Medika untuk alat lab dan jas medis"
+    >
+      {/* Ambient background */}
+      <div aria-hidden="true" className="absolute inset-0">
+        <div className="absolute inset-0 bg-gradient-to-b from-blue-50/30 via-white to-slate-50/50" />
+        <div
+          className="absolute top-[20%] left-[5%] w-[450px] h-[450px] rounded-full bg-[radial-gradient(closest-side,rgba(78,113,255,0.10),transparent_70%)] blur-3xl"
+          style={{ animation: "breathe 9s ease-in-out infinite" }}
+        />
+        <div
+          className="absolute bottom-[10%] right-[5%] w-[400px] h-[400px] rounded-full bg-[radial-gradient(closest-side,rgba(141,216,255,0.10),transparent_70%)] blur-3xl"
+          style={{ animation: "breathe 11s ease-in-out infinite 3s" }}
+        />
+      </div>
+
+      <Container className="relative z-10">
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -64,7 +83,7 @@ export const LabWhyChoose = () => {
           </p>
         </motion.div>
 
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-5">
           {reasons.map((reason, index) => (
             <motion.div
               key={reason.title}
@@ -72,18 +91,26 @@ export const LabWhyChoose = () => {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, amount: 0.3 }}
               transition={{ duration: 0.5, delay: index * 0.08 }}
-              className="flex items-start gap-4 p-6 rounded-2xl
-                border border-white/60 bg-white/60 backdrop-blur-sm
-                shadow-[0_4px_20px_rgba(0,0,0,0.04)]
-                hover:shadow-[0_10px_35px_rgba(78,113,255,0.10)]
-                hover:-translate-y-0.5 transition-all duration-300 group"
+              className="group relative"
             >
-              <div className="flex-shrink-0 grid place-items-center h-11 w-11 rounded-xl bg-gradient-to-br from-primary/10 to-primary/5 text-primary group-hover:scale-110 transition-transform duration-300">
-                <reason.icon className="h-5 w-5" />
-              </div>
-              <div>
-                <h3 className="font-semibold text-gray-900 text-sm mb-1">{reason.title}</h3>
-                <p className="text-xs text-gray-500 leading-relaxed">{reason.description}</p>
+              {/* Ambient glow on hover */}
+              <div className="absolute -inset-1 rounded-3xl bg-gradient-to-br from-blue-400/0 to-cyan-400/0 group-hover:from-blue-400/10 group-hover:to-cyan-400/5 blur-xl transition-all duration-500 pointer-events-none" />
+
+              <div
+                className="relative flex items-start gap-4 p-6 rounded-2xl
+                  bg-white/50 backdrop-blur-xl border border-white/50
+                  shadow-[4px_4px_12px_rgba(0,0,0,0.04),-4px_-4px_12px_rgba(255,255,255,0.7)]
+                  hover:shadow-[6px_6px_20px_rgba(0,0,0,0.07),-6px_-6px_20px_rgba(255,255,255,0.9)]
+                  hover:bg-white/70 hover:border-blue-200/40
+                  hover:-translate-y-0.5 transition-all duration-300"
+              >
+                <div className="flex-shrink-0 grid place-items-center h-12 w-12 rounded-2xl bg-gradient-to-br from-primary/10 to-primary/5 text-primary shadow-sm group-hover:scale-110 group-hover:shadow-md transition-all duration-300">
+                  <reason.icon className="h-5 w-5" />
+                </div>
+                <div>
+                  <h3 className="font-bold text-gray-900 text-sm mb-1.5">{reason.title}</h3>
+                  <p className="text-xs text-gray-500 leading-relaxed">{reason.description}</p>
+                </div>
               </div>
             </motion.div>
           ))}
