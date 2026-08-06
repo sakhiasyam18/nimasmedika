@@ -16,7 +16,8 @@ export const Header = () => {
 
   const navItems = [
     { label: "Layanan", href: "/layanan/oksigen" },
-    { label: "Tentang Kami", href: "/#about" },
+    { label: "Alat Lab & Jas Medis", href: "/layanan/alat-lab-madiun-dan-jas-dokter-jas-lab" },
+    { label: "Sewa Bed Pasien", href: "/layanan/sewa-bed-pasien" },
   ];
 
   // Hide/show header saat scroll
