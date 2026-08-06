@@ -203,20 +203,20 @@ export const LabHero = () => {
               style={{ animation: "breathe 10s ease-in-out infinite 1s" }}
             />
 
-            {/* Bento / Collage Grid */}
-            <div className="relative grid grid-cols-4 grid-rows-4 gap-3 sm:gap-4 aspect-square max-w-md mx-auto lg:max-w-none">
-              {/* Large — top left (2x2) */}
-              <ShimmerCard className="col-span-2 row-span-2" label="Alat Lab" delay={0.1} />
-              {/* Small — top right */}
-              <ShimmerCard className="col-span-2 row-span-1" label="Jas Dokter" delay={0.2} />
-              {/* Small — mid right */}
-              <ShimmerCard className="col-span-1 row-span-1" delay={0.3} />
-              {/* Portrait — mid right */}
-              <ShimmerCard className="col-span-1 row-span-2" label="Jas Lab" delay={0.35} />
-              {/* Wide — bottom left */}
-              <ShimmerCard className="col-span-2 row-span-1" delay={0.4} />
-              {/* Small — bottom */}
-              <ShimmerCard className="col-span-1 row-span-1" delay={0.45} />
+            {/* Bento / Collage Grid — 2 col mobile, 4 col desktop */}
+            <div className="relative grid grid-cols-2 lg:grid-cols-4 gap-3 sm:gap-4 max-w-md mx-auto lg:max-w-none">
+              {/* Large — spans 2 cols on all, 2 rows on lg */}
+              <ShimmerCard className="col-span-2 aspect-video lg:row-span-2 lg:aspect-auto lg:h-full" label="Alat Lab" delay={0.1} />
+              {/* Top right — full width on mobile, 2 col on lg */}
+              <ShimmerCard className="col-span-1 aspect-square sm:aspect-[4/3] lg:col-span-2 lg:row-span-1 lg:aspect-[16/9]" label="Jas Dokter" delay={0.2} />
+              {/* Small square */}
+              <ShimmerCard className="col-span-1 aspect-square sm:aspect-[4/3]" delay={0.3} />
+              {/* Portrait — tall on lg */}
+              <ShimmerCard className="col-span-1 aspect-square sm:aspect-[4/3] lg:row-span-2 lg:aspect-auto lg:h-full" label="Jas Lab" delay={0.35} />
+              {/* Wide bottom */}
+              <ShimmerCard className="col-span-1 aspect-square sm:aspect-[4/3] lg:col-span-2 lg:aspect-[16/9]" delay={0.4} />
+              {/* Small */}
+              <ShimmerCard className="col-span-2 aspect-video lg:col-span-1 lg:aspect-square" delay={0.45} />
             </div>
           </motion.div>
         </div>

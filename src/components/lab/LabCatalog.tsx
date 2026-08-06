@@ -16,56 +16,56 @@ const products = [
     name: "Tabung Reaksi & Gelas Laboratorium",
     category: "Alat Lab",
     catColor: "bg-blue-500/10 text-blue-600 border-blue-200/50",
-    span: "col-span-2 row-span-2",
-    aspect: "aspect-square",
+    span: "col-span-1 sm:col-span-2 lg:row-span-2",
+    aspect: "aspect-[4/3] sm:aspect-video lg:aspect-auto lg:h-full",
   },
   {
     name: "Jas Dokter Lengan Panjang",
     category: "Jas Dokter",
     catColor: "bg-violet-500/10 text-violet-600 border-violet-200/50",
-    span: "col-span-1 row-span-1",
+    span: "col-span-1",
     aspect: "aspect-[4/3]",
   },
   {
     name: "Jas Laboratorium Anti Kimia",
     category: "Jas Lab",
     catColor: "bg-emerald-500/10 text-emerald-600 border-emerald-200/50",
-    span: "col-span-1 row-span-1",
+    span: "col-span-1",
     aspect: "aspect-[4/3]",
   },
   {
     name: "Mikropipet & Alat Ukur Presisi",
     category: "Alat Lab",
     catColor: "bg-blue-500/10 text-blue-600 border-blue-200/50",
-    span: "col-span-1 row-span-2",
-    aspect: "aspect-auto h-full",
+    span: "col-span-1 lg:row-span-2",
+    aspect: "aspect-[4/3] lg:aspect-auto lg:h-full",
   },
   {
     name: "Sentrifuge Digital Laboratorium",
     category: "Alat Lab",
     catColor: "bg-blue-500/10 text-blue-600 border-blue-200/50",
-    span: "col-span-2 row-span-1",
-    aspect: "aspect-[21/9]",
+    span: "col-span-1 sm:col-span-2",
+    aspect: "aspect-[4/3] sm:aspect-[21/9]",
   },
   {
     name: "Jas Dokter Lengan Pendek",
     category: "Jas Dokter",
     catColor: "bg-violet-500/10 text-violet-600 border-violet-200/50",
-    span: "col-span-1 row-span-1",
+    span: "col-span-1",
     aspect: "aspect-[4/3]",
   },
   {
     name: "Peralatan Sterilisasi & Autoklaf",
     category: "Alat Lab",
     catColor: "bg-blue-500/10 text-blue-600 border-blue-200/50",
-    span: "col-span-2 row-span-1",
-    aspect: "aspect-[21/9]",
+    span: "col-span-1 sm:col-span-2",
+    aspect: "aspect-[4/3] sm:aspect-[21/9]",
   },
   {
     name: "Jas Lab Praktikum Kampus",
     category: "Jas Lab",
     catColor: "bg-emerald-500/10 text-emerald-600 border-emerald-200/50",
-    span: "col-span-1 row-span-1",
+    span: "col-span-1",
     aspect: "aspect-[4/3]",
   },
 ];
@@ -82,10 +82,10 @@ const CatalogCard = ({
     whileInView={{ opacity: 1, y: 0 }}
     viewport={{ once: true, amount: 0.15 }}
     transition={{ duration: 0.5, delay: index * 0.06 }}
-    className={`group relative ${product.span}`}
+    className={`group relative ${product.span} min-h-0`}
   >
     <div
-      className={`relative ${product.aspect} w-full h-full overflow-hidden rounded-3xl
+      className={`relative ${product.aspect} w-full overflow-hidden rounded-2xl sm:rounded-3xl
         bg-white/40 backdrop-blur-xl border border-white/40
         shadow-[4px_4px_12px_rgba(0,0,0,0.05),-4px_-4px_12px_rgba(255,255,255,0.7)]
         hover:shadow-[6px_6px_20px_rgba(0,0,0,0.08),-6px_-6px_20px_rgba(255,255,255,0.9)]
@@ -106,20 +106,20 @@ const CatalogCard = ({
       </div>
 
       {/* Category badge — top left */}
-      <div className="absolute top-4 left-4 z-10">
+      <div className="absolute top-2.5 left-2.5 sm:top-4 sm:left-4 z-10">
         <span
-          className={`px-3 py-1.5 rounded-full text-[11px] font-semibold
+          className={`px-2 py-1 sm:px-3 sm:py-1.5 rounded-full text-[10px] sm:text-[11px] font-semibold
             backdrop-blur-xl border shadow-sm ${product.catColor}`}
         >
           {product.category}
         </span>
       </div>
 
-      {/* Info overlay — bottom */}
-      <div className="absolute bottom-0 inset-x-0 z-10 p-4 sm:p-5">
-        <div className="rounded-2xl bg-white/60 backdrop-blur-2xl border border-white/40 p-4 shadow-[0_8px_32px_rgba(0,0,0,0.06)] translate-y-2 opacity-0 group-hover:translate-y-0 group-hover:opacity-100 transition-all duration-400">
-          <h3 className="font-semibold text-gray-900 text-sm mb-1">{product.name}</h3>
-          <p className="text-[11px] text-gray-400 mb-3">Hubungi kami untuk harga terbaik</p>
+      {/* Info overlay — bottom, always visible on mobile */}
+      <div className="absolute bottom-0 inset-x-0 z-10 p-2.5 sm:p-4 lg:p-5">
+        <div className="rounded-xl sm:rounded-2xl bg-white/70 sm:bg-white/60 backdrop-blur-2xl border border-white/40 p-2.5 sm:p-4 shadow-[0_8px_32px_rgba(0,0,0,0.06)] lg:translate-y-2 lg:opacity-0 lg:group-hover:translate-y-0 lg:group-hover:opacity-100 transition-all duration-400">
+          <h3 className="font-semibold text-gray-900 text-[11px] sm:text-sm mb-0.5 sm:mb-1 leading-tight">{product.name}</h3>
+          <p className="text-[10px] sm:text-[11px] text-gray-400 mb-1.5 sm:mb-3 hidden sm:block">Hubungi kami untuk harga terbaik</p>
           <a
             href={buildWhatsAppUrl(`Halo, saya ingin bertanya tentang ${product.name}. Berapa harganya?`)}
             target="_blank"
@@ -177,7 +177,7 @@ export const LabCatalog = () => {
         </motion.div>
 
         {/* ===== Bento Collage Grid ===== */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-5 auto-rows-[180px] sm:auto-rows-[200px]">
+        <div className="grid grid-cols-2 sm:grid-cols-2 lg:grid-cols-3 gap-3 sm:gap-4 lg:gap-5">
           {products.map((product, index) => (
             <CatalogCard key={product.name} product={product} index={index} />
           ))}

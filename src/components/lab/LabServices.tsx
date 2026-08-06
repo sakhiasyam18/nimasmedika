@@ -91,15 +91,15 @@ export const LabServices = () => {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, amount: 0.3 }}
               transition={{ duration: 0.5, delay: index * 0.12 }}
-              className={`group relative rounded-3xl p-7 sm:p-8
+              className={`group relative rounded-2xl sm:rounded-3xl p-5 sm:p-7 lg:p-8
                 bg-white/50 backdrop-blur-xl
                 border border-white/50 ${service.borderHover}
-                shadow-[6px_6px_16px_rgba(0,0,0,0.05),-6px_-6px_16px_rgba(255,255,255,0.8)]
+                shadow-[4px_4px_12px_rgba(0,0,0,0.05),-4px_-4px_12px_rgba(255,255,255,0.8)]
                 hover:shadow-[8px_8px_24px_rgba(0,0,0,0.08),-8px_-8px_24px_rgba(255,255,255,0.9)]
                 hover:-translate-y-1.5 transition-all duration-400`}
             >
               {/* Gradient overlay */}
-              <div className={`absolute inset-0 rounded-3xl bg-gradient-to-br ${service.gradient} opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none`} />
+              <div className={`absolute inset-0 rounded-2xl sm:rounded-3xl bg-gradient-to-br ${service.gradient} opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none`} />
 
               {/* Icon */}
               <div className="relative">
