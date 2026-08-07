@@ -117,15 +117,15 @@ export const LabHero = () => {
       <div aria-hidden="true" className="absolute inset-0 pointer-events-none">
         <div className="absolute inset-0 bg-gradient-to-b from-slate-50 via-white to-blue-50/30" />
         <div
-          className="absolute top-[10%] left-[15%] w-[600px] h-[600px] rounded-full bg-[radial-gradient(closest-side,rgba(78,113,255,0.12),transparent_70%)] blur-3xl"
+          className="absolute top-[10%] left-[15%] w-[600px] h-[600px] rounded-full bg-[radial-gradient(closest-side,rgba(78,113,255,0.12),transparent_70%)]"
           style={{ animation: "breathe 8s ease-in-out infinite" }}
         />
         <div
-          className="absolute bottom-[5%] right-[10%] w-[500px] h-[500px] rounded-full bg-[radial-gradient(closest-side,rgba(141,216,255,0.15),transparent_70%)] blur-3xl"
+          className="absolute bottom-[5%] right-[10%] w-[500px] h-[500px] rounded-full bg-[radial-gradient(closest-side,rgba(141,216,255,0.15),transparent_70%)]"
           style={{ animation: "breathe 10s ease-in-out infinite 2s" }}
         />
         <div
-          className="absolute top-[40%] right-[30%] w-[350px] h-[350px] rounded-full bg-[radial-gradient(closest-side,rgba(139,92,246,0.08),transparent_70%)] blur-3xl"
+          className="absolute top-[40%] right-[30%] w-[350px] h-[350px] rounded-full bg-[radial-gradient(closest-side,rgba(139,92,246,0.08),transparent_70%)]"
           style={{ animation: "breathe 12s ease-in-out infinite 4s" }}
         />
       </div>
@@ -227,7 +227,7 @@ export const LabHero = () => {
           >
             <div
               aria-hidden="true"
-              className="absolute inset-0 -m-8 rounded-[3rem] bg-gradient-to-br from-blue-100/40 via-transparent to-violet-100/30 blur-2xl"
+              className="absolute inset-0 -m-8 rounded-[3rem] bg-gradient-to-br from-blue-100/30 via-transparent to-violet-100/20"
               style={{ animation: "breathe 10s ease-in-out infinite 1s" }}
             />
 

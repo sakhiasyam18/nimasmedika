@@ -182,7 +182,7 @@ export const LabCatalog = () => {
       <div aria-hidden="true" className="absolute inset-0">
         <div className="absolute inset-0 bg-gradient-to-b from-white via-slate-50/50 to-blue-50/30" />
         <div
-          className="absolute bottom-[10%] left-[20%] w-[600px] h-[600px] rounded-full bg-[radial-gradient(closest-side,rgba(78,113,255,0.07),transparent_70%)] blur-3xl"
+          className="absolute bottom-[10%] left-[20%] w-[600px] h-[600px] rounded-full bg-[radial-gradient(closest-side,rgba(78,113,255,0.07),transparent_70%)]"
           style={{ animation: "breathe 10s ease-in-out infinite 2s" }}
         />
       </div>

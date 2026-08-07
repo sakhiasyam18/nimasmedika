@@ -56,8 +56,8 @@ export const LabServices = () => {
       <div aria-hidden="true" className="absolute inset-0">
         <div className="absolute inset-0 bg-gradient-to-b from-blue-50/30 via-slate-50/80 to-white" />
         <div
-          className="absolute top-0 right-[10%] w-[500px] h-[500px] rounded-full bg-[radial-gradient(closest-side,rgba(139,92,246,0.06),transparent_70%)] blur-3xl"
-          style={{ animation: "breathe 12s ease-in-out infinite" }}
+          className="absolute top-0 right-[10%] w-[500px] h-[500px] rounded-full bg-[radial-gradient(closest-side,rgba(139,92,246,0.06),transparent_70%)]"
+          style={{ animation: "breathe 10s ease-in-out infinite" }}
         />
       </div>
 

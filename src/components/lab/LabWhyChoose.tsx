@@ -52,12 +52,12 @@ export const LabWhyChoose = () => {
       <div aria-hidden="true" className="absolute inset-0">
         <div className="absolute inset-0 bg-gradient-to-b from-blue-50/30 via-white to-slate-50/50" />
         <div
-          className="absolute top-[20%] left-[5%] w-[450px] h-[450px] rounded-full bg-[radial-gradient(closest-side,rgba(78,113,255,0.10),transparent_70%)] blur-3xl"
-          style={{ animation: "breathe 9s ease-in-out infinite" }}
+          className="absolute top-[20%] left-[5%] w-[450px] h-[450px] rounded-full bg-[radial-gradient(closest-side,rgba(78,113,255,0.10),transparent_70%)]"
+          style={{ animation: "breathe 10s ease-in-out infinite" }}
         />
         <div
-          className="absolute bottom-[10%] right-[5%] w-[400px] h-[400px] rounded-full bg-[radial-gradient(closest-side,rgba(141,216,255,0.10),transparent_70%)] blur-3xl"
-          style={{ animation: "breathe 11s ease-in-out infinite 3s" }}
+          className="absolute bottom-[10%] right-[5%] w-[400px] h-[400px] rounded-full bg-[radial-gradient(closest-side,rgba(141,216,255,0.10),transparent_70%)]"
+          style={{ animation: "breathe 12s ease-in-out infinite 3s" }}
         />
       </div>
 

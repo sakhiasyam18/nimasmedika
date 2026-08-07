@@ -103,8 +103,8 @@ export const LabFAQ = () => {
       <div aria-hidden="true" className="absolute inset-0">
         <div className="absolute inset-0 bg-gradient-to-b from-blue-50/20 via-white to-slate-50/30" />
         <div
-          className="absolute top-[30%] right-[10%] w-[400px] h-[400px] rounded-full bg-[radial-gradient(closest-side,rgba(78,113,255,0.08),transparent_70%)] blur-3xl"
-          style={{ animation: "breathe 10s ease-in-out infinite 1s" }}
+          className="absolute top-[30%] right-[10%] w-[400px] h-[400px] rounded-full bg-[radial-gradient(closest-side,rgba(78,113,255,0.08),transparent_70%)]"
+          style={{ animation: "breathe 10s ease-in-out infinite" }}
         />
       </div>
 
