@@ -68,13 +68,27 @@ export default function AlatLabPage() {
     },
     offers: {
       "@type": "AggregateOffer",
-      offerCount: "8",
+      offerCount: 8,
+      lowPrice: 15000,
+      highPrice: 2500000,
       priceCurrency: "IDR",
     },
     aggregateRating: {
       "@type": "AggregateRating",
-      ratingValue: "4.9",
-      reviewCount: "64",
+      ratingValue: 4.9,
+      reviewCount: 64,
+    },
+    review: {
+      "@type": "Review",
+      reviewRating: {
+        "@type": "Rating",
+        ratingValue: 5,
+        bestRating: 5,
+      },
+      author: {
+        "@type": "Person",
+        name: "Pelanggan Nimas Medika",
+      },
     },
   };
 
