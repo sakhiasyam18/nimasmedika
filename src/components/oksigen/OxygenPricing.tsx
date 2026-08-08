@@ -478,6 +478,7 @@ const PricingCard: React.FC<{ option: PricingOption; index: number }> =
                 <AnimatePresence>
                   {isExpanded && (
                     <motion.div
+                      id={`detail-${option.id}`}
                       initial={{ opacity: 0, height: 0, marginTop: 0 }}
                       animate={{ opacity: 1, height: "auto", marginTop: 24 }}
                       exit={{ opacity: 0, height: 0, marginTop: 0 }}

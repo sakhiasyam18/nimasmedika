@@ -69,22 +69,22 @@ export default function Oksigen() {
     "description": "Layanan jual, sewa, dan isi ulang tabung oksigen medis 24 jam di Madiun. Melayani pesan antar ke rumah (home care). Oksigen 1m3 dan 6m3 terisi penuh 2000 PSI.",
     "offers": {
       "@type": "AggregateOffer",
-      "offerCount": "4",
-      "lowPrice": "45000",
-      "highPrice": "1700000",
+      "offerCount": 4,
+      "lowPrice": 45000,
+      "highPrice": 1700000,
       "priceCurrency": "IDR"
     },
     "aggregateRating": {
       "@type": "AggregateRating",
-      "ratingValue": "4.9",
-      "reviewCount": "128"
+      "ratingValue": 4.9,
+      "reviewCount": 128
     },
     "review": {
       "@type": "Review",
       "reviewRating": {
         "@type": "Rating",
-        "ratingValue": "5",
-        "bestRating": "5"
+        "ratingValue": 5,
+        "bestRating": 5
       },
       "author": {
         "@type": "Person",
