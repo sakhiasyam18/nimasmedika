@@ -609,7 +609,7 @@ const PricingCard: React.FC<{ option: PricingOption; index: number }> =
                   onClick={toggleExpanded}
                   className="mt-6 inline-flex items-center gap-2 rounded-full bg-gradient-5 text-white px-4 py-2 text-sm font-semibold ring-2 ring-primary/30 hover:translate-y-[-1px] active:translate-y-[1px] transition focus:outline-none focus-visible:ring-4 focus-visible:ring-primary/60 focus-visible:ring-offset-2"
                   aria-expanded={isExpanded}
-                  aria-controls={`detail-${option.id}`}
+                  aria-controls={isExpanded ? `detail-${option.id}` : undefined}
                 >
                   <span>
                     {isExpanded ? "Sembunyikan Detail" : "Lihat Detail Lengkap"}
