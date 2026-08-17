@@ -170,7 +170,7 @@ const AccordionItem: React.FC<{
         onClick={onToggle}
         className="w-full text-left p-6 sm:p-8 flex items-start gap-4 sm:gap-5 focus:outline-none focus-visible:ring-2 focus-visible:ring-primary/40 focus-visible:ring-offset-2 rounded-2xl sm:rounded-3xl"
         aria-expanded={isOpen}
-        aria-controls={`faq-answer-${index}`}
+        aria-controls={isOpen ? `faq-answer-${index}` : undefined}
       >
         {/* Nomor FAQ — lingkaran gradient */}
         <div

@@ -119,7 +119,7 @@ export const Header = () => {
         <button
           onClick={() => setIsOpen(!isOpen)}
           aria-expanded={isOpen}
-          aria-controls="mobile-menu"
+          aria-controls={isOpen ? "mobile-menu" : undefined}
           className={`md:hidden relative z-50 inline-flex items-center justify-center rounded-full p-2.5 transition-all duration-300 active:scale-95 focus:outline-none focus-visible:ring-2 focus-visible:ring-blue-600 focus-visible:ring-offset-2 ${
             isScrolled ? "text-slate-700 hover:bg-slate-100" : "text-slate-800 hover:bg-white/50"
           }`}
