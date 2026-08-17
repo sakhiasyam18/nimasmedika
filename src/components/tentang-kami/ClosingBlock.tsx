@@ -33,7 +33,7 @@ export const ClosingBlock = () => {
           </div>
 
           {/* The Visionary Card (Glassmorphism Floating Island) */}
-          <div className="relative p-12 md:p-20 rounded-[3rem] border border-white/10 bg-white/[0.02] backdrop-blur-3xl shadow-[0_0_50px_-12px_rgba(59,130,246,0.3)] overflow-hidden">
+          <div className="relative p-12 md:p-20 rounded-[3rem] border border-white/10 bg-white/[0.02] shadow-[0_0_50px_-12px_rgba(59,130,246,0.3)] overflow-hidden">
             {/* Dekorasi Neon Garis di dalam kartu */}
             <div className="absolute top-0 left-1/2 -translate-x-1/2 w-1/2 h-[1px] bg-gradient-to-r from-transparent via-blue-400/50 to-transparent" />
 

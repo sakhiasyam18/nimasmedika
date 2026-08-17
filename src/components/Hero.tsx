@@ -13,7 +13,7 @@ export const Hero = () => {
         {/* Radial biru lembut di tengah */}
         <div className="absolute inset-0 bg-[radial-gradient(60%_60%_at_50%_30%,rgba(78,113,255,0.12)_0%,rgba(78,113,255,0.06)_35%,transparent_70%)]" />
         {/* Glow bawah agar menyambung ke section selanjutnya */}
-        <div className="absolute -bottom-24 left-1/2 -translate-x-1/2 h-72 w-[85%] rounded-[60px] blur-3xl opacity-50 bg-[radial-gradient(closest-side,rgba(141,216,255,0.35),transparent_70%)]" />
+        <div className="absolute -bottom-24 left-1/2 -translate-x-1/2 h-72 w-[85%] rounded-[60px] opacity-50 bg-[radial-gradient(closest-side,rgba(141,216,255,0.35),transparent_70%)]" />
       </div>
 
       <Container className="relative z-10 py-28 sm:py-36 animate-in fade-in slide-in-from-bottom-4 duration-1000">
@@ -100,7 +100,7 @@ export const Hero = () => {
 
       {/* Dekorasi gelembung neon halus */}
       <div className="absolute -top-10 -left-10 h-48 w-48 rounded-full bg-[radial-gradient(closest-side,rgba(187,251,255,0.5),transparent_70%)] blur-2xl" />
-      <div className="absolute -bottom-16 -right-8 h-60 w-60 rounded-full bg-[radial-gradient(closest-side,rgba(78,113,255,0.45),transparent_70%)] blur-3xl" />
+      <div className="absolute -bottom-16 -right-8 h-60 w-60 rounded-full bg-[radial-gradient(closest-side,rgba(78,113,255,0.45),transparent_70%)]" />
     </section>
   );
 };

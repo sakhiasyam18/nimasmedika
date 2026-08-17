@@ -81,8 +81,8 @@ export const UsageGuide = () => {
       >
         {/* Gradient biru-ungu di tengah atas */}
         <div className="absolute inset-0 bg-gradient-to-b from-slate-50 via-white to-slate-50" />
-        <div className="absolute top-0 left-1/3 w-[400px] h-[400px] bg-[radial-gradient(closest-side,rgba(78,113,255,0.06),transparent_70%)] blur-3xl" />
-        <div className="absolute bottom-0 right-1/4 w-[300px] h-[300px] bg-[radial-gradient(closest-side,rgba(141,216,255,0.08),transparent_70%)] blur-3xl" />
+        <div className="absolute top-0 left-1/3 w-[400px] h-[400px] bg-[radial-gradient(closest-side,rgba(78,113,255,0.06),transparent_70%)]" />
+        <div className="absolute bottom-0 right-1/4 w-[300px] h-[300px] bg-[radial-gradient(closest-side,rgba(141,216,255,0.08),transparent_70%)]" />
       </div>
 
       <Container>

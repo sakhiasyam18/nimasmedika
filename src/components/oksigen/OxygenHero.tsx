@@ -73,9 +73,9 @@ export const OxygenHero = () => {
         {/* Radial biru lembut di tengah atas */}
         <div className="absolute inset-0 bg-[radial-gradient(60%_50%_at_50%_20%,rgba(78,113,255,0.10)_0%,rgba(78,113,255,0.04)_40%,transparent_70%)]" />
         {/* Glow cyan di kanan bawah — aksen visual */}
-        <div className="absolute bottom-0 right-0 w-[500px] h-[500px] bg-[radial-gradient(closest-side,rgba(141,216,255,0.18),transparent_70%)] blur-3xl" />
+        <div className="absolute bottom-0 right-0 w-[500px] h-[500px] bg-[radial-gradient(closest-side,rgba(141,216,255,0.18),transparent_70%)]" />
         {/* Glow ungu halus di kiri — depth visual */}
-        <div className="absolute top-1/3 -left-20 w-[400px] h-[400px] bg-[radial-gradient(closest-side,rgba(120,80,255,0.08),transparent_70%)] blur-3xl" />
+        <div className="absolute top-1/3 -left-20 w-[400px] h-[400px] bg-[radial-gradient(closest-side,rgba(120,80,255,0.08),transparent_70%)]" />
       </div>
 
       <Container className="relative z-10">
@@ -195,6 +195,7 @@ export const OxygenHero = () => {
                   alt="Tabung oksigen medis 1m³ Nimas Medika Madiun"
                   width={500}
                   height={334}
+                  sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 500px"
                   className="w-full h-auto object-cover"
                   priority // Gambar hero harus di-preload
                 />

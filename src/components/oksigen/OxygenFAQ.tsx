@@ -274,8 +274,8 @@ export const OxygenFAQ = () => {
         className="absolute inset-0 -z-10 pointer-events-none"
       >
         <div className="absolute inset-0 bg-gradient-to-b from-white via-slate-50/70 to-white" />
-        <div className="absolute top-0 right-0 -translate-y-1/3 w-[300px] sm:w-[500px] h-[300px] sm:h-[500px] bg-[radial-gradient(closest-side,rgba(78,113,255,0.08),transparent_70%)] blur-3xl" />
-        <div className="absolute bottom-0 left-0 translate-y-1/3 w-[250px] sm:w-[400px] h-[250px] sm:h-[400px] bg-[radial-gradient(closest-side,rgba(141,216,255,0.1),transparent_70%)] blur-3xl" />
+        <div className="absolute top-0 right-0 -translate-y-1/3 w-[300px] sm:w-[500px] h-[300px] sm:h-[500px] bg-[radial-gradient(closest-side,rgba(78,113,255,0.08),transparent_70%)]" />
+        <div className="absolute bottom-0 left-0 translate-y-1/3 w-[250px] sm:w-[400px] h-[250px] sm:h-[400px] bg-[radial-gradient(closest-side,rgba(141,216,255,0.1),transparent_70%)]" />
       </div>
 
       <Container className="relative z-10">

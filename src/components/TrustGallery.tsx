@@ -160,8 +160,8 @@ export const TrustGallery: React.FC = () => {
       >
         {/* Dekorasi Radial */}
         <div aria-hidden className="absolute inset-0">
-          <div className="absolute -top-20 left-1/2 -translate-x-1/2 h-[40rem] w-[40rem] rounded-full blur-3xl opacity-40 bg-[radial-gradient(closest-side,rgba(141,216,255,0.3),transparent_70%)]" />
-          <div className="absolute -bottom-20 -right-16 h-[36rem] w-[36rem] rounded-full blur-3xl opacity-40 bg-[radial-gradient(closest-side,rgba(78,113,255,0.25),transparent_70%)]" />
+          <div className="absolute -top-20 left-1/2 -translate-x-1/2 h-[40rem] w-[40rem] rounded-full opacity-40 bg-[radial-gradient(closest-side,rgba(141,216,255,0.3),transparent_70%)]" />
+          <div className="absolute -bottom-20 -right-16 h-[36rem] w-[36rem] rounded-full opacity-40 bg-[radial-gradient(closest-side,rgba(78,113,255,0.25),transparent_70%)]" />
         </div>
 
         <Container>

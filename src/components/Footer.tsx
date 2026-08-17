@@ -31,7 +31,7 @@ export function Footer() {
   return (
     <footer className="relative overflow-hidden bg-white text-gray-900 border-t border-slate-200">
       <div aria-hidden className="absolute inset-0 pointer-events-none">
-        <div className="absolute -top-20 left-1/2 -translate-x-1/2 h-[30rem] w-[30rem] rounded-full blur-3xl opacity-20 bg-[radial-gradient(closest-side,rgba(78,113,255,0.2),transparent_70%)]" />
+        <div className="absolute -top-20 left-1/2 -translate-x-1/2 h-[30rem] w-[30rem] rounded-full opacity-20 bg-[radial-gradient(closest-side,rgba(78,113,255,0.2),transparent_70%)]" />
       </div>
 
       <Container className="relative z-10 pt-16 pb-12">

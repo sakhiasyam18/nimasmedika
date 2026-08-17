@@ -66,7 +66,7 @@ export const OriginBlock = () => {
             </div>
 
             {/* Efek Neon Halus di sudut space kosong */}
-            <div className="absolute -bottom-10 -right-10 w-32 h-32 bg-blue-500/20 blur-3xl rounded-full" />
+            <div className="absolute -bottom-10 -right-10 w-32 h-32 bg-blue-500/20 rounded-full" />
           </div>
         </div>
       </Container>
