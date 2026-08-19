@@ -6,17 +6,20 @@
 // ============================================================
 
 import type { Metadata } from "next";
+import dynamic from "next/dynamic";
 import { Container } from "@/components/Container";
 import { Header } from "@/components/Header";
 import { Footer } from "@/components/Footer";
 import { OxygenHero } from "@/components/oksigen/OxygenHero";
-import { OxygenPricing } from "@/components/oksigen/OxygenPricing";
-import { UsageGuide } from "@/components/oksigen/UsageGuide";
-import { OxygenFAQ } from "@/components/oksigen/OxygenFAQ";
-import { ServiceArea } from "@/components/oksigen/ServiceArea";
-import { WhyChoose } from "@/components/oksigen/WhyChoose";
-import { OxygenServices } from "@/components/oksigen/OxygenServices";
-import { SafeUsage } from "@/components/oksigen/SafeUsage";
+
+// Lazy-load komponen below-the-fold untuk mengurangi TBT & mempercepat LCP
+const OxygenPricing = dynamic(() => import("@/components/oksigen/OxygenPricing").then(m => ({ default: m.OxygenPricing })));
+const UsageGuide = dynamic(() => import("@/components/oksigen/UsageGuide").then(m => ({ default: m.UsageGuide })));
+const OxygenFAQ = dynamic(() => import("@/components/oksigen/OxygenFAQ").then(m => ({ default: m.OxygenFAQ })));
+const ServiceArea = dynamic(() => import("@/components/oksigen/ServiceArea").then(m => ({ default: m.ServiceArea })));
+const WhyChoose = dynamic(() => import("@/components/oksigen/WhyChoose").then(m => ({ default: m.WhyChoose })));
+const OxygenServices = dynamic(() => import("@/components/oksigen/OxygenServices").then(m => ({ default: m.OxygenServices })));
+const SafeUsage = dynamic(() => import("@/components/oksigen/SafeUsage").then(m => ({ default: m.SafeUsage })));
 
 // ===== SEO Metadata khusus halaman oksigen =====
 // Next.js App Router akan merge metadata ini dengan layout.tsx
