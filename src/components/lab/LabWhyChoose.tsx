@@ -45,7 +45,7 @@ const reasons = [
 export const LabWhyChoose = () => {
   return (
     <section
-      className="relative py-20 sm:py-28 overflow-hidden"
+      className="relative py-14 sm:py-28 overflow-hidden"
       aria-label="Mengapa memilih Nimas Medika untuk alat lab dan jas medis"
     >
       {/* Ambient background */}
@@ -67,18 +67,18 @@ export const LabWhyChoose = () => {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, amount: 0.3 }}
           transition={{ duration: 0.6 }}
-          className="text-center mb-14"
+          className="text-center mb-10 sm:mb-14"
         >
-          <p className="text-sm font-semibold text-primary uppercase tracking-widest mb-3">
+          <p className="text-xs sm:text-sm font-semibold text-primary uppercase tracking-widest mb-2 sm:mb-3">
             Mengapa Nimas Medika?
           </p>
-          <h2 className="text-3xl sm:text-4xl font-extrabold text-gray-900 tracking-tight">
+          <h2 className="text-2xl sm:text-4xl font-extrabold text-gray-900 tracking-tight">
             Kepercayaan yang Sudah{" "}
             <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#4E71FF] to-[#8DD8FF]">
               Teruji
             </span>
           </h2>
-          <p className="mt-4 text-gray-500 max-w-2xl mx-auto">
+          <p className="mt-3 sm:mt-4 text-gray-500 max-w-2xl mx-auto text-sm sm:text-base">
             Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
           </p>
         </motion.div>
@@ -97,15 +97,15 @@ export const LabWhyChoose = () => {
               <div className="absolute -inset-1 rounded-3xl bg-gradient-to-br from-blue-400/0 to-cyan-400/0 group-hover:from-blue-400/10 group-hover:to-cyan-400/5 blur-xl transition-all duration-500 pointer-events-none" />
 
               <div
-                className="relative flex items-start gap-4 p-6 rounded-2xl
+                className="relative flex items-start gap-3 sm:gap-4 p-4 sm:p-6 rounded-2xl
                   bg-white/50 backdrop-blur-xl border border-white/50
                   shadow-[4px_4px_12px_rgba(0,0,0,0.04),-4px_-4px_12px_rgba(255,255,255,0.7)]
                   hover:shadow-[6px_6px_20px_rgba(0,0,0,0.07),-6px_-6px_20px_rgba(255,255,255,0.9)]
                   hover:bg-white/70 hover:border-blue-200/40
                   hover:-translate-y-0.5 transition-all duration-300"
               >
-                <div className="flex-shrink-0 grid place-items-center h-12 w-12 rounded-2xl bg-gradient-to-br from-primary/10 to-primary/5 text-primary shadow-sm group-hover:scale-110 group-hover:shadow-md transition-all duration-300">
-                  <reason.icon className="h-5 w-5" />
+                <div className="flex-shrink-0 grid place-items-center h-10 w-10 sm:h-12 sm:w-12 rounded-xl sm:rounded-2xl bg-gradient-to-br from-primary/10 to-primary/5 text-primary shadow-sm group-hover:scale-110 group-hover:shadow-md transition-all duration-300">
+                  <reason.icon className="h-4 w-4 sm:h-5 sm:w-5" />
                 </div>
                 <div>
                   <h3 className="font-bold text-gray-900 text-sm mb-1.5">{reason.title}</h3>

@@ -110,7 +110,7 @@ export const LabHero = () => {
 
   return (
     <section
-      className="relative isolate overflow-hidden pt-16 pb-24 sm:pt-24 sm:pb-32"
+      className="relative isolate overflow-hidden pt-28 pb-16 sm:pt-36 sm:pb-32"
       aria-label="Hero layanan alat laboratorium dan jas medis Nimas Medika Madiun"
     >
       {/* ===== Ambient Background ===== */}
@@ -132,21 +132,21 @@ export const LabHero = () => {
       <div className="noise-overlay absolute inset-0 pointer-events-none" aria-hidden="true" />
 
       <Container className="relative z-10">
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-16 items-center">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-16 items-center">
           {/* ===== Left: Copywriting ===== */}
           <motion.div
             initial={{ opacity: 0, x: -40 }}
             animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.7, ease: "easeOut" }}
           >
-            <h1 className="font-heading text-3xl sm:text-4xl font-extrabold tracking-tight text-gray-900 lg:text-[3.4rem] leading-[1.1]">
+            <h1 className="font-heading text-2xl sm:text-4xl font-extrabold tracking-tight text-gray-900 lg:text-[3.4rem] leading-[1.15]">
               Jual Alat Lab &{" "}
               <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#4E71FF] via-[#6B8CFF] to-[#8DD8FF]">
                 Jas Dokter Madiun
               </span>
             </h1>
 
-            <div className="mt-5 sm:mt-6 text-base sm:text-lg leading-7 sm:leading-8 text-gray-600 space-y-3 sm:space-y-4">
+            <div className="mt-4 sm:mt-6 text-sm sm:text-lg leading-6 sm:leading-8 text-gray-600 space-y-2.5 sm:space-y-4">
               <p>
                 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
               </p>
@@ -158,12 +158,12 @@ export const LabHero = () => {
               </p>
             </div>
 
-            <div className="mt-7 sm:mt-8 flex flex-wrap gap-3 sm:gap-4">
+            <div className="mt-6 sm:mt-8 flex flex-col sm:flex-row gap-3 sm:gap-4">
               <motion.a
                 href="#katalog"
                 whileHover={{ scale: 1.04 }}
                 whileTap={{ scale: 0.97 }}
-                className="inline-flex items-center gap-2 rounded-full px-6 py-3 sm:px-8 sm:py-3.5
+                className="inline-flex items-center justify-center gap-2 rounded-full px-6 py-3 sm:px-8 sm:py-3.5
                   bg-gradient-to-r from-[#2C5BFF] via-[#4E71FF] to-[#8DD8FF]
                   font-semibold text-white text-sm sm:text-base
                   shadow-[0_0_28px_rgba(78,113,255,0.35),0_8px_20px_rgba(78,113,255,0.20)]
@@ -178,7 +178,7 @@ export const LabHero = () => {
                 rel="noopener noreferrer"
                 whileHover={{ scale: 1.04 }}
                 whileTap={{ scale: 0.97 }}
-                className="inline-flex items-center gap-2 rounded-full px-6 py-3 sm:px-8 sm:py-3.5
+                className="inline-flex items-center justify-center gap-2 rounded-full px-6 py-3 sm:px-8 sm:py-3.5
                   border border-white/60 bg-white/60 backdrop-blur-xl
                   font-semibold text-slate-800 text-sm sm:text-base
                   shadow-[0_8px_30px_rgb(0,0,0,0.06),inset_0_1px_0_rgba(255,255,255,0.8)]
@@ -194,7 +194,7 @@ export const LabHero = () => {
               variants={containerVariants}
               initial="hidden"
               animate="visible"
-              className="mt-8 sm:mt-10 grid grid-cols-2 gap-2.5 sm:gap-3"
+              className="mt-6 sm:mt-10 grid grid-cols-2 gap-2 sm:gap-3"
             >
               {trustBadges.map((badge) => (
                 <motion.div

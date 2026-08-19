@@ -65,10 +65,10 @@ const FAQItem = ({
   >
     <button
       onClick={onToggle}
-      className="w-full flex items-center justify-between gap-4 px-6 py-5 text-left focus:outline-none focus-visible:ring-2 focus-visible:ring-blue-600 focus-visible:ring-inset"
+      className="w-full flex items-center justify-between gap-3 sm:gap-4 px-4 py-4 sm:px-6 sm:py-5 text-left focus:outline-none focus-visible:ring-2 focus-visible:ring-blue-600 focus-visible:ring-inset"
       aria-expanded={isOpen}
     >
-      <span className="font-semibold text-gray-900 text-sm leading-snug">{question}</span>
+      <span className="font-semibold text-gray-900 text-xs sm:text-sm leading-snug">{question}</span>
       <motion.span
         animate={{ rotate: isOpen ? 180 : 0 }}
         transition={{ duration: 0.25 }}
@@ -85,7 +85,7 @@ const FAQItem = ({
           exit={{ height: 0, opacity: 0 }}
           transition={{ duration: 0.3, ease: "easeInOut" }}
         >
-          <div className="px-6 pb-5 text-sm text-gray-500 leading-relaxed border-t border-slate-100/80 pt-4">
+          <div className="px-4 pb-4 sm:px-6 sm:pb-5 text-xs sm:text-sm text-gray-500 leading-relaxed border-t border-slate-100/80 pt-3 sm:pt-4">
             {answer}
           </div>
         </motion.div>
@@ -98,7 +98,7 @@ export const LabFAQ = () => {
   const [openIndex, setOpenIndex] = useState<number | null>(0);
 
   return (
-    <section className="relative py-20 sm:py-28 overflow-hidden" aria-label="FAQ alat laboratorium dan jas medis Madiun">
+    <section className="relative py-14 sm:py-28 overflow-hidden" aria-label="FAQ alat laboratorium dan jas medis Madiun">
       {/* Ambient background */}
       <div aria-hidden="true" className="absolute inset-0">
         <div className="absolute inset-0 bg-gradient-to-b from-blue-50/20 via-white to-slate-50/30" />
@@ -114,18 +114,18 @@ export const LabFAQ = () => {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, amount: 0.3 }}
           transition={{ duration: 0.6 }}
-          className="text-center mb-14"
+          className="text-center mb-10 sm:mb-14"
         >
-          <p className="text-sm font-semibold text-primary uppercase tracking-widest mb-3">
+          <p className="text-xs sm:text-sm font-semibold text-primary uppercase tracking-widest mb-2 sm:mb-3">
             FAQ
           </p>
-          <h2 className="text-3xl sm:text-4xl font-extrabold text-gray-900 tracking-tight">
+          <h2 className="text-2xl sm:text-4xl font-extrabold text-gray-900 tracking-tight">
             Pertanyaan yang Sering{" "}
             <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#4E71FF] to-[#8DD8FF]">
               Ditanyakan
             </span>
           </h2>
-          <p className="mt-4 text-gray-500 max-w-2xl mx-auto">
+          <p className="mt-3 sm:mt-4 text-gray-500 max-w-2xl mx-auto text-sm sm:text-base">
             Tidak menemukan jawaban? Langsung tanya kami via WhatsApp, kami siap bantu!
           </p>
         </motion.div>

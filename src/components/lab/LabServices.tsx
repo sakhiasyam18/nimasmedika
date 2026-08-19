@@ -7,7 +7,7 @@
 
 import React from "react";
 import { motion } from "framer-motion";
-import { FlaskConical, Shirt, Stethoscope, ArrowUpRight } from "lucide-react";
+import { FlaskConical, Shirt, Stethoscope } from "lucide-react";
 import { Container } from "@/components/Container";
 
 const services = [
@@ -49,7 +49,7 @@ const services = [
 export const LabServices = () => {
   return (
     <section
-      className="relative py-20 sm:py-28 overflow-hidden"
+      className="relative py-14 sm:py-28 overflow-hidden"
       aria-label="Layanan alat lab dan jas medis Nimas Medika"
     >
       {/* Ambient background */}
@@ -67,18 +67,18 @@ export const LabServices = () => {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, amount: 0.3 }}
           transition={{ duration: 0.6 }}
-          className="text-center mb-14"
+          className="text-center mb-10 sm:mb-14"
         >
-          <p className="text-sm font-semibold text-primary uppercase tracking-widest mb-3">
+          <p className="text-xs sm:text-sm font-semibold text-primary uppercase tracking-widest mb-2 sm:mb-3">
             Layanan Kami
           </p>
-          <h2 className="text-3xl sm:text-4xl font-extrabold text-gray-900 tracking-tight">
+          <h2 className="text-2xl sm:text-4xl font-extrabold text-gray-900 tracking-tight">
             Satu Toko, Semua Kebutuhan{" "}
             <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#4E71FF] to-[#8DD8FF]">
               Medis & Lab
             </span>
           </h2>
-          <p className="mt-4 text-gray-500 max-w-2xl mx-auto text-base leading-relaxed">
+          <p className="mt-3 sm:mt-4 text-gray-500 max-w-2xl mx-auto text-sm sm:text-base leading-relaxed">
             Lorem ipsum dolor sit amet, consectetur adipiscing elit. Kami menyediakan alat kesehatan dan laboratorium lengkap di Madiun.
           </p>
         </motion.div>
@@ -89,7 +89,7 @@ export const LabServices = () => {
               key={service.title}
               initial={{ opacity: 0, y: 40 }}
               whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true, amount: 0.3 }}
+              viewport={{ once: true, amount: 0.2 }}
               transition={{ duration: 0.5, delay: index * 0.12 }}
               className={`group relative rounded-2xl sm:rounded-3xl p-5 sm:p-7 lg:p-8
                 bg-white/50 backdrop-blur-xl
@@ -110,11 +110,8 @@ export const LabServices = () => {
 
               {/* Content */}
               <div className="relative">
-                <div className="flex items-center gap-2 mb-3">
-                  <h3 className="text-lg font-bold text-gray-900">{service.title}</h3>
-                  <ArrowUpRight className="h-4 w-4 text-gray-400 opacity-0 -translate-x-2 group-hover:opacity-100 group-hover:translate-x-0 transition-all duration-300" />
-                </div>
-                <p className="text-sm text-gray-500 leading-relaxed mb-6">{service.description}</p>
+                <h3 className="text-base sm:text-lg font-bold text-gray-900 mb-3">{service.title}</h3>
+                <p className="text-sm text-gray-500 leading-relaxed mb-5 sm:mb-6">{service.description}</p>
 
                 {/* Tags */}
                 <div className="flex flex-wrap gap-2">

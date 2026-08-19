@@ -32,7 +32,7 @@ const MarqueeRow = ({ reverse = false }: { reverse?: boolean }) => (
       {[...brands, ...brands, ...brands, ...brands].map((brand, i) => (
         <div
           key={`${brand.name}-${i}`}
-          className="flex-shrink-0 px-6 sm:px-8 py-3 sm:py-4 rounded-xl sm:rounded-2xl
+          className="flex-shrink-0 px-4 sm:px-8 py-2.5 sm:py-4 rounded-xl sm:rounded-2xl
             bg-white/50 border border-white/60 backdrop-blur-md
             shadow-[0_4px_12px_rgba(0,0,0,0.02),inset_0_1px_0_rgba(255,255,255,0.8)]
             hover:bg-white/80 hover:border-primary/20 hover:shadow-[0_8px_20px_rgba(0,0,0,0.04)]
@@ -40,7 +40,7 @@ const MarqueeRow = ({ reverse = false }: { reverse?: boolean }) => (
         >
           <span
             className={`text-slate-400 group-hover:text-primary transition-colors duration-300
-              text-sm sm:text-base select-none whitespace-nowrap ${brand.style}`}
+              text-xs sm:text-base select-none whitespace-nowrap ${brand.style}`}
           >
             {brand.name}
           </span>
@@ -53,7 +53,7 @@ const MarqueeRow = ({ reverse = false }: { reverse?: boolean }) => (
 export const LabBrands = () => {
   return (
     <section
-      className="relative py-12 sm:py-20 overflow-hidden"
+      className="relative py-10 sm:py-20 overflow-hidden"
       aria-label="Brand alat laboratorium yang tersedia di Nimas Medika"
     >
       {/* ===== Light Ambient Background ===== */}
